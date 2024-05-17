@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--primary-color);
+
+  width: 7px;
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--yellow-color);
+
+  border-radius: 2px;
+}
+:root {
+  --background-color: #ffffff;
+  --primary-color: #f6f6f6;
+
+  --orange-color: #f37121;
+  --yellow-color: #ffbd69;
+
+  --secandary-color: #c70039;
+  --dark-color: #111d5e;
+}
+
+.app {
+  font-family: var(--font-rubik);
+}
+h1 {
+  font-family: var(--font-bree_serif);
+}
+
+.nav {
+  font-family: var(--font-bree_serif);
+  background-color: var(--primary-color);
+  width: 100%;
+  color: #111111;
+}
+
+.active {
+  display: block;
+  content: "";
+  border-bottom: solid 3px var(--yellow-color);
+  transform: scaleX(1);
+}
+.navitem::after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px var(--orange-color);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.navitem:hover::after {
+  transform: scaleX(1);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 80vw;
+  background-color: var(--primary-color);
+  right: -100px;
+  top: 0;
+  height: 100vh;
+  box-shadow: 1px 2px 0.5rem #1b181827;
+}
+.close-img {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.footer {
+  width: 100%;
+  /* position: absolute; */
+  bottom: 0;
+  background-color: #000000;
+  color: #d4d4d4;
+}
+.text-underline::after {
+  display: block;
+  content: "";
+  background-color: var(--orange-color);
+  width: 40px;
+  height: 10px;
+}
+.search_input {
+  @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#111d5e] focus:outline-none focus:ring-0;
+}
+.text-gradient-orange {
+  @apply bg-gradient-to-r from-[#ffbd69] via-[#f37121] to-[#c70039]  bg-clip-text text-transparent;
+}
+.black_btn {
+  @apply rounded-[0.4rem]  bg-[#111d5e] p-[1rem_3rem] text-white transition-all hover:bg-[#f37121]  text-center text-sm font-inter flex items-center justify-center;
+}
+.text-gradient-blue {
+  @apply bg-gradient-to-r from-[#f37121] via-[#c70039] to-[#111d5e]  bg-clip-text text-transparent;
+}
+.podcast {
+  @apply break-inside-avoid rounded-lg text-gray-700 shadow-[inset_10px_-50px_94px_0px_rgb(199,199,199,0.2)] bg-clip-padding p-6 pb-4 backdrop-blur-[3rem] backdrop-filter md:w-[450px] w-[100%] h-fit space-y-[2rem] bg-primary-color;
+}
+.glassmorphism {
+  @apply rounded-xl bg-white/10 shadow-[inset_10px_100px_180px_0_rgb(199,199,199,0.2)] backdrop-blur-[1rem]  p-5;
+}
+.skeleton_container {
+  /* @apply bg-slate-500; */
+}
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
