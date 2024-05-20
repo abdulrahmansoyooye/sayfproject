@@ -2,8 +2,7 @@ import { Bree_Serif, Rubik } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 const bree_Serif = Bree_Serif({
   subsets: ["latin"],
   weight: ["400"],

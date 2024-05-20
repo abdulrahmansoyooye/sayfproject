@@ -27,6 +27,8 @@
 
   --secandary-color: #c70039;
   --dark-color: #111d5e;
+
+  --text-color: #111111;
 }
 
 .app {
@@ -81,10 +83,8 @@ h1 {
 
 .footer {
   width: 100%;
-  /* position: absolute; */
   bottom: 0;
-  background-color: #000000;
-  color: #d4d4d4;
+  background-color: var(--background-color);
 }
 .text-underline::after {
   display: block;
@@ -103,7 +103,13 @@ h1 {
   @apply rounded-[0.4rem]  bg-[#111d5e] p-[1rem_3rem] text-white transition-all hover:bg-[#f37121]  text-center text-sm font-inter flex items-center justify-center;
 }
 .text-gradient-blue {
-  @apply bg-gradient-to-r from-[#f37121] via-[#c70039] to-[#111d5e]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#c70039] via-[#f37121] to-[#ffdc85]  bg-clip-text text-transparent;
+}
+.dark-text {
+  @apply text-slate-700;
+}
+.light-text {
+  @apply text-slate-500;
 }
 .podcast {
   @apply break-inside-avoid rounded-lg text-gray-700 shadow-[inset_10px_-50px_94px_0px_rgb(199,199,199,0.2)] bg-clip-padding p-6 pb-4 backdrop-blur-[3rem] backdrop-filter md:w-[450px] w-[100%] h-fit space-y-[2rem] bg-primary-color;

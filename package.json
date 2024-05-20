@@ -12,11 +12,14 @@
     "@sanity/image-url": "^1.0.2",
     "aos": "^2.3.4",
     "framer-motion": "^11.1.9",
+    "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "next-sanity": "^9.0.15",
     "react": "^18",
     "react-dom": "^18",
-    "react-loading-skeleton": "^3.4.0"
+    "react-icons": "^5.2.1",
+    "react-loading-skeleton": "^3.4.0",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "eslint": "^8",

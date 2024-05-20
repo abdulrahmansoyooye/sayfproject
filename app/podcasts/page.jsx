@@ -7,7 +7,9 @@ import Image from "next/image";
 import { urlFor } from "@/lib/imageUrl";
 import { useEffect, useState } from "react";
 
-const Podcasts = () => {
+const Podcasts = ({ searchParams }) => {
+  let page = parseInt(searchParams.page, 10);
+  console.log(page)
   const [allpodcasts, setAllPodcasts] = useState([]);
 
   // Search
@@ -161,7 +163,7 @@ export const PodcastCard = ({
         <img
           src={imageUrl && urlFor(imageUrl).url()}
           alt="podcast-image"
-          className="rounded-[1rem] w-[100%] h-[200px] object-cover"
+          className="rounded-[1rem] w-full h-[240px] object-cover"
         />
       </div>
       <div className="flex justify-between items-center gap-[1rem] rounded-[1rem] cursor-pointer">
