@@ -100,7 +100,7 @@ h1 {
   @apply bg-gradient-to-r from-[#ffbd69] via-[#f37121] to-[#c70039]  bg-clip-text text-transparent;
 }
 .black_btn {
-  @apply rounded-[0.4rem]  bg-[#111d5e] p-[1rem_3rem] text-white transition-all hover:bg-[#f37121]  text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-[0.4rem]  bg-[#f37121] p-[1rem_3rem] text-white transition-all hover:bg-[#c70039]  text-center text-sm font-inter flex items-center justify-center;
 }
 .text-gradient-blue {
   @apply bg-gradient-to-r from-[#c70039] via-[#f37121] to-[#ffdc85]  bg-clip-text text-transparent;
