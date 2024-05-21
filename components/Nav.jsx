@@ -26,10 +26,18 @@ const Nav = () => {
   const isActive = (href) => pathname === href;
   const [istoggle, setIstoggle] = useState(false);
   return (
-    <div className="nav p-[2rem_2rem_2rem] sm:p-[2rem_6rem_2rem] flex-between z-[1000]">
-      <Link href={"/"} className="font-[400] cursor-pointer navitem">
+    <div className="nav p-[2rem_2rem_2rem] sm:p-[2rem_6rem_2rem] flex-between z-[1000] ">
+      <Link
+        href={"/"}
+        className="font-[500] text-[1.2rem] cursor-pointer navitem"
+      >
         Sayf Network
       </Link>
+      {/* <img
+        src={"/assets/logo.png"}
+        alt="footer-img"
+        className="cursor-pointer"
+      /> */}
       {/* Desktop */}
       <div className="max-md:hidden flex-between gap-[2rem]">
         {navLinks.map(({ name }, index) => (

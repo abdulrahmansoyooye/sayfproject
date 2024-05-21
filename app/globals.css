@@ -28,21 +28,25 @@
   --secandary-color: #c70039;
   --dark-color: #111d5e;
 
-  --text-color: #111111;
+  --text-color: #111d5e;
 }
 
 .app {
   font-family: var(--font-rubik);
+  color: var(--text-color);
 }
-h1 {
+h1,
+span {
   font-family: var(--font-bree_serif);
 }
-
+.section {
+  @apply p-[6rem] mb-[3rem] max-md:p-[3rem];
+}
 .nav {
   font-family: var(--font-bree_serif);
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   width: 100%;
-  color: #111111;
 }
 
 .active {
@@ -84,14 +88,23 @@ h1 {
 .footer {
   width: 100%;
   bottom: 0;
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
 }
 .text-underline::after {
   display: block;
   content: "";
   background-color: var(--orange-color);
   width: 40px;
-  height: 10px;
+  height: 5px;
+  cursor: pointer;
+}
+.active-carousel {
+  display: block;
+  content: "";
+  background-color: var(--dark-color);
+  width: 40px;
+  height: 5px;
+  cursor: pointer;
 }
 .search_input {
   @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#111d5e] focus:outline-none focus:ring-0;
@@ -100,10 +113,10 @@ h1 {
   @apply bg-gradient-to-r from-[#ffbd69] via-[#f37121] to-[#c70039]  bg-clip-text text-transparent;
 }
 .black_btn {
-  @apply rounded-[0.4rem]  bg-[#f37121] p-[1rem_3rem] text-white transition-all hover:bg-[#c70039]  text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-[0.4rem]  bg-[#f37121] p-[1rem_3rem] text-white transition-all hover:bg-[#c70039]  text-center text-sm  flex items-center justify-center;
 }
 .text-gradient-blue {
-  @apply bg-gradient-to-r from-[#c70039] via-[#f37121] to-[#ffdc85]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#c70039] via-[#f37121] to-[#f37121]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;
