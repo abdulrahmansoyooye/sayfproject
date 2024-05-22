@@ -58,7 +58,7 @@ const Carousel = () => {
     });
   };
   return (
-    <div className="relative flex flex-col gap-[9rem] justify-center section ">
+    <div className="relative flex flex-col gap-[9rem] justify-center section mt-[4rem]">
       <div className="flex gap-[1rem] justify-center">
         {carouselItem.map(
           ({ title, content, buttonText }, index) =>

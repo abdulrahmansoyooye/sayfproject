@@ -13,7 +13,7 @@ export default function Home() {
         className="absolute"
       />
       {/* Carousel */}
-      <div className="pt-[4rem] bg-primary-color">
+      <div className="pt-[4rem]  bg-primary-color">
         <Carousel />
       </div>
       {/* Section2 */}
