@@ -32,6 +32,7 @@ const Nav = () => {
         className="font-[500] text-[1.2rem] cursor-pointer navitem"
       >
         Sayf Network
+        
       </Link>
       {/* <img
         src={"/assets/logo.png"}
