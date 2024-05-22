@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const Podcasts = ({ searchParams }) => {
   let page = parseInt(searchParams.page, 10);
-  console.log(page)
+  console.log(page);
   const [allpodcasts, setAllPodcasts] = useState([]);
 
   // Search
@@ -53,7 +53,7 @@ const Podcasts = ({ searchParams }) => {
       <div className="flex gap-[2rem] flex-col">
         <h1 className="text-[3rem] text-center flex items-center gap-[1rem] flex-col">
           <div>
-            Daily <span className="text-gradient-orange">Podcasts</span>
+            Daily <span className="text-gradient-brown">Podcasts</span>
             <br className="breaker-style" />
           </div>
         </h1>

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex flex-col justify-evenly gap-[2rem] max-w-[900px] m-auto ">
         <div className="flex-center flex-col">
           <h2 className="text-[2rem] max-md:text-[1.5rem] dark-text text-center">
-            Join <span className="text-gradient-orange ">20k+</span> Muslims in
+            Join <span className="text-gradient-brown ">20k+</span> Muslims in
             our community to never miss out our daily snippets
           </h2>
         </div>

@@ -7,17 +7,17 @@ export default function Home() {
   return (
     <main className="home ">
       {/* Carousel */}
-      <div className="mb-[6rem]">
+      <div className="mb-[6rem] bg-[#f9fbfd]">
         <Carousel />
       </div>
       {/* Section2 */}
-      <div className="flex flex-col bg-[#ffffff] mb-[6rem]">
-        <div className="flex p-[6rem_4rem]  max-md:flex-col gap-[2rem] bg-[#f6f6f6]">
+      <div className="flex flex-col  bg-[#f9fbfd] mb-[6rem]">
+        <div className="flex p-[6rem_4rem]  max-md:flex-col gap-[2rem] bg-[#ffffff]">
           {/* Story */}
-          <div className="flex flex-col gap-[1rem] sm:w-[50%] w-full">
+          <div className="flex flex-col gap-[1rem] sm:w-[50%] w-full ">
             <div className="text-[3rem] max-md:text-[2rem] ">
-              What is Sayf - Our{" "}
-              <span className="text-gradient-blue">Story</span>
+              What is Sayf -
+              <span className="text-gradient-blue"> Our Story</span>
             </div>
             <div className="space-y-[0.75rem]">
               <p className="light-text font-[400]">
@@ -37,8 +37,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          {/* offer */}
-          <div className="flex flex-col gap-[1rem] items-start">
+          <div className="flex flex-col gap-[1rem] items-start ">
             <Image
               src={"/assets/svg-shape.svg"}
               alt="footer-img"
@@ -47,10 +46,13 @@ export default function Home() {
             />
           </div>
         </div>{" "}
-        <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[2rem_auto] section">
-          <div className="text-[3rem] max-md:text-[1.5rem] ">We Offer:</div>
+        {/* offer */}
+        <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[2rem_auto] section bg-[#f9fbfd]">
+          <div className="text-[3rem] max-md:text-[2rem] text-gradient-brown ">
+            We Offer:
+          </div>
           <div className="flex max-md:flex-col gap-[2rem]">
-            <div className="flex flex-col gap-[1rem] bg-[#f6f6f6] text-slate-50 p-[2rem] rounded-[1rem]">
+            <div className="flex flex-col gap-[1rem] bg-[#f9fbfd] text-slate-50 p-[2rem] rounded-[1rem] border ">
               <p className="dark-text">Authentic Islamic Guidance:</p>
 
               <p className="font-[400] light-text">
@@ -59,7 +61,7 @@ export default function Home() {
                 unique challenges of modern life.
               </p>
             </div>
-            <div className="flex flex-col gap-[1rem] bg-[#f6f6f6] text-slate-50 p-[2rem] rounded-[1rem]">
+            <div className="flex flex-col gap-[1rem] bg-[#f9fbfd] text-slate-50 p-[2rem] rounded-[1rem] border ">
               <p className="dark-text"> Practical Solutions</p>
               <p className="font-[400]  light-text">
                 Discover actionable strategies that are easy to implement and

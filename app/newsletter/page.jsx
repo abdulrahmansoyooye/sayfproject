@@ -8,7 +8,7 @@ const NewsLetter = () => {
       <div className=" flex flex-col p-[12rem_0rem] gap-[5rem] items-center">
         <div className=" text-center flex items-center gap-[0.5rem] flex-col">
           <h1 className="text-[3rem] text-center ">
-            Everyday <span className="text-gradient-orange"> News </span> Letter
+            Everyday <span className="text-gradient-brown"> News </span> Letter
           </h1>
 
           <p className="text-[1rem] font-[400]">

@@ -20,15 +20,16 @@
 }
 :root {
   --background-color: #ffffff;
-  --primary-color: #f6f6f6;
+  --primary-color: #f9fbfd;
 
-  --orange-color: #f37121;
-  --yellow-color: #ffbd69;
+  --brown-color: #ba704f;
+  --light-color: #dfa878;
 
-  --secandary-color: #c70039;
-  --dark-color: #111d5e;
+  --secandary-color: #6c3428;
+  --dark-color: #cee6f3;
 
-  --text-color: #111d5e;
+  --text-color: #125c86;
+  --brown-text: var(--brown-color);
 }
 
 .app {
@@ -44,28 +45,31 @@ span {
 }
 .nav {
   font-family: var(--font-bree_serif);
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   color: var(--text-color);
   width: 100%;
+  z-index: 10000;
 }
 
 .active {
   display: block;
   content: "";
-  border-bottom: solid 3px var(--yellow-color);
+  border-bottom: solid 3px var(--brown-color);
   transform: scaleX(1);
 }
 .navitem::after {
   display: block;
   content: "";
-  border-bottom: solid 3px var(--orange-color);
+  border-bottom: solid 3px var(--light-color);
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
 .navitem:hover::after {
   transform: scaleX(1);
 }
-
+.carousel-item{
+  
+}
 .mobileNav {
   display: flex;
   flex-direction: column;
@@ -93,30 +97,32 @@ span {
 .text-underline::after {
   display: block;
   content: "";
-  background-color: var(--orange-color);
+  background-color: var(--brown-color);
   width: 40px;
   height: 5px;
   cursor: pointer;
+  border-radius: 2px;
 }
 .active-carousel {
   display: block;
   content: "";
-  background-color: var(--dark-color);
+  background-color: var(--secandary-color);
   width: 40px;
   height: 5px;
   cursor: pointer;
+  border-radius: 2px;
 }
 .search_input {
   @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#111d5e] focus:outline-none focus:ring-0;
 }
-.text-gradient-orange {
-  @apply bg-gradient-to-r from-[#ffbd69] via-[#f37121] to-[#c70039]  bg-clip-text text-transparent;
+.text-gradient-blue {
+  @apply bg-gradient-to-r from-[#ba704f] via-[#dfa878] to-[#dfa878]  bg-clip-text text-transparent;
 }
 .black_btn {
-  @apply rounded-[0.4rem]  bg-[#f37121] p-[1rem_3rem] text-white transition-all hover:bg-[#c70039]  text-center text-sm  flex items-center justify-center;
+  @apply rounded-[0.4rem]  bg-[#296597] p-[1rem_3rem] text-white transition-all hover:bg-[#CEE6F3]  cursor-pointer text-center text-sm  flex items-center justify-center;
 }
-.text-gradient-blue {
-  @apply bg-gradient-to-r from-[#c70039] via-[#f37121] to-[#f37121]  bg-clip-text text-transparent;
+.text-gradient-brown {
+  @apply bg-gradient-to-r from-[#ba704f] via-[#dfa878] to-[#dfa878]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;
