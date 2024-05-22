@@ -74,7 +74,7 @@ const Podcasts = ({ searchParams }) => {
           </div>
         </div>
 
-        <div className="flex gap-[2rem] md:max-w-[1080px] m-auto  p-[2rem] flex-wrap max-md:flex-col justify-center ">
+        <div className="flex gap-[2rem]  m-auto  p-[2rem] flex-wrap max-md:flex-col justify-center ">
           {searchText ? (
             searchedPodcast.length > 0 ? (
               <PodcastCardList data={searchedPodcast} />
@@ -146,8 +146,8 @@ export const PodcastCard = ({
   };
   return (
     <div
-      className={`podcast glassmorphism flex-col gap-[4rem]`}
-      // data-aos="fade-up"
+      className="podcast glassmorphism flex-col gap-[4rem]"
+     
     >
       <div className="flex-between">
         <div className="flex flex-col ">

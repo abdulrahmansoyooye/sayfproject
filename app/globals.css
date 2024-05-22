@@ -20,15 +20,15 @@
 }
 :root {
   --background-color: #ffffff;
-  --primary-color: #f9fbfd;
+  --primary-color: #f6f6f6;
 
-  --brown-color: #ba704f;
-  --light-color: #dfa878;
+  --brown-color: #d67d3e;
+  --light-color: #f9e4d4;
 
-  --secandary-color: #6c3428;
-  --dark-color: #cee6f3;
+  --secandary-color: #9c0f48;
+  --dark-color: #470d21;
 
-  --text-color: #125c86;
+  --text-color: #27374d;
   --brown-text: var(--brown-color);
 }
 
@@ -41,7 +41,7 @@ span {
   font-family: var(--font-bree_serif);
 }
 .section {
-  @apply p-[6rem] mb-[3rem] max-md:p-[3rem];
+  @apply p-[5rem] mb-[3rem] max-md:p-[2rem];
 }
 .nav {
   font-family: var(--font-bree_serif);
@@ -67,8 +67,7 @@ span {
 .navitem:hover::after {
   transform: scaleX(1);
 }
-.carousel-item{
-  
+.carousel-item {
 }
 .mobileNav {
   display: flex;
@@ -116,19 +115,19 @@ span {
   @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#111d5e] focus:outline-none focus:ring-0;
 }
 .text-gradient-blue {
-  @apply bg-gradient-to-r from-[#ba704f] via-[#dfa878] to-[#dfa878]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#9C0F48] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .black_btn {
-  @apply rounded-[0.4rem]  bg-[#296597] p-[1rem_3rem] text-white transition-all hover:bg-[#CEE6F3]  cursor-pointer text-center text-sm  flex items-center justify-center;
+  @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center;
 }
 .text-gradient-brown {
-  @apply bg-gradient-to-r from-[#ba704f] via-[#dfa878] to-[#dfa878]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#470D21] via-[#9C0F48] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;
 }
 .light-text {
-  @apply text-slate-500;
+  @apply text-slate-400;
 }
 .podcast {
   @apply break-inside-avoid rounded-lg text-gray-700 shadow-[inset_10px_-50px_94px_0px_rgb(199,199,199,0.2)] bg-clip-padding p-6 pb-4 backdrop-blur-[3rem] backdrop-filter md:w-[450px] w-[100%] h-fit space-y-[2rem] bg-primary-color;
