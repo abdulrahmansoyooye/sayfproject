@@ -58,7 +58,7 @@ const Carousel = () => {
     });
   };
   return (
-    <div className="relative flex flex-col gap-[9rem] justify-center section mt-[4rem]">
+    <div className="relative flex flex-col gap-[9rem] justify-center section mt-[7rem]">
       <div className="flex gap-[1rem] justify-center">
         {carouselItem.map(
           ({ title, content, buttonText }, index) =>
@@ -68,7 +68,7 @@ const Carousel = () => {
                 key={`${index}-${title}`}
               >
                 <div className="flex flex-col gap-[1rem]">
-                  <div className="text-[3rem] max-md:text-[2rem]">
+                  <div className="text-[3rem] max-lg:text-[2rem]">
                     <span>{applyGradient(title)}</span>
                   </div>
                   <p className="font-[400] dark-text">{content}</p>

@@ -28,7 +28,7 @@
   --secandary-color: #9c0f48;
   --dark-color: #470d21;
 
-  --text-color: #27374d;
+  --text-color: #111111;
   --brown-text: var(--brown-color);
 }
 
@@ -41,7 +41,7 @@ span {
   font-family: var(--font-bree_serif);
 }
 .section {
-  @apply p-[5rem] mb-[3rem] max-md:p-[2rem];
+  @apply p-[5rem] mb-[3rem] max-lg:p-[2rem];
 }
 .nav {
   position: fixed;
@@ -115,13 +115,13 @@ span {
   @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#111d5e] focus:outline-none focus:ring-0;
 }
 .text-gradient-blue {
-  @apply bg-gradient-to-r from-[#9C0F48] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .black_btn {
   @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center;
 }
 .text-gradient-brown {
-  @apply bg-gradient-to-r from-[#470D21] via-[#9C0F48] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#F9E4D4]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;

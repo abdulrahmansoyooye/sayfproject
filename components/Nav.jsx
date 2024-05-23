@@ -27,18 +27,22 @@ const Nav = () => {
   const [istoggle, setIstoggle] = useState(false);
   return (
     <div className="nav p-[1rem_2rem_1rem] sm:p-[2rem_6rem_2rem] flex-between z-[1000] ">
-      <Link
-        href={"/"}
-        className="font-[500] text-[1.2rem] cursor-pointer navitem"
-      >
-        Sayf Network
-        
-      </Link>
-      {/* <img
-        src={"/assets/logo.png"}
-        alt="footer-img"
-        className="cursor-pointer"
-      /> */}
+      <div className="flex justify-center items-center">
+        <Image
+          src={"/assets/sayf.png"}
+          width={60}
+          height={50}
+          alt="footer-img"
+          className="cursor-pointer"
+        />{" "}
+        <Link
+          href={"/"}
+          className="font-[500] text-[1.2rem] cursor-pointer navitem"
+        >
+          Sayf Network
+        </Link>
+      </div>
+
       {/* Desktop */}
       <div className="max-md:hidden flex-between gap-[2rem]">
         {navLinks.map(({ name }, index) => (
@@ -55,7 +59,7 @@ const Nav = () => {
       {/* Mobile */}
       {istoggle && (
         <motion.div
-          className={`sm:hidden mobileNav transition-all ease-in-out duration-200`}
+          className={` mobileNav transition-all ease-in-out duration-200`}
           animate={{ x: -100 }}
           transition={{
             ease: "linear",
@@ -63,7 +67,7 @@ const Nav = () => {
           }}
         >
           <div
-            className="cursor-pointer sm:hidden close-img"
+            className="cursor-pointer md:hidden close-img"
             onClick={() => setIstoggle(!istoggle)}
           >
             <Image
@@ -91,7 +95,7 @@ const Nav = () => {
           </Link>
         </motion.div>
       )}
-      <Link href={"/about"} className="navitem max-md:hidden">
+      <Link href={"/about"} className="navitem max-lg:hidden">
         About
       </Link>
       <div

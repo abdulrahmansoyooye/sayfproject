@@ -10,7 +10,7 @@ export default function Home() {
         src={"/assets/svg-shape.svg"}
         width={900}
         height={400}
-        className="absolute"
+        className="absolute mt-[7rem]"
       />
       {/* Carousel */}
       <div className="pt-[4rem]  bg-primary-color">
@@ -20,24 +20,24 @@ export default function Home() {
       <div className="flex flex-col bg-primary-color mb-[4rem]">
         {/* Story */}
         <div className="flex flex-col gap-[1rem] p-[4rem_2rem] w-full justify-center bg-[#ffffff] ">
-          <div className="flex justify-start sm:w-[70%] m-auto  items-center max-md:flex-col">
+          <div className="flex justify-start sm:w-[70%] m-auto  items-center max-lg:flex-col">
             <Image src={"/assets/sayf.png"} width={160} height={160} />
-            <div className="text-[3rem] max-md:text-[2rem] text-center">
+            <div className="text-[3rem] max-lg:text-[2rem] text-center">
               What is Sayf -
               <span className="text-gradient-blue"> Our Story</span>
             </div>{" "}
           </div>
 
-          <div className="flex sm:max-w-[70%]  m-auto max-md:flex-col gap-[2rem]">
+          <div className="flex sm:max-w-[70%]  m-auto max-lg:flex-col gap-[2rem]">
             <div className="space-y-[0.75rem]">
-              <p className="light-text font-[400]">
+              <p className="dark-text font-[400]">
                 In a world overflowing with self-help books and advice from
                 countless sources,many of us find ourselves seeking happiness,
                 fulfillment,successful relationships,productivity, and ways to
                 overcome bad habits.Yet, despite consuming all this information,
                 the answers often remian elusive.
               </p>
-              <p className="light-text font-[400]">
+              <p className="dark-text font-[400]">
                 {"     "} At Sayf, we belive there's a better way. As young
                 Muslims,we relized that true contentment and success come from
                 within our own rich tradition.The secrets to happiness,
@@ -49,11 +49,17 @@ export default function Home() {
           </div>
         </div>{" "}
         {/* offer */}
-        <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section bg-primary-color">
-          <div className="text-[3rem] max-md:text-[2rem] text-gradient-blue ">
+        <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section bg-primary-color z-10">
+          {/* <Image
+            src={"/assets/svg-shape1.svg"}
+            width={900}
+            height={400}
+            className="absolute -z-10"
+          /> */}
+          <div className="text-[3rem] max-lg:text-[2rem] text-gradient-blue ">
             We Offer:
           </div>
-          <div className="flex max-md:flex-col gap-[2rem]">
+          <div className="flex max-lg:flex-col gap-[2rem]">
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300">
               <p className="dark-text">Authentic Islamic Guidance</p>
 
@@ -75,35 +81,41 @@ export default function Home() {
       </div>
 
       {/* Section 3 */}
-      <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section ">
-        <div className="space-y-[2rem]">
-          <div className="text-[3rem] max-md:text-[2rem] text-center">
+      <div className="flex max-lg:flex-col flex- gap-[2rem] w-full section ">
+        <div className="space-y-[2rem] sm:w-[50%]">
+          <div className="text-[3rem] max-lg:text-[2rem] text-left max-lg:text-center">
             The <span className="text-gradient-blue">Ultimate</span> Life
             Discovery <span className="text-gradient-blue">Course</span>
           </div>
+          <div className="flex flex-col gap-[1rem]  ">
+            <div className="font-[400] dark-text">
+              The one course that will insha Allah transform everything about
+              you: your productivity, habits, relationships, cofidence,
+              happiness, No technical jargon. Just recordings and lectures that
+              have transformed people to become closer to their Lord, more
+              fulfilled, less anxious, and Take our free productivity course to
+              learn how to get rid of bad habits, get closer to your lord and
+              start achieving your goals.
+            </div>
+
+            <button className="black_btn sm:w-[60%] w-full">Learn More</button>
+          </div>{" "}
         </div>
-
-        <div className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border ">
-          <div className="font-[400] dark-text">
-            The one course that will insha Allah transform everything about you:
-            your productivity, habits, relationships, cofidence, happiness, No
-            technical jargon. Just recordings and lectures that have transformed
-            people to become closer to their Lord, more fulfilled, less anxious,
-            and Take our free productivity course to learn how to get rid of bad
-            habits, get closer to your lord and start achieving your goals.
-          </div>
-
-          <button className="black_btn sm:w-[60%] w-full m-auto">
-            Learn More
-          </button>
+        <div>
+          <Image
+            src={"/assets/article1.jpg"}
+            width={600}
+            height={700}
+            className="rounded-[1rem] max-lg:w-full"
+          />
         </div>
       </div>
 
       {/* Section 4 */}
-      <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff] ">
-        <div className="flex sm:w-[70%] m-auto justify-center  items-center max-md:flex-col gap-[1rem]">
+      <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff] border-t-[2px] border-b-[2px]">
+        <div className="flex sm:w-[70%] m-auto justify-center  items-center max-lg:flex-col gap-[1rem]">
           <Image src={"/assets/newsletter.png"} width={100} height={100} />
-          <div className="text-[3rem] max-md:text-[2rem] text-center">
+          <div className="text-[3rem] max-lg:text-[2rem] text-center">
             Sayf Weekly <span className="text-gradient-blue"> Newsletter</span>
           </div>{" "}
         </div>
@@ -125,12 +137,18 @@ export default function Home() {
       {/* Section 5 */}
 
       <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-primary-color ">
-        <div className="flex justify-center sm:w-[80%] m-auto  items-center max-md:flex-col border-b-2 pb-[1rem]">
-          <div className="text-[3rem] max-md:text-[2rem] text-center">
+        {/* <Image
+          src={"/assets/svg-shape1.svg"}
+          width={900}
+          height={400}
+          className="absolute "
+        /> */}
+        <div className="flex justify-center sm:w-[80%] m-auto  items-center max-lg:flex-col max-lg:w-[100%] border-b-2 pb-[1rem]">
+          <div className="text-[3rem] max-lg:text-[2rem] text-center">
             Read a <span className="text-gradient-blue">popular</span> Article
           </div>
         </div>
-        <div className="flex max-md:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
+        <div className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem] max-lg:w-[100%]">
           <div className="flex flex-col gap-[1rem]  sm:w-[50%]">
             <p className="dark-text text-[1.5rem]">
               Authentic Islamic Guidance
@@ -153,11 +171,11 @@ export default function Home() {
               src={"/assets/article1.jpg"}
               width={400}
               height={200}
-              className="rounded-[1rem] max-md:w-full"
+              className="rounded-[1rem] max-lg:w-full"
             />
           </div>
         </div>
-        <div className="flex max-md:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
+        <div className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
           <div className="flex flex-col gap-[0.5rem]  sm:w-[50%]">
             <p className="dark-text text-[1.5rem]">
               Authentic Islamic Guidance
@@ -180,11 +198,11 @@ export default function Home() {
               src={"/assets/article2.jpg"}
               width={400}
               height={200}
-              className="rounded-[1rem] max-md:w-full object-cover"
+              className="rounded-[1rem] max-lg:w-full object-cover"
             />
           </div>
         </div>
-        <div className="flex max-md:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
+        <div className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
           <div className="flex flex-col gap-[0.5rem]  sm:w-[50%]">
             <p className="dark-text text-[1.5rem]">
               Authentic Islamic Guidance
@@ -207,7 +225,7 @@ export default function Home() {
               src={"/assets/article3.jpg"}
               width={400}
               height={200}
-              className="rounded-[1rem] max-md:w-full  max-md:h-[200px] object-cover"
+              className="rounded-[1rem] max-lg:w-full  max-lg:h-[200px] object-cover"
             />
           </div>
         </div>
@@ -216,8 +234,8 @@ export default function Home() {
       {/* Section 6 */}
       <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section ">
         <div className="space-y-[2rem]">
-          <div className="text-[3rem] max-md:text-[2rem] text-center">
-            The Burtally <span className="text-gradient-blue">Honest</span>{" "}
+          <div className="text-[3rem] max-lg:text-[2rem] text-center">
+            The Brutally <span className="text-gradient-blue">Honest</span>{" "}
             Podcast
           </div>
         </div>

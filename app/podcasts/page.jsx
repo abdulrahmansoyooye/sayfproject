@@ -57,7 +57,7 @@ const Podcasts = ({ searchParams }) => {
             <br className="breaker-style" />
           </div>
         </h1>
-        <div className="relative w-[60%] max-md:w-[80%] m-auto">
+        <div className="relative w-[60%] max-lg:w-[80%] m-auto">
           <input
             value={searchText}
             className="search_input glassmorphism"
@@ -74,7 +74,7 @@ const Podcasts = ({ searchParams }) => {
           </div>
         </div>
 
-        <div className="flex gap-[2rem]  m-auto  p-[2rem] flex-wrap max-md:flex-col justify-center ">
+        <div className="flex gap-[2rem]  m-auto  p-[2rem] flex-wrap max-lg:flex-col justify-center ">
           {searchText ? (
             searchedPodcast.length > 0 ? (
               <PodcastCardList data={searchedPodcast} />
@@ -145,10 +145,7 @@ export const PodcastCard = ({
     }
   };
   return (
-    <div
-      className="podcast glassmorphism flex-col gap-[4rem]"
-     
-    >
+    <div className="podcast glassmorphism flex-col gap-[4rem]">
       <div className="flex-between">
         <div className="flex flex-col ">
           <h2 className="text-[1.5rem]">{title}</h2>

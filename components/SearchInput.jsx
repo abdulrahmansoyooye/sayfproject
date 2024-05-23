@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const SearchInput = ({ setPodcasts, podcasts }) => {
   return (
-    <div className="relative w-[60%] max-md:w-[80%] m-auto">
+    <div className="relative w-[60%] max-lg:w-[80%] m-auto">
       <input
         value={inputValue}
         className="search_input"
