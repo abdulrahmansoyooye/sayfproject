@@ -29,7 +29,7 @@ export default function Home() {
           </div>
 
           <div className="flex sm:max-w-[70%]  m-auto max-lg:flex-col gap-[2rem]">
-            <div className="space-y-[0.75rem]">
+            <div className="space-y-[0.75rem] text-center">
               <p className="dark-text font-[400]">
                 In a world overflowing with self-help books and advice from
                 countless sources,many of us find ourselves seeking happiness,
