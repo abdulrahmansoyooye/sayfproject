@@ -1,9 +1,12 @@
+"use client";
 import Carousel from "@/components/Carousel";
-import Underline from "@/components/Underline";
-import Welcome from "@/components/Welcome";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 export default function Home() {
+  const variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <main className="home">
       <Image
@@ -19,7 +22,13 @@ export default function Home() {
       {/* Section2 */}
       <div className="flex flex-col bg-primary-color mb-[4rem]">
         {/* Story */}
-        <div className="flex flex-col gap-[1rem] p-[4rem_2rem] w-full justify-center bg-[#ffffff] ">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col gap-[1rem] p-[4rem_2rem] w-full justify-center bg-[#ffffff] "
+        >
           <div className="flex justify-start sm:w-[70%] m-auto  items-center max-lg:flex-col">
             <Image src={"/assets/sayf.png"} width={160} height={160} />
             <div className="text-[3rem] max-lg:text-[2rem] text-center">
@@ -47,19 +56,68 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>{" "}
+        </motion.div>{" "}
+        {/* Ideas */}
+        <div className="flex flex-col  p-[6rem_2rem] w-full justify-center bg-[#ffffff] gap-[2rem]">
+          <div className="text-[3rem] max-lg:text-[2rem] text-gradient-blue text-center">
+            What Others Are Saying About Our Ideas
+          </div>
+          <div className="flex max-lg:flex-col gap-[2rem] sm:w-[70%] m-auto">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              whileInView={variants}
+              transition={{ duration: 0.5 }}
+              className="space-y-[2rem] dark-text bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] "
+            >
+              <p className="font-[400] ">
+                {" "}
+                <span className="text-[1rem] text-gradient-blue">"</span>Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Eum,
+                consequuntur quae voluptas distinctio asperiores quod facere{" "}
+                <span className="text-[1rem] text-gradient-blue">"</span>.{" "}
+              </p>
+              <div className="flex justify-between text-[12px] font-[700] ">
+                <p>Bilaal Orelope</p>
+                <p>⚒️ Doctor</p>
+                <Image src={"/assets/flag.png"} width={20} height={20} />
+              </div>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              whileInView={variants}
+              transition={{ duration: 0.5 }}
+              className="space-y-[2rem] dark-text bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] "
+            >
+              <p className="font-[400] ">
+                {" "}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+                consequuntur quae voluptas distinctio asperiores quod facere .{" "}
+              </p>
+              <div className="flex justify-between text-[12px] font-[700] ">
+                <p>Bilaal Orelope</p>
+                <p>⚒️ Doctor</p>
+                <Image src={"/assets/flag.png"} width={20} height={20} />
+              </div>
+            </motion.div>
+          </div>
+        </div>
         {/* offer */}
         <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section bg-primary-color z-10">
-          {/* <Image
-            src={"/assets/svg-shape1.svg"}
-            width={900}
-            height={400}
-            className="absolute -z-10"
-          /> */}
           <div className="text-[3rem] max-lg:text-[2rem] text-gradient-blue ">
             We Offer:
           </div>
-          <div className="flex max-lg:flex-col gap-[2rem]">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            whileInView={variants}
+            transition={{ duration: 0.5 }}
+            className="flex max-lg:flex-col gap-[2rem]"
+          >
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300">
               <p className="dark-text">Authentic Islamic Guidance</p>
 
@@ -69,25 +127,38 @@ export default function Home() {
                 unique challenges of modern life.
               </p>
             </div>
-            <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              whileInView={variants}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300"
+            >
               <p className="dark-text"> Practical Solutions</p>
               <p className="font-[400]  dark-text">
                 Discover actionable strategies that are easy to implement and
                 resonate with your faith, leading to lasting positive change.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-
       {/* Section 3 */}
       <div className="flex max-lg:flex-col flex- gap-[2rem] w-full section ">
-        <div className="space-y-[2rem] sm:w-[50%]">
+        <div className="space-y-[2rem] w-[50%]  max-lg:w-full">
           <div className="text-[3rem] max-lg:text-[2rem] text-left max-lg:text-center">
             The <span className="text-gradient-blue">Ultimate</span> Life
             Discovery <span className="text-gradient-blue">Course</span>
           </div>
-          <div className="flex flex-col gap-[1rem]  ">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            whileInView={variants}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-[1rem] "
+          >
             <div className="font-[400] dark-text">
               The one course that will insha Allah transform everything about
               you: your productivity, habits, relationships, cofidence,
@@ -99,7 +170,7 @@ export default function Home() {
             </div>
 
             <button className="black_btn sm:w-[60%] w-full">Learn More</button>
-          </div>{" "}
+          </motion.div>{" "}
         </div>
         <div>
           <Image
@@ -112,7 +183,14 @@ export default function Home() {
       </div>
 
       {/* Section 4 */}
-      <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff] border-t-[2px] border-b-[2px]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        whileInView={variants}
+        transition={{ duration: 1 }}
+        className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff] border-t-[2px] border-b-[2px]"
+      >
         <div className="flex sm:w-[70%] m-auto justify-center  items-center max-lg:flex-col gap-[1rem]">
           <Image src={"/assets/newsletter.png"} width={100} height={100} />
           <div className="text-[3rem] max-lg:text-[2rem] text-center">
@@ -128,27 +206,26 @@ export default function Home() {
               faulty relationships, lack of purpose, etc...
             </p>
           </div>
-          <button className="black_btn w-[60%] m-auto">
-            Subscribe For Free
-          </button>
+          <button className="black_btn m-auto">Subscribe For Free</button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Section 5 */}
 
       <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-primary-color ">
-        {/* <Image
-          src={"/assets/svg-shape1.svg"}
-          width={900}
-          height={400}
-          className="absolute "
-        /> */}
         <div className="flex justify-center sm:w-[80%] m-auto  items-center max-lg:flex-col max-lg:w-[100%] border-b-2 pb-[1rem]">
           <div className="text-[3rem] max-lg:text-[2rem] text-center">
             Read a <span className="text-gradient-blue">popular</span> Article
           </div>
         </div>
-        <div className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem] max-lg:w-[100%]">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          whileInView={variants}
+          transition={{ duration: 0.5 }}
+          className="flex max-lg:flex-col-reverse max-lg:w-full gap-[1rem] justify-between w-[80%] m-auto border-b-2 pb-[1rem] "
+        >
           <div className="flex flex-col gap-[1rem]  sm:w-[50%]">
             <p className="dark-text text-[1.5rem]">
               Authentic Islamic Guidance
@@ -174,8 +251,24 @@ export default function Home() {
               className="rounded-[1rem] max-lg:w-full"
             />
           </div>
-        </div>
-        <div className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          whileInView={variants}
+          transition={{ duration: 0.5 }}
+          className="flex gap-[1rem] max-lg:flex-col justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]"
+        >
+          <div>
+            {" "}
+            <Image
+              src={"/assets/article2.jpg"}
+              width={400}
+              height={200}
+              className="rounded-[1rem] max-lg:w-full object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-[0.5rem]  sm:w-[50%]">
             <p className="dark-text text-[1.5rem]">
               Authentic Islamic Guidance
@@ -191,18 +284,15 @@ export default function Home() {
               quod similique fugit, cum, laborum harum excepturi expedita ab.
             </p>
           </div>
-
-          <div>
-            {" "}
-            <Image
-              src={"/assets/article2.jpg"}
-              width={400}
-              height={200}
-              className="rounded-[1rem] max-lg:w-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          whileInView={variants}
+          transition={{ duration: 0.5 }}
+          className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]"
+        >
           <div className="flex flex-col gap-[0.5rem]  sm:w-[50%]">
             <p className="dark-text text-[1.5rem]">
               Authentic Islamic Guidance
@@ -228,7 +318,7 @@ export default function Home() {
               className="rounded-[1rem] max-lg:w-full  max-lg:h-[200px] object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Section 6 */}
@@ -240,7 +330,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border ">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={variants}
+          whileInView={variants}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border "
+        >
           <Image
             src={"/assets/podcast-pic.jpg"}
             width={300}
@@ -256,7 +353,7 @@ export default function Home() {
           <button className="black_btn sm:w-[60%] w-full m-auto">
             See latest Episodes
           </button>
-        </div>
+        </motion.div>
       </div>
     </main>
   );

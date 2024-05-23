@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Underline from "./Underline";
+import { motion } from "framer-motion";
 const carouselItem = [
   {
     title: `Sayf; For Productive Muslims`,
@@ -57,13 +57,21 @@ const Carousel = () => {
       return word + " ";
     });
   };
+  const variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <div className="relative flex flex-col gap-[9rem] justify-center section mt-[7rem]">
       <div className="flex gap-[1rem] justify-center">
         {carouselItem.map(
           ({ title, content, buttonText }, index) =>
             index === page && (
-              <div
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={variants}
+                transition={{ duration: 0.5 }}
                 className="flex flex-col gap-[5rem] carousel-item justify-center  text-center"
                 key={`${index}-${title}`}
               >
@@ -71,13 +79,15 @@ const Carousel = () => {
                   <div className="text-[3rem] max-lg:text-[2rem]">
                     <span>{applyGradient(title)}</span>
                   </div>
-                  <p className="font-[400] dark-text">{content}</p>
+                  <motion.p className="font-[400] dark-text">
+                    {content}
+                  </motion.p>
                 </div>
 
                 <div className="black_btn sm:max-w-[50%] m-auto w-full">
                   {buttonText}
                 </div>
-              </div>
+              </motion.div>
             )
         )}
       </div>
