@@ -11,11 +11,9 @@ const Footer = () => {
     <div className="footer p-[2rem] pt-[4rem] mt-[2rem]">
       {/* Section 1 */}
       <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        whileInView={variants}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         className="flex flex-col justify-evenly gap-[2rem] max-w-[900px] m-auto "
       >
         <div className="flex-center flex-col">
@@ -29,10 +27,8 @@ const Footer = () => {
           <div className="flex gap-[3rem] justify-center ">
             {socials.map((icon, index) => (
               <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={variants}
-                whileInView={variants}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: `0.${index}` }}
                 key={`${index}-image`}
                 className="bg-slate-200 p-[0.75rem] rounded-[50%] cursor-pointer transition-all duration-300 hover:bg-slate-300"

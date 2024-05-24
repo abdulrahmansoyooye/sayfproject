@@ -23,10 +23,9 @@ export default function Home() {
       <div className="flex flex-col bg-primary-color mb-[4rem]">
         {/* Story */}
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
           className="flex flex-col gap-[1rem] p-[4rem_2rem] w-full justify-center bg-[#ffffff] "
         >
           <div className="flex justify-start sm:w-[70%] m-auto  items-center max-lg:flex-col">
@@ -64,11 +63,9 @@ export default function Home() {
           </div>
           <div className="flex max-lg:flex-col gap-[2rem] sm:w-[70%] m-auto">
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={variants}
-              whileInView={variants}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 1 }}
               className="space-y-[2rem] dark-text bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] "
             >
               <p className="font-[400] ">
@@ -85,11 +82,9 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={variants}
-              whileInView={variants}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 1 }}
               className="space-y-[2rem] dark-text bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] "
             >
               <p className="font-[400] ">
@@ -111,11 +106,9 @@ export default function Home() {
             We Offer:
           </div>
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={variants}
-            whileInView={variants}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 1 }}
             className="flex max-lg:flex-col gap-[2rem]"
           >
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300">
@@ -128,11 +121,9 @@ export default function Home() {
               </p>
             </div>
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={variants}
-              whileInView={variants}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300"
             >
               <p className="dark-text"> Practical Solutions</p>
@@ -152,11 +143,9 @@ export default function Home() {
             Discovery <span className="text-gradient-blue">Course</span>
           </div>
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={variants}
-            whileInView={variants}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", duration: 1 }}
             className="flex flex-col gap-[1rem] "
           >
             <div className="font-[400] dark-text">
@@ -184,11 +173,9 @@ export default function Home() {
 
       {/* Section 4 */}
       <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        whileInView={variants}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", duration: 1 }}
         className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff] border-t-[2px] border-b-[2px]"
       >
         <div className="flex sm:w-[70%] m-auto justify-center  items-center max-lg:flex-col gap-[1rem]">
@@ -219,11 +206,9 @@ export default function Home() {
           </div>
         </div>
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          whileInView={variants}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
           className="flex max-lg:flex-col-reverse max-lg:w-full gap-[1rem] justify-between w-[80%] m-auto border-b-2 pb-[1rem] "
         >
           <div className="flex flex-col gap-[1rem]  sm:w-[50%]">
@@ -253,11 +238,9 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          whileInView={variants}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
           className="flex gap-[1rem] max-lg:flex-col justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]"
         >
           <div>
@@ -286,11 +269,9 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          whileInView={variants}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
           className="flex max-lg:flex-col-reverse  gap-[1rem] justify-between sm:w-[80%] m-auto border-b-2 pb-[1rem]"
         >
           <div className="flex flex-col gap-[0.5rem]  sm:w-[50%]">
@@ -331,11 +312,10 @@ export default function Home() {
         </div>
 
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          whileInView={variants}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
           className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border "
         >
           <Image
