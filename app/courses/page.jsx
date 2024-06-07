@@ -1,30 +1,179 @@
+"use client";
 import Welcome from "@/components/Welcome";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { getCourses } from "@/utils/actions/courseActions";
+import Loading from "../loading";
 
 const Courses = () => {
-  return (
-    <div>
-      <Welcome title={"Courses"} />
-      <div className=" flex flex-col p-[12rem_0rem] gap-[5rem] items-center">
-        <div className=" text-center flex items-center gap-[0.5rem] flex-col">
-          <h1 className="text-[3rem] text-center ">
-            All <span className="text-gradient-brown"> Courses </span> Here
-          </h1>
+  const [allcourses, setAllCourses] = useState([]);
 
-          <p className="text-[1rem] font-[400]">
-            Get the courses you need is a single click{" "}
-          </p>
+  // Search
+  const [searchText, setSearchText] = useState("");
+  const [searchedCourse, setSearchedCourses] = useState([]);
+  const handleSearchCourse = (e) => {
+    setSearchText(e.target.value);
+
+    const inputValue = e.target.value.toLowerCase();
+
+    const filteredCourse = allcourses.filter(
+      ({ title, description, tag }) =>
+        title.toLowerCase().includes(inputValue) ||
+        description.toLowerCase().includes(inputValue) ||
+        tag.toLowerCase().includes(inputValue)
+    );
+
+    setSearchedCourses(filteredCourse);
+  };
+
+  useEffect(() => {
+    async function fetchCourses() {
+      try {
+        const res = await getCourses();
+        console.log(res);
+        setAllCourses(res.reverse());
+      } catch (error) {
+        setError("Failed to fetch Courses");
+      }
+    }
+    fetchCourses();
+  }, []);
+
+  return (
+    <div className="flex flex-col gap-[4rem]">
+      <Welcome title="Courses" text="Some courses for you to read" />
+
+      <div className="flex gap-[2rem] flex-col">
+        <h1 className="text-[2rem] text-center flex items-center gap-[1rem] flex-col">
+          <div>
+            Daily <span className="text-gradient-brown">Courses</span>
+            <br className="breaker-style" />
+          </div>
+        </h1>
+        <div className="relative w-[60%] max-lg:w-[80%] m-auto">
+          <input
+            value={searchText}
+            className="search_input glassmorphism"
+            placeholder="Search For Courses"
+            onChange={handleSearchCourse}
+          />
+          <div className="absolute top-3 right-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+            <Image
+              src={"/assets/search.png"}
+              width={20}
+              height={20}
+              alt="search"
+            />
+          </div>
         </div>
-        <div>
-          <a href="https://sayf.ck.page/newsletter" target="_blank">
-            <button className="black_btn flex flex-col scale-[1.2] hover:scale-[1.5]">
-              <span> See All Courses</span>
-              <div></div>
-            </button>
-          </a>
+
+        <div className="flex gap-[2rem] p-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
+          {searchText ? (
+            searchedCourse.length > 0 ? (
+              <CourseCardList data={searchedCourse} />
+            ) : (
+              <div>Couldn't Find</div>
+            )
+          ) : allcourses.length > 0 ? (
+            <CourseCardList data={allcourses} />
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </div>
   );
 };
+export const CourseCardList = ({ data }) => {
+  return data.map(
+    (
+      { _id, title, createdAt, description, tag, audioUrl, imageUrl },
+      index
+    ) => (
+      <CourseCard
+        key={_id}
+        _id={_id}
+        title={title}
+        createdAt={createdAt}
+        description={description}
+        tag={tag}
+        audioUrl={audioUrl}
+        imageUrl={imageUrl}
+      />
+    )
+  );
+};
+export const CourseCard = ({
+  _id,
+  title,
+  createdAt,
+  description,
+  tag,
+  audioUrl,
+  imageUrl,
+}) => {
+  const router = useRouter();
 
+  const format = (type, createdAt) => {
+    if (type == "date") {
+      return `${new Date(createdAt)
+        .getDate()
+        .toString()
+        .padStart(2, "0")}/${new Date(createdAt)
+        .getMonth()
+        .toString()
+        .padStart(2, "0")}/${new Date(createdAt)
+        .getFullYear()
+        .toString()
+        .padStart(2, "0")}`;
+    } else {
+      return `${new Date(createdAt)
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${new Date(createdAt)
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}:${new Date(createdAt)
+        .getSeconds()
+        .toString()
+        .padStart(2, "0")}`;
+    }
+  };
+
+  return (
+    <div
+      className="container glassmorphism flex-col gap-[4rem] cursor-pointer"
+      onClick={() => router.push(`/courses/${_id}`)}
+    >
+      <div className="flex-between">
+        <div className="flex flex-col ">
+          <h2 className="text-[1.5rem]">{title}</h2>
+          <p className="text-[12px] text-gray-500 font-[300]">
+            {" "}
+            {description.slice(0, 80)}
+          </p>
+        </div>
+
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem]">
+          #{tag}
+        </div>
+      </div>
+      <div className="flex flex-col ">
+        <img
+          src={"/assets/article3.jpg"}
+          className="w-full h-[250px] object-cover rounded-md "
+          alt="article-img"
+        />
+      </div>
+      <div className="">
+        <button className="black_btn w-full">Go to Course</button>
+      </div>
+      <div className="flex-between text-[11px] text-slate-500">
+        <div>{format("time", createdAt)}</div>
+        <div>{format("date", createdAt)}</div>
+      </div>
+    </div>
+  );
+};
 export default Courses;

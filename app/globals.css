@@ -45,13 +45,18 @@ span {
 }
 .nav {
   position: fixed;
-  font-family: var(--font-bree_serif);
+  top: 0;
   background-color: var(--primary-color);
   color: var(--text-color);
   width: 100%;
-  z-index: 10000;
 }
-
+.serif {
+  font-family: var(--font-bree_serif);
+}
+.rubik {
+  font-family: var(--font-rubik);
+  font-weight: 300;
+}
 .active {
   display: block;
   content: "";
@@ -61,7 +66,7 @@ span {
 .navitem::after {
   display: block;
   content: "";
-  border-bottom: solid 3px var(--light-color);
+  border-bottom: solid 3px var(--secandary-color);
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -89,6 +94,7 @@ span {
 }
 
 .footer {
+  position: relative;
   width: 100%;
   bottom: 0;
   background-color: var(--primary-color);
@@ -118,7 +124,7 @@ span {
   @apply bg-gradient-to-r from-[#9c0f48] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .black_btn {
-  @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
+  @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
 }
 .text-gradient-brown {
   @apply bg-gradient-to-r from-[#470D21] via-[#9C0F48] to-[#D67D3E]  bg-clip-text text-transparent;
@@ -129,7 +135,7 @@ span {
 .light-text {
   @apply text-slate-400;
 }
-.podcast {
+.container {
   @apply break-inside-avoid rounded-lg text-gray-700 shadow-[inset_10px_-50px_94px_0px_rgb(199,199,199,0.2)] bg-clip-padding p-6 pb-4 backdrop-blur-[3rem] backdrop-filter md:w-[450px] w-[100%] h-fit space-y-[2rem] bg-primary-color;
 }
 .glassmorphism {

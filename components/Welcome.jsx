@@ -2,12 +2,13 @@ import Underline from "./Underline";
 
 const Welcome = ({ title, text }) => {
   return (
-    <div className="flex flex-col items-center h-[80vh] justify-center bg-primary-color bg-no-repeat bg-cover">
-      <div className="flex flex-col gap-1 text-center items-center">
-        <h1 className="text-[6rem] max-lg:text-[4rem] text-gradient-blue">
+    <div className="flex flex-col items-center h-[70vh] justify-center bg-[#f6f6f6] pt-[3rem]">
+      <div className="flex flex-col gap-1 text-center items-center ">
+        <h1 className="text-[5rem] max-lg:text-[4rem] text-gradient-blue font-[500] text-gradient">
           {title}
         </h1>
-        <p className="text-gradient">{text}</p>
+        <p className="font-[400]">{text}</p>
+       
       </div>
     </div>
   );

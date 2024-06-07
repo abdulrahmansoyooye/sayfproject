@@ -26,18 +26,18 @@ const Nav = () => {
   const isActive = (href) => pathname === href;
   const [istoggle, setIstoggle] = useState(false);
   return (
-    <div className="nav p-[1rem_2rem_1rem] sm:p-[2rem_6rem_2rem] flex-between z-[1000] ">
-      <div className="flex justify-center items-center">
+    <div className="nav p-[1rem] flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif">
+      <div className="flex justify-around items-center max-lg:w-[60%]  ">
         <Image
           src={"/assets/sayf.png"}
-          width={60}
+          width={70}
           height={50}
           alt="footer-img"
           className="cursor-pointer"
         />{" "}
         <Link
           href={"/"}
-          className="font-[500] text-[1.2rem] cursor-pointer navitem"
+          className="font-[500] text-[1.6rem] cursor-pointer navitem  text-center"
         >
           Sayf Network
         </Link>
@@ -48,7 +48,7 @@ const Nav = () => {
         {navLinks.map(({ name }, index) => (
           <div key={`${name}-${index}`}>
             <Link
-              href={`${name}`}
+              href={`/${name}`}
               className={isActive(`/${name}`) ? "active" : "navitem font-[400]"}
             >
               {`${name.slice(0, 1).toUpperCase()}${name.slice(1)}`}
@@ -80,7 +80,7 @@ const Nav = () => {
           {navLinks.map(({ name }, index) => (
             <div key={`${name}-${index}`}>
               <Link
-                href={`${name}`}
+                href={`/${name}`}
                 className={
                   isActive(`/${name}`) ? "active" : "navitem font-[500] "
                 }
