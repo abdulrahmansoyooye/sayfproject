@@ -2,7 +2,7 @@
 import ArticlesCard from "@/components/ArticlesCard";
 import Welcome from "@/components/Welcome";
 import { getArticles, getCategory } from "@/utils/actions/articleActions";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import Loading from "../loading";
 
@@ -12,7 +12,7 @@ const Articles = () => {
   const [currentCategory, setCurrentCategory] = useState("All");
   const [error, setError] = useState("");
   const [categoryId, setcategoryId] = useState("");
-  const [isCategoryToggle, setIsCategoryToggle] = useState(true);
+  const [isCategoryToggle, setIsCategoryToggle] = useState(false);
   useEffect(() => {
     async function fetchArticles() {
       try {
@@ -53,16 +53,16 @@ const Articles = () => {
 
       <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
         <div
-          className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[60%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
+          className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
           onClick={() => setIsCategoryToggle(!isCategoryToggle)}
         >
-          {!isCategoryToggle ? " Show All Catrgories" : " Collapse"}
+          {!isCategoryToggle ? " Show All Catrgories" : " Show less"}
         </div>
         <div
           className={`flex gap-[1rem] justify-center flex-wrap max-lg:${
             isCategoryToggle
               ? " flex w-[100%]"
-              : " absolute right-[1000000000px] w-[10%]"
+              : " absolute right-[100000px] w-[10%]"
           } transition-all duration-500`}
         >
           <div

@@ -26,18 +26,18 @@ const Nav = () => {
   const isActive = (href) => pathname === href;
   const [istoggle, setIstoggle] = useState(false);
   return (
-    <div className="nav p-[1rem] flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif">
+    <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif">
       <div className="flex justify-around items-center max-lg:w-[60%]  ">
         <Image
           src={"/assets/sayf.png"}
-          width={70}
+          width={80}
           height={50}
           alt="footer-img"
           className="cursor-pointer"
         />{" "}
         <Link
           href={"/"}
-          className="font-[500] text-[1.6rem] cursor-pointer navitem  text-center"
+          className="font-[500] text-[1.1rem] cursor-pointer navitem  text-center"
         >
           Sayf Network
         </Link>

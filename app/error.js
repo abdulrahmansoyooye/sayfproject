@@ -9,20 +9,20 @@ const Error = () => {
         className=" rounded-md p-[1rem] flex flex-col justify-center items-center cursor-pointer gap-[1rem]"
         onClick={() => window.location.reload}
       >
-        <Image src={"/assets/cloud.png"} width={60} height={60} alt="error" />
+        <Image src={"/assets/cloud.png"} width={100} height={60} alt="error" />
         <div className="text-[1.3rem] font-[500]  text-red-500">
           An Error Occured
         </div>
 
-        <div className="text-[1rem] font-[300] flex gap-[0.5rem]">
+        <div className="text-[1rem] font-[300] flex gap-[0.5rem] justify-center">
           {" "}
+          <div>Try Again</div>
           <Image
             src={"/assets/reload.png"}
-            width={20}
+            width={25}
             height={20}
             alt="error"
           />
-          Retry
         </div>
       </div>
     </div>

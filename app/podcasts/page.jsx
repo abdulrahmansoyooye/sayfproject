@@ -139,8 +139,7 @@ export const PodcastCard = ({
       className="container glassmorphism flex-col gap-[4rem] cursor-pointer"
       onClick={() => router.push(`/podcasts/${_id}`)}
     >
-      
-      <div className="flex-between">
+      <div className="flex-between flex-wrap gap-[0.5rem]">
         <div className="flex flex-col ">
           <h2 className="text-[1.5rem]">{title}</h2>
           <p className="text-[15px] text-gray-500 font-[300]">
@@ -149,7 +148,7 @@ export const PodcastCard = ({
           </p>
         </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem] font-[300]">
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
           #{tag}
         </div>
       </div>

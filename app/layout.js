@@ -1,17 +1,18 @@
-import { Bree_Serif, Rubik } from "next/font/google";
+import { Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const bree_Serif = Bree_Serif({
+const bree_Serif = Poppins({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["100", "200", "300", "400", "600", "500", "700"],
+
   display: "swap",
   variable: "--font-bree_serif",
 });
 export const rubik = Rubik({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "500", "700", "800", "900"],
+  weight: ["300", "400", "600", "500", "700"],
 
   display: "swap",
   variable: "--font-rubik",

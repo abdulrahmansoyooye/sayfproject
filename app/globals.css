@@ -22,7 +22,7 @@
   --background-color: #ffffff;
   --primary-color: #f6f6f6;
 
-  --brown-color: #d67d3e;
+  --brown-color: #d67d3ee5;
   --light-color: #f9e4d4;
 
   --secandary-color: #9c0f48;
@@ -66,7 +66,7 @@ span {
 .navitem::after {
   display: block;
   content: "";
-  border-bottom: solid 3px var(--secandary-color);
+  border-bottom: solid 3px var(--brown-color);
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
@@ -86,6 +86,7 @@ span {
   top: 0;
   height: 100vh;
   box-shadow: 1px 2px 0.5rem #1b181827;
+  color: var(--text-color);
 }
 .close-img {
   position: absolute;
@@ -118,16 +119,16 @@ span {
   border-radius: 2px;
 }
 .search_input {
-  @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#111d5e] focus:outline-none focus:ring-0;
+  @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
 }
 .text-gradient-blue {
-  @apply bg-gradient-to-r from-[#9c0f48] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .black_btn {
   @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
 }
 .text-gradient-brown {
-  @apply bg-gradient-to-r from-[#470D21] via-[#9C0F48] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;

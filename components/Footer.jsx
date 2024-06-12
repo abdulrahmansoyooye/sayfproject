@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-const socials = ["whatsapp", "facebook", "telegram", "instagram"];
+import Link from "next/link";
+const socials = ["whatsapp", "telegram", "facebook", "instagram"];
 const Footer = () => {
   const variants = {
     hidden: { opacity: 0, y: 10 },
@@ -18,7 +19,7 @@ const Footer = () => {
       >
         <div className="flex-center flex-col">
           <h2 className="text-[2rem] max-lg:text-[1.5rem] dark-text text-center">
-            Join <span className="text-gradient-brown ">20k+</span> Muslims in
+            Join <span className="text-gradient-brown ">20k+ Muslims</span> in
             our community to never miss out our daily snippets
           </h2>
         </div>
@@ -45,7 +46,13 @@ const Footer = () => {
           <div className="flex justify-center light-text text-[12px] gap-[0.5rem] ">
             <p className="font-[400]">© 2024 Sayf Network</p>|
             <p className="font-[400]">
-              Developed by <a href="">Soyooye</a>
+              Developed by{" "}
+              <Link
+                href="https://www.linkedin.com/in/abdulrahman-soyooye-814435294/"
+                target="_blank"
+              >
+                Soyooye
+              </Link>
             </p>
           </div>
         </div>

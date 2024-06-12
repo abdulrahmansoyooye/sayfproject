@@ -41,10 +41,10 @@ const page = () => {
           alt="article-img"
         />
 
-        <div className="flex flex-col gap-[4rem] justify-between w-full">
+        <div className="flex flex-col gap-[4rem] justify-between w-full flex-wrap">
           <div className="flex justify-between  gap-[0.5rem] flex-wrap">
             <div className="text-[2rem] font-[500] dark-text ">{title}</div>
-            <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem] flex-0 max-w-[30%] font-[300]">
+            <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem] flex-0 font-[300]">
               #{tag}
             </div>
           </div>

@@ -20,24 +20,23 @@ export default function Home() {
         <Carousel />
       </div>
       {/* Section2 */}
-      <div className="flex flex-col bg-primary-color mb-[4rem]">
+      <div className="flex flex-col bg-primary-color ">
         {/* Story */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 1 }}
-          className="flex flex-col gap-[1rem] p-[4rem_2rem] w-full justify-center bg-[#ffffff] "
+          className="flex flex-col gap-[2rem] p-[2rem] w-full justify-center bg-[#ffffff] "
         >
-          <div className="flex justify-start sm:w-[70%] m-auto  items-center max-lg:flex-col">
-            <Image src={"/assets/sayf.png"} width={160} height={160} />
-            <div className="text-[3rem] max-lg:text-[2rem] text-center">
+          <div className="flex m-auto  items-center max-lg:flex-col">
+            <div className="text-[2rem] max-lg:text-[2rem] text-center">
               What is Sayf -
               <span className="text-gradient-blue"> Our Story</span>
             </div>{" "}
           </div>
 
-          <div className="flex sm:max-w-[70%]  m-auto max-lg:flex-col gap-[2rem]">
-            <div className="space-y-[0.75rem] text-center">
+          <div className="flex text-left gap-[2rem] max-lg:flex-col justify-center">
+            <div className="space-y-[0.75rem] text-left sm:w-[50%]">
               <p className="dark-text font-[400]">
                 In a world overflowing with self-help books and advice from
                 countless sources,many of us find ourselves seeking happiness,
@@ -54,12 +53,14 @@ export default function Home() {
                 also beautifully simple.
               </p>
             </div>
+            <Image src={"/assets/sayf.png"} width={300} height={300} />
           </div>
         </motion.div>{" "}
         {/* Ideas */}
-        <div className="flex flex-col  p-[6rem_2rem] w-full justify-center bg-[#ffffff] gap-[2rem]">
-          <div className="text-[3rem] max-lg:text-[2rem] text-gradient-blue text-center">
-            What Others Are Saying About Our Ideas
+        <div className="flex flex-col  p-[2rem] w-full justify-center bg-[#ffffff] gap-[2rem]">
+          <div className="text-[2rem] text-center">
+            What <span className="text-gradient-blue">Others</span> Are Saying
+            About Our <span className="text-gradient-blue">Ideas</span>
           </div>
           <div className="flex max-lg:flex-col gap-[2rem] sm:w-[70%] m-auto">
             <motion.div
@@ -102,9 +103,7 @@ export default function Home() {
         </div>
         {/* offer */}
         <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section bg-primary-color z-10">
-          <div className="text-[3rem] max-lg:text-[2rem] text-gradient-blue ">
-            We Offer:
-          </div>
+          <div className="text-[2rem] text-gradient-blue ">We Offer</div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -136,8 +135,8 @@ export default function Home() {
         </div>
       </div>
       {/* Section 3 */}
-      <div className="flex max-lg:flex-col flex- gap-[2rem] w-full section ">
-        <div className="space-y-[2rem] w-[50%]  max-lg:w-full">
+      <div className="flex max-lg:flex-col flex- gap-[2rem] w-full section items-end">
+        <div className="space-y-[2rem] w-[60%]  max-lg:w-full">
           <div className="text-[3rem] max-lg:text-[2rem] text-left max-lg:text-center">
             The <span className="text-gradient-blue">Ultimate</span> Life
             Discovery <span className="text-gradient-blue">Course</span>
@@ -158,14 +157,14 @@ export default function Home() {
               start achieving your goals.
             </div>
 
-            <button className="black_btn sm:w-[60%] w-full">Learn More</button>
+            <button className="black_btn w-full">Learn More</button>
           </motion.div>{" "}
         </div>
-        <div>
+        <div className="flex-end">
           <Image
             src={"/assets/article1.jpg"}
-            width={600}
-            height={700}
+            width={700}
+            height={900}
             className="rounded-[1rem] max-lg:w-full"
           />
         </div>
@@ -178,14 +177,14 @@ export default function Home() {
         transition={{ ease: "easeOut", duration: 1 }}
         className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff] border-t-[2px] border-b-[2px]"
       >
-        <div className="flex sm:w-[70%] m-auto justify-center  items-center max-lg:flex-col gap-[1rem]">
-          <Image src={"/assets/newsletter.png"} width={100} height={100} />
-          <div className="text-[3rem] max-lg:text-[2rem] text-center">
+        <div className="flex justify-center items-center max-lg:flex-col gap-[1rem]">
+          <Image src={"/assets/newsletter.png"} width={50} height={50} />
+          <div className="text-[2rem]  text-center">
             Sayf Weekly <span className="text-gradient-blue"> Newsletter</span>
           </div>{" "}
         </div>
 
-        <div className="flex sm:max-w-[50%]  m-auto flex-col gap-[2rem]">
+        <div className="flex flex-col gap-[2rem] w-[70%] m-auto max-lg:w-full">
           <div className="space-y-[0.75rem]">
             <p className="dark-text font-[400] text-center">
               Every week, we will send you weapons o fight your deadliest
@@ -193,7 +192,7 @@ export default function Home() {
               faulty relationships, lack of purpose, etc...
             </p>
           </div>
-          <button className="black_btn m-auto">Subscribe For Free</button>
+          <button className="black_btn">Subscribe For Free</button>
         </div>
       </motion.div>
 
