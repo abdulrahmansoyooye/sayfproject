@@ -54,7 +54,7 @@ const Podcasts = () => {
         <div className="relative w-[60%] max-lg:w-[80%] m-auto">
           <input
             value={searchText}
-            className="search_input glassmorphism"
+            className="search_input "
             placeholder="Search For Podcasts"
             onChange={handleSearchPodcast}
           />
@@ -136,7 +136,7 @@ export const PodcastCard = ({
 
   return (
     <div
-      className="container glassmorphism flex-col gap-[4rem] cursor-pointer"
+      className="container flex-col gap-[4rem] cursor-pointer"
       onClick={() => router.push(`/podcasts/${_id}`)}
     >
       <div className="flex-between flex-wrap gap-[0.5rem]">

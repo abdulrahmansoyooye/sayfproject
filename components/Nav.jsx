@@ -26,7 +26,7 @@ const Nav = () => {
   const isActive = (href) => pathname === href;
   const [istoggle, setIstoggle] = useState(false);
   return (
-    <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif">
+    <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif glassmorphism">
       <div className="flex justify-around items-center max-lg:w-[60%]  ">
         <Image
           src={"/assets/sayf.png"}

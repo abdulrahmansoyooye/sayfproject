@@ -35,7 +35,7 @@ export default function Home() {
             </div>{" "}
           </div>
 
-          <div className="flex text-left gap-[2rem] max-lg:flex-col justify-center">
+          <div className="flex text-left gap-[2rem] max-lg:flex-col justify-center items-start">
             <div className="space-y-[0.75rem] text-left sm:w-[50%]">
               <p className="dark-text font-[400]">
                 In a world overflowing with self-help books and advice from
@@ -53,7 +53,13 @@ export default function Home() {
                 also beautifully simple.
               </p>
             </div>
-            <Image src={"/assets/sayf.png"} width={300} height={300} />
+            <Image
+              src={"/assets/story.png"}
+              width={450}
+              height={300}
+              alt="story"
+              className="rotate-45 "
+            />
           </div>
         </motion.div>{" "}
         {/* Ideas */}
