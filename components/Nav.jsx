@@ -27,7 +27,7 @@ const Nav = () => {
   const [istoggle, setIstoggle] = useState(false);
   return (
     <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif glassmorphism">
-      <div className="flex justify-around items-center max-lg:w-[60%]  ">
+      <div className="flex justify-around items-center max-lg:w-[60%]">
         <Image
           src={"/assets/sayf.png"}
           width={80}
@@ -37,7 +37,7 @@ const Nav = () => {
         />{" "}
         <Link
           href={"/"}
-          className="font-[500] text-[1.1rem] cursor-pointer navitem  text-center"
+          className=" text-[1.1rem] cursor-pointer text-brown-color navitem  text-center font-[400]"
         >
           Sayf Network
         </Link>

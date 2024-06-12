@@ -55,7 +55,6 @@ span {
 }
 .rubik {
   font-family: var(--font-rubik);
-  font-weight: 300;
 }
 .active {
   display: block;

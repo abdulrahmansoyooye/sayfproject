@@ -26,17 +26,17 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 1 }}
-          className="flex flex-col gap-[2rem] p-[2rem] w-full justify-center bg-[#ffffff] "
+          className="flex flex-col gap-[2rem] p-[2rem] w-full justify-center bg-[#ffffff] pb-[5rem]"
         >
-          <div className="flex m-auto  items-center max-lg:flex-col">
+          <div className="flex m-auto  items-center ">
             <div className="text-[2rem] max-lg:text-[2rem] text-center">
               What is Sayf -
               <span className="text-gradient-blue"> Our Story</span>
             </div>{" "}
           </div>
 
-          <div className="flex text-left gap-[2rem] max-lg:flex-col justify-center items-start">
-            <div className="space-y-[0.75rem] text-left sm:w-[50%]">
+          <div className="flex text-left gap-[2rem] max-lg:flex-col-reverse justify-center items-start m-auto  w-[80%] max-lg:w-full">
+            <div className="space-y-[0.75rem] text-left w-[50%] max-lg:w-full max-lg:text-center">
               <p className="dark-text font-[400]">
                 In a world overflowing with self-help books and advice from
                 countless sources,many of us find ourselves seeking happiness,
@@ -58,15 +58,15 @@ export default function Home() {
               width={450}
               height={300}
               alt="story"
-              className="rotate-45 "
+              className="rotate-45 m-auto"
             />
           </div>
         </motion.div>{" "}
         {/* Ideas */}
         <div className="flex flex-col  p-[2rem] w-full justify-center bg-[#ffffff] gap-[2rem]">
           <div className="text-[2rem] text-center">
-            What <span className="text-gradient-blue">Others</span> Are Saying
-            About Our <span className="text-gradient-blue">Ideas</span>
+            What Others Are Saying{" "}
+            <span className="text-gradient-blue">About Our Ideas</span>
           </div>
           <div className="flex max-lg:flex-col gap-[2rem] sm:w-[70%] m-auto">
             <motion.div
