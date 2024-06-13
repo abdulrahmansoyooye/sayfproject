@@ -126,6 +126,9 @@ span {
 .black_btn {
   @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
 }
+.cta_btn {
+  @apply hover:bg-brown-color hover:text-white transition-all duration-500 border border-brown-color  p-[1rem] rounded-md w-full text-center font-[400];
+}
 .text-gradient-brown {
   @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }

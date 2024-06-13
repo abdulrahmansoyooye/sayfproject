@@ -1,15 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-const ArticlesCard = ({
-  categoryId,
-  _id,
-  title,
-  content,
-  _createdAt,
-  index,
-}) => {
-  console.log(categoryId);
+const ArticlesCard = ({ _id, title, content, _createdAt, index }) => {
   const data = `${content.slice(0, 220)} `;
   return (
     <motion.div
@@ -35,15 +27,13 @@ const ArticlesCard = ({
             />
 
             <div
-              className="font-[200] rubik"
+              className="font-[300] "
               dangerouslySetInnerHTML={{ __html: data }}
             />
 
             <div className="flex gap-1 justify-end  hover:text-brown-color ">
               {" "}
-              <p className="hover:scale-[1.2] transition-all duration-500 border border-brown-color border-1 p-[1rem] rounded-md w-full text-center">
-                Continue Reading
-              </p>
+              <p className="cta_btn">Continue Reading</p>
             </div>
           </div>
         </Link>

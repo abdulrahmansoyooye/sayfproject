@@ -1,10 +1,10 @@
 "use client";
 import ArticlesCard from "@/components/ArticlesCard";
 import Welcome from "@/components/Welcome";
-import { getArticles, getCategory } from "@/utils/actions/articleActions";
 
 import { useEffect, useState } from "react";
 import Loading from "../loading";
+import { getCategory, getsayfArticle } from "@/utils/actions/articleActions";
 
 const Articles = () => {
   const [categories, setCategories] = useState([]);
@@ -16,7 +16,7 @@ const Articles = () => {
   useEffect(() => {
     async function fetchArticles() {
       try {
-        const res = await getArticles("All");
+        const res = await getsayfArticle("All");
         setArticles(res.reverse());
       } catch (error) {
         setError("Failed to fetch articles");
@@ -36,10 +36,9 @@ const Articles = () => {
 
   const handleCategoryClick = async (name, _id) => {
     setCurrentCategory(name);
-    setcategoryId(_id);
     setArticles([]);
     try {
-      const res = await getArticles(name);
+      const res = await getsayfArticle(name);
 
       setArticles(res.reverse());
     } catch (error) {
@@ -61,12 +60,12 @@ const Articles = () => {
         <div
           className={`flex gap-[1rem] justify-center flex-wrap max-lg:${
             isCategoryToggle
-              ? " flex w-[100%]"
+              ? " flex w-[100%] flex-wrap"
               : " absolute right-[100000px] w-[10%]"
           } transition-all duration-500`}
         >
           <div
-            className={`cursor-pointer  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-md  text-center w-[150px] ${
+            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-md  text-center max-w-[150px] ${
               currentCategory == "All" && "border border-1 border-brown-color"
             }`}
             onClick={() => handleCategoryClick("All")}
@@ -74,25 +73,25 @@ const Articles = () => {
             <h1 className="font-[500]">All</h1>
           </div>
           {categories &&
-            categories.map(({ _id, name }) => (
+            categories.map((item, index) => (
               <div
-                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-md  text-center  w-[150px] ${
-                  name == currentCategory && "border-brown-color"
+                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-md  text-center  min-w-[150px] ${
+                  item == currentCategory && "border-brown-color"
                 }`}
-                onClick={() => handleCategoryClick(name, _id)}
-                key={_id}
+                onClick={() => handleCategoryClick(item)}
+                key={`${item}-${index}`}
               >
-                <h1 className="font-[500]">{name}</h1>
+                <h1 className="font-[500]">{item}</h1>
               </div>
             ))}
         </div>
 
         <div className="flex gap-[2rem] justify-center flex-wrap  w-full">
-          {articles && articles.length === 0 && <Loading />}
+          {articles.length === 0 && <Loading />}
           {currentCategory === "All" ? (
-            <AllCategories articles={articles} categoryId={categoryId} />
+            <AllCategories articles={articles} />
           ) : (
-            <OtherCategories articles={articles} categoryId={categoryId} />
+            <OtherCategories articles={articles} />
           )}
         </div>
       </div>
@@ -104,13 +103,7 @@ export default Articles;
 
 const OtherCategories = ({ articles }) => {
   return articles.map(({ _id, title, content }, index) => (
-    <ArticlesCard
-      _id={_id}
-      title={title}
-      content={content}
-      key={_id}
-      index={index}
-    />
+    <ArticlesCard title={title} content={content} key={_id} index={index} />
   ));
 };
 
@@ -120,7 +113,6 @@ const AllCategories = ({ articles, categoryId }) => {
       _id={_id}
       title={title}
       content={content}
-      categoryId={categoryId}
       key={_id}
       index={index}
     />

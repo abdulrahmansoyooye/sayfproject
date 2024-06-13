@@ -2,12 +2,18 @@
 import Welcome from "@/components/Welcome";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getPodcasts } from "@/utils/actions/podcatsActions";
-import { useRouter } from "next/navigation";
+import {
+  getPodcastCategories,
+  getPodcasts,
+} from "@/utils/actions/podcatsActions";
+import { Link } from "next/navigation";
 import Loading from "../loading";
 
 const Podcasts = () => {
   const [allpodcasts, setAllPodcasts] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState("All");
+  const [categories, setCategories] = useState([]);
+  const [error, setError] = useState("");
 
   // Search
   const [searchText, setSearchText] = useState("");
@@ -26,47 +32,105 @@ const Podcasts = () => {
 
     setSearchedPodcasts(filteredPodcast);
   };
-
   useEffect(() => {
     async function fetchpodcasts() {
       try {
-        const res = await getPodcasts();
-        console.log(res);
-        setAllPodcasts(res.reverse());
+        const res = await getPodcasts("All");
+
+        setAllPodcasts(res);
       } catch (error) {
         setError("Failed to fetch podcasts");
       }
     }
+    async function fetchPodcastCategories() {
+      try {
+        const res = await getPodcastCategories();
+        setCategories(res);
+      } catch (error) {
+        setMessage(error.message);
+      }
+    }
+    fetchPodcastCategories();
     fetchpodcasts();
   }, []);
+  const handleCategoryClick = async (category) => {
+    setCurrentCategory(category);
+    setAllPodcasts([]);
+    try {
+      const res = await getPodcasts(category);
 
+      setAllPodcasts(res);
+    } catch (error) {
+      setError("Failed to fetch Podcasts");
+    }
+  };
+  console.log(categories);
   return (
     <div className="flex flex-col gap-[4rem]">
       <Welcome title="Podcasts" text="Some podcasts for you to read" />
 
-      <div className="flex gap-[2rem] flex-col">
-        <h1 className="text-[2rem] text-center flex items-center gap-[1rem] flex-col">
-          <div>
-            Daily <span className="text-gradient-brown">Podcasts</span>
-            <br className="breaker-style" />
+      <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
+        {/* {error && <p>{error}</p>} */}
+
+        {/* Search */}
+        <div className="flex flex-col gap-[1rem]">
+          <div className="text-[2rem] text-center flex items-center gap-[1rem] flex-col">
+            <div>
+              Daily <span className="text-gradient-brown">Podcasts</span>
+              <br className="breaker-style" />
+            </div>
           </div>
-        </h1>
-        <div className="relative w-[60%] max-lg:w-[80%] m-auto">
-          <input
-            value={searchText}
-            className="search_input "
-            placeholder="Search For Podcasts"
-            onChange={handleSearchPodcast}
-          />
-          <div className="absolute top-3 right-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]"></div>
+          <div className="relative max-lg:w-full m-auto">
+            <input
+              value={searchText}
+              className="search_input container w-full"
+              placeholder="Search For Podcasts"
+              onChange={handleSearchPodcast}
+            />
+            <div className="absolute top-3 right-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+              {" "}
+              <Image
+                src={"/assets/search.png"}
+                width={20}
+                height={20}
+                alt="search"
+              />
+            </div>
+          </div>
+        </div>
+        {/* Categories */}
+
+        <div className="flex gap-[1rem] justify-center flex-wrap ">
+          <div
+            className={`cursor-pointer  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-primary-color rounded-md  text-center w-[150px] ${
+              currentCategory == "All" && "border border-1 border-brown-color"
+            }`}
+            onClick={() => handleCategoryClick("All")}
+          >
+            <h1 className="font-[500]">All</h1>
+          </div>
+          {categories &&
+            categories.map((category) => (
+              <div
+                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-primary-color border-1 rounded-md  text-center  w-[150px] ${
+                  category == currentCategory && "border-brown-color"
+                }`}
+                onClick={() => handleCategoryClick(category)}
+                key={category}
+              >
+                <div className="font-[500]">{category}</div>
+              </div>
+            ))}
         </div>
 
+        {/* Podcast Item */}
         <div className="flex gap-[2rem] p-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
           {searchText ? (
             searchedPodcast.length > 0 ? (
-              <PodcastCardList data={searchedPodcast} />
+              <div>Not Found</div>
             ) : (
-              <div className="text-center text-[1.5rem]">Not Found</div>
+              <PodcastCardList data={searchedPodcast} />
+              // <div className="text-center text-[1.5rem]">Not Found</div>
             )
           ) : allpodcasts.length > 0 ? (
             <PodcastCardList data={allpodcasts} />
@@ -86,7 +150,6 @@ export const PodcastCardList = ({ data }) => {
     ) => (
       <PodcastCard
         key={_id}
-        _id={_id}
         title={title}
         createdAt={createdAt}
         description={description}
@@ -106,81 +169,60 @@ export const PodcastCard = ({
   audioUrl,
   imageUrl,
 }) => {
-  const router = useRouter();
-
-  const format = (type, createdAt) => {
-    if (type == "date") {
-      return `${new Date(createdAt)
-        .getDate()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getMonth()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getFullYear()
-        .toString()
-        .padStart(2, "0")}`;
-    } else {
-      return `${new Date(createdAt)
-        .getHours()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getSeconds()
-        .toString()
-        .padStart(2, "0")}`;
-    }
-  };
-
   return (
-    <div
-      className="container flex-col gap-[4rem] cursor-pointer"
-      onClick={() => router.push(`/podcasts/${_id}`)}
-    >
-      <div className="flex-between flex-wrap gap-[0.5rem]">
-        <div className="flex flex-col ">
-          <h2 className="text-[1.5rem]">{title}</h2>
-          <p className="text-[15px] text-gray-500 font-[300]">
-            {" "}
-            {description.slice(0, 80)}
-          </p>
-        </div>
+    <div className=" border-alt-color border-2 rounded-md w-[45%] max-lg:w-full transition-all duration-300 ">
+      <div className="">
+        <div href={`/podcasts/${_id}`} className="font-[400] cursor-pointer">
+          <div className="w-full">
+            <img
+              src={"/assets/article3.jpg"}
+              className="w-full h-[250px] object-cover rounded-md "
+              alt="article-img"
+            />
+          </div>
+          <div className="flex flex-col gap-[2rem] p-[1rem]">
+            <div className="flex justify-between flex-wrap gap-[0.5rem]">
+              <div className="text-[1.5rem] font-[500]">{title}</div>
+              <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem]">
+                #{tag}
+              </div>
+            </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
-          #{tag}
+            <div className="">{description}</div>
+            <div className="flex w-full hover:text-primary-color ">
+              {" "}
+              <p className="cta_btn">See Podcast</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col ">
-        <img
-          src={"/assets/article3.jpg"}
-          className="w-full h-[250px] object-cover rounded-md "
-          alt="article-img"
-        />
-      </div>
-      <div className="flex justify-between items-center gap-[1rem] rounded-[1rem] cursor-pointer">
-        <audio src={audioUrl} controls>
-          Your browser does not support the audio element.
-        </audio>
-        <a
-          href={audioUrl}
-          className="bg-[#f1f3f4] rounded-[50%] p-4 hover:bg-slate-200 transition-colors duration-300 ease-in-out "
-          download
-        >
-          <Image
-            width={20}
-            height={20}
-            src={"/assets/download.png"}
-            alt="download"
-          />
-        </a>
-      </div>
-      <div className="flex-between text-[11px] text-slate-500">
-        <div>{format("time", createdAt)}</div>
-        <div>{format("date", createdAt)}</div>
       </div>
     </div>
   );
 };
 export default Podcasts;
+
+// const format = (type, createdAt) => {
+//   if (type == "date") {
+//     return `${new Date(createdAt)
+//       .getDate()
+//       .toString()
+//       .padStart(2, "0")}/${new Date(createdAt)
+//       .getMonth()
+//       .toString()
+//       .padStart(2, "0")}/${new Date(createdAt)
+//       .getFullYear()
+//       .toString()
+//       .padStart(2, "0")}`;
+//   } else {
+//     return `${new Date(createdAt)
+//       .getHours()
+//       .toString()
+//       .padStart(2, "0")}:${new Date(createdAt)
+//       .getMinutes()
+//       .toString()
+//       .padStart(2, "0")}:${new Date(createdAt)
+//       .getSeconds()
+//       .toString()
+//       .padStart(2, "0")}`;
+//   }
+// };
