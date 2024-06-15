@@ -36,7 +36,7 @@ const Nav = () => {
           alt="footer-img"
           className="cursor-pointer"
         />{" "}
-        <div className=" text-[1.1rem] cursor-pointer text-brown-color navitem  text-center font-[400]">
+        <div className=" text-[1.1rem] cursor-pointer navitem  text-center font-[400]">
           Sayf Network
         </div>
       </div>
