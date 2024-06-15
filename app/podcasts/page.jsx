@@ -1,7 +1,7 @@
 "use client";
 import Welcome from "@/components/Welcome";
 import Image from "next/image";
-import { Link } from "next/navigation";
+import { Link, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   getPodcastCategories,
@@ -29,9 +29,9 @@ const Podcasts = () => {
         description.toLowerCase().includes(inputValue) ||
         tag.toLowerCase().includes(inputValue)
     );
-
     setSearchedPodcasts(filteredPodcast);
   };
+
   useEffect(() => {
     async function fetchpodcasts() {
       try {
@@ -39,7 +39,7 @@ const Podcasts = () => {
 
         setAllPodcasts(res);
       } catch (error) {
-        setError("Something went wrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againpodcasts");
+        setError("Something went wrong. Try Again");
       }
     }
     async function fetchPodcastCategories() {
@@ -61,15 +61,17 @@ const Podcasts = () => {
 
       setAllPodcasts(res);
     } catch (error) {
-      setError("Something went wrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try AgainPodcasts");
+      setError("Something went wrong. Try Again");
     }
   };
-  console.log(categories);
   return (
     <div className="flex flex-col gap-[4rem]">
-      <Welcome title="Podcasts" text="Some podcasts for you to read" />
+      <Welcome
+        title="Listen to a Podcast"
+        text="Some podcasts for you to read"
+      />
 
-      <div className="flex flex-col gap-[2rem] p-[2rem] ">
+      <div className="flex flex-col gap-[2rem] p-[1rem] ">
         {/* {error && <p>{error}</p>} */}
 
         {/* Search */}
@@ -80,14 +82,14 @@ const Podcasts = () => {
               <br className="breaker-style" />
             </div>
           </div>
-          <div className="relative max-lg:w-full m-auto">
+          <div className="relative flex  justify-center gap-[1rem] items-center">
             <input
               value={searchText}
-              className="search_input container w-full"
+              className="search_input container "
               placeholder="Search For Podcasts"
               onChange={handleSearchPodcast}
             />
-            <div className="absolute top-3 right-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+            <div className="max-lg:absolute right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
               {" "}
               <Image
                 src={"/assets/search.png"}
@@ -127,10 +129,9 @@ const Podcasts = () => {
         <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center ">
           {searchText ? (
             searchedPodcast.length > 0 ? (
-              <div>Not Found</div>
-            ) : (
               <PodcastCardList data={searchedPodcast} />
-              // <div className="text-center text-[1.5rem]">Not Found</div>
+            ) : (
+              <div className="text-center">Not Found</div>
             )
           ) : allpodcasts.length > 0 ? (
             <PodcastCardList data={allpodcasts} />
@@ -156,6 +157,7 @@ export const PodcastCardList = ({ data }) => {
         tag={tag}
         audioUrl={audioUrl}
         imageUrl={imageUrl}
+        _id={_id}
       />
     )
   );
@@ -169,33 +171,80 @@ export const PodcastCard = ({
   audioUrl,
   imageUrl,
 }) => {
-  return (
-    <div className=" border-alt-color border-2 rounded-md w-[35%] max-lg:w-full transition-all duration-300">
-      <div className="">
-        <div className="w-full">
-          <img
-            src={"/assets/article3.jpg"}
-            className="w-full h-[250px] object-cover rounded-md "
-            alt="article-img"
-          />
-        </div>
-        <div className="flex flex-col gap-[2rem] p-[1rem]">
-          <div className="flex justify-between flex-wrap gap-[0.5rem]">
-            <div className="text-[1.5rem] font-[500]">{title}</div>
-            <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem]">
-              #{tag}
-            </div>
-          </div>
+  const router = useRouter();
 
-          <div className="font-[400]">{description}</div>
-          <div className="flex w-full hover:text-primary-color ">
+  const format = (type, createdAt) => {
+    if (type == "date") {
+      return `${new Date(createdAt)
+        .getDate()
+        .toString()
+        .padStart(2, "0")}/${new Date(createdAt)
+        .getMonth()
+        .toString()
+        .padStart(2, "0")}/${new Date(createdAt)
+        .getFullYear()
+        .toString()
+        .padStart(2, "0")}`;
+    } else {
+      return `${new Date(createdAt)
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${new Date(createdAt)
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}:${new Date(createdAt)
+        .getSeconds()
+        .toString()
+        .padStart(2, "0")}`;
+    }
+  };
+
+  return (
+    <div
+      className="container flex-col gap-[4rem] cursor-pointer m-auto"
+      onClick={() => router.push(`/podcasts/${_id}`)}
+    >
+      <div className="flex-between flex-wrap gap-[0.75rem]">
+        <div className="flex flex-col gap-[.75rem]">
+          <h2 className="text-[1.5rem]">{title}</h2>
+          <p className="text-[12px] text-gray-500 font-[400]">
             {" "}
-            <a href={`/podcasts/${_id}`} className="font-[400] cursor-pointer">
-              {" "}
-              See Podcast
-            </a>
-          </div>
+            {description.slice(0, 80)}
+          </p>
         </div>
+
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
+          #{tag}
+        </div>
+      </div>
+      <div className="flex flex-col ">
+        <img
+          src={"/assets/article3.jpg"}
+          className="w-full h-[250px] object-cover rounded-md "
+          alt="article-img"
+        />
+      </div>
+      <div className="flex-between">
+        <div>
+          <audio controls>
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <a
+          className="bg-slate-100  hover:bg-slate-200 transition-all duration-500 p-[1rem] rounded-[50%]"
+          download=""
+        >
+          <Image
+            src={"/assets/download.png"}
+            width={20}
+            height={20}
+            alt="download"
+          />
+        </a>
+      </div>
+      <div className="flex-between text-[11px] text-slate-500">
+        <div>{format("time", createdAt)}</div>
+        <div>{format("date", createdAt)}</div>
       </div>
     </div>
   );

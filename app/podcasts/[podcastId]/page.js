@@ -21,7 +21,7 @@ const page = () => {
         setDescription(res.description);
         setTag(res.tag);
       } catch (error) {
-        setError("Something went wrong. Try Againpodcasts");
+        setError("Something went wrong. Try Again");
       }
     }
     fetchpodcasts();

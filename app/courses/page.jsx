@@ -42,23 +42,27 @@ const Courses = () => {
 
   return (
     <div className="flex flex-col gap-[4rem]">
-      <Welcome title="Courses" text="Some courses for you to read" />
+      <Welcome
+        title="See Availabe Courses"
+        text="Some courses for you to read"
+      />
 
-      <div className="flex gap-[2rem] flex-col">
+      <div className="flex gap-[2rem] flex-col p-[1rem]">
         <h1 className="text-[2rem] text-center flex items-center gap-[1rem] flex-col">
           <div>
-            Daily <span className="text-gradient-brown">Courses</span>
+            The Ultimate <span className="text-gradient-brown">Course</span>
             <br className="breaker-style" />
           </div>
         </h1>
-        <div className="relative w-[60%] max-lg:w-[80%] m-auto">
+        <div className="relative flex  justify-center gap-[1rem] items-center">
           <input
             value={searchText}
-            className="search_input container"
-            placeholder="Search For Courses"
+            className="search_input container "
+            placeholder="Search For Podcasts"
             onChange={handleSearchCourse}
           />
-          <div className="absolute top-3 right-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+          <div className="max-lg:absolute right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+            {" "}
             <Image
               src={"/assets/search.png"}
               width={20}
@@ -68,12 +72,12 @@ const Courses = () => {
           </div>
         </div>
 
-        <div className="flex gap-[2rem] p-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
           {searchText ? (
             searchedCourse.length > 0 ? (
               <CourseCardList data={searchedCourse} />
             ) : (
-              <div>Couldn't Find</div>
+              <div className="text-center">Not Found</div>
             )
           ) : allcourses.length > 0 ? (
             <CourseCardList data={allcourses} />
@@ -146,8 +150,8 @@ export const CourseCard = ({
       className="container flex-col gap-[4rem] cursor-pointer"
       onClick={() => router.push(`/courses/${_id}`)}
     >
-      <div className="flex-between">
-        <div className="flex flex-col ">
+      <div className="flex-between flex-wrap gap-[1rem]">
+        <div className="flex flex-col gap-[0.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
           <p className="text-[12px] text-gray-500 font-[400]">
             {" "}

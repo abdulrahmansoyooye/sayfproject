@@ -7,11 +7,11 @@ const NewsLetter = () => {
       <Welcome title={"News Letter"} />
       <div className=" flex flex-col p-[12rem_0rem] gap-[5rem] items-center">
         <div className=" text-center flex items-center gap-[0.5rem] flex-col">
-          <h1 className="text-[3rem] text-center ">
+          <h1 className="text-[2rem] text-center ">
             Everyday <span className="text-gradient-brown"> News </span> Letter
           </h1>
 
-          <p className="text-[1rem] font-[400]">
+          <p className="text-[0.9rem] font-[400]">
             This is the NewsLetter you'd be reading everytime{" "}
           </p>
         </div>
