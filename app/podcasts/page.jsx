@@ -1,12 +1,12 @@
 "use client";
 import Welcome from "@/components/Welcome";
 import Image from "next/image";
+import { Link } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   getPodcastCategories,
   getPodcasts,
 } from "@/utils/actions/podcatsActions";
-import { Link } from "next/navigation";
 import Loading from "../loading";
 
 const Podcasts = () => {
@@ -69,7 +69,7 @@ const Podcasts = () => {
     <div className="flex flex-col gap-[4rem]">
       <Welcome title="Podcasts" text="Some podcasts for you to read" />
 
-      <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
+      <div className="flex flex-col gap-[2rem] p-[2rem] ">
         {/* {error && <p>{error}</p>} */}
 
         {/* Search */}
@@ -100,31 +100,31 @@ const Podcasts = () => {
         </div>
         {/* Categories */}
 
-        <div className="flex gap-[1rem] justify-center flex-wrap ">
+        <div className="flex gap-[1rem] justify-center flex-wrap  items-center">
           <div
-            className={`cursor-pointer  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-primary-color rounded-md  text-center w-[150px] ${
+            className={`cursor-pointer  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-primary-color rounded-md  text-center w-[150px]  ${
               currentCategory == "All" && "border border-1 border-brown-color"
             }`}
             onClick={() => handleCategoryClick("All")}
           >
-            <h1 className="font-[500]">All</h1>
+            <h1 className="font-[400]">All</h1>
           </div>
           {categories &&
             categories.map((category) => (
               <div
-                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-primary-color border-1 rounded-md  text-center  w-[150px] ${
+                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-primary-color  border-1 rounded-md  text-center  ${
                   category == currentCategory && "border-brown-color"
                 }`}
                 onClick={() => handleCategoryClick(category)}
                 key={category}
               >
-                <div className="font-[500]">{category}</div>
+                <div className="font-[400]">{category}</div>
               </div>
             ))}
         </div>
 
         {/* Podcast Item */}
-        <div className="flex gap-[2rem] p-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center ">
           {searchText ? (
             searchedPodcast.length > 0 ? (
               <div>Not Found</div>
@@ -170,29 +170,30 @@ export const PodcastCard = ({
   imageUrl,
 }) => {
   return (
-    <div className=" border-alt-color border-2 rounded-md w-[45%] max-lg:w-full transition-all duration-300 ">
+    <div className=" border-alt-color border-2 rounded-md w-[35%] max-lg:w-full transition-all duration-300">
       <div className="">
-        <div href={`/podcasts/${_id}`} className="font-[400] cursor-pointer">
-          <div className="w-full">
-            <img
-              src={"/assets/article3.jpg"}
-              className="w-full h-[250px] object-cover rounded-md "
-              alt="article-img"
-            />
+        <div className="w-full">
+          <img
+            src={"/assets/article3.jpg"}
+            className="w-full h-[250px] object-cover rounded-md "
+            alt="article-img"
+          />
+        </div>
+        <div className="flex flex-col gap-[2rem] p-[1rem]">
+          <div className="flex justify-between flex-wrap gap-[0.5rem]">
+            <div className="text-[1.5rem] font-[500]">{title}</div>
+            <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem]">
+              #{tag}
+            </div>
           </div>
-          <div className="flex flex-col gap-[2rem] p-[1rem]">
-            <div className="flex justify-between flex-wrap gap-[0.5rem]">
-              <div className="text-[1.5rem] font-[500]">{title}</div>
-              <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem]">
-                #{tag}
-              </div>
-            </div>
 
-            <div className="">{description}</div>
-            <div className="flex w-full hover:text-primary-color ">
+          <div className="font-[400]">{description}</div>
+          <div className="flex w-full hover:text-primary-color ">
+            {" "}
+            <a href={`/podcasts/${_id}`} className="font-[400] cursor-pointer">
               {" "}
-              <p className="cta_btn">See Podcast</p>
-            </div>
+              See Podcast
+            </a>
           </div>
         </div>
       </div>

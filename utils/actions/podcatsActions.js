@@ -43,9 +43,9 @@ export const getPodcastCategories = async () => {
     const podcasts = await Podcasts.find({});
     const foundCategory = podcasts.map(({ category }) => category);
     const formattedCateogries = [...new Set(foundCategory)];
-    console.log(foundCategory);
-    // const response = JSON.parse(JSON.stringify(formattedCateogries));
-    // return response;
+
+    const response = JSON.parse(JSON.stringify(formattedCateogries));
+    return response;
   } catch (error) {
     console.log(error);
   }
