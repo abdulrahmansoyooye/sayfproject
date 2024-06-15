@@ -126,7 +126,7 @@ const Podcasts = () => {
         </div>
 
         {/* Podcast Item */}
-        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center ">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center m-auto">
           {searchText ? (
             searchedPodcast.length > 0 ? (
               <PodcastCardList data={searchedPodcast} />
@@ -201,7 +201,7 @@ export const PodcastCard = ({
 
   return (
     <div
-      className="container  flex-col gap-[4rem] cursor-pointer m-auto"
+      className="container  flex-col gap-[4rem] cursor-pointer"
       onClick={() => router.push(`/podcasts/${_id}`)}
     >
       <div className="flex-between flex-wrap gap-[0.75rem]">
