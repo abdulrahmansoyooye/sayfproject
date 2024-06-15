@@ -201,7 +201,7 @@ export const PodcastCard = ({
 
   return (
     <div
-      className="container flex-col gap-[4rem] cursor-pointer m-auto"
+      className="container  flex-col gap-[4rem] cursor-pointer m-auto"
       onClick={() => router.push(`/podcasts/${_id}`)}
     >
       <div className="flex-between flex-wrap gap-[0.75rem]">

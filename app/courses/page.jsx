@@ -71,7 +71,6 @@ const Courses = () => {
             />
           </div>
         </div>
-
         <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
           {searchText ? (
             searchedCourse.length > 0 ? (
