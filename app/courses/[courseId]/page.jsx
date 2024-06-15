@@ -24,14 +24,14 @@ const page = () => {
         setTag(res.tag);
         setLink(res.link);
       } catch (error) {
-        setError("Something went wrong. Try Againcourses");
+        setError("Something went wrong. Try Again");
       }
     }
     fetchcourses();
   }, []);
 
   return (
-    <div className="flex flex-col gap-[4rem] mt-[6rem] p-[3rem_2rem] max-lg:p-[4rem_1rem] border serif h-[100vh]  bg-[#f6f6f6]">
+    <div className="flex flex-col gap-[4rem] mt-[6rem] p-[3rem_2rem] max-lg:p-[4rem_1rem] border serif  bg-[#f6f6f6]">
       {error && <Error />}
 
       <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-md ">
