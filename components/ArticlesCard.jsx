@@ -21,9 +21,7 @@ const ArticlesCard = ({ _id, title, content, _createdAt, index }) => {
             />
           </div>
           <div className="flex flex-col gap-[2rem] p-[1rem] ">
-            <div className="text-[1.5rem] font-[500]  serif text-brown-color">
-              {title}
-            </div>
+            <div className="text-[1.5rem] font-[500]  serif ">{title}</div>
 
             <div
               className="font-[400] "

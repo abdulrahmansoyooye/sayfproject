@@ -35,10 +35,10 @@ const EachArticle = () => {
               <Image src={"/assets/back.png"} width={15} height={30} alt />
               Go Back
             </button>
-          </a>{" "}
+          </a>
         </div>
         <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-md ">
-          <div className="text-[2rem] text-center">{title}</div>
+          <div className="text-[1.7rem] text-center">{title}</div>
           <img
             src={"/assets/article3.jpg"}
             className="max-lg:w-full w-full h-[400px] object-cover rounded-md "
