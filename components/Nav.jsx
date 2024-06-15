@@ -8,6 +8,7 @@ const navLinks = [
   {
     name: "books",
   },
+
   {
     name: "articles",
   },
@@ -35,16 +36,16 @@ const Nav = () => {
           alt="footer-img"
           className="cursor-pointer"
         />{" "}
-        <Link
-          href={"/"}
-          className=" text-[1.1rem] cursor-pointer text-brown-color navitem  text-center font-[400]"
-        >
+        <div className=" text-[1.1rem] cursor-pointer text-brown-color navitem  text-center font-[400]">
           Sayf Network
-        </Link>
+        </div>
       </div>
 
       {/* Desktop */}
       <div className="max-md:hidden flex-between gap-[2rem]">
+        <Link href={"/"} className="navitem">
+          Home
+        </Link>
         {navLinks.map(({ name }, index) => (
           <div key={`${name}-${index}`}>
             <Link
@@ -77,6 +78,14 @@ const Nav = () => {
               alt="close-img"
             />
           </div>
+
+          <Link
+            href={"/"}
+            className="navitem"
+            onClick={() => setIstoggle(!istoggle)}
+          >
+            Home
+          </Link>
           {navLinks.map(({ name }, index) => (
             <div key={`${name}-${index}`}>
               <Link
@@ -90,7 +99,11 @@ const Nav = () => {
               </Link>
             </div>
           ))}
-          <Link href={"/about"} className="navitem">
+          <Link
+            href={"/about"}
+            className="navitem"
+            onClick={() => setIstoggle(!istoggle)}
+          >
             About
           </Link>
         </motion.div>
