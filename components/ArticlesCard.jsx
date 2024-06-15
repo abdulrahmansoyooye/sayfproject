@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 const ArticlesCard = ({ _id, title, content, _createdAt, index }) => {
-  const data = `${content.slice(0, 220)} `;
+  const data = `${content.slice(0, 220)}...<a>Read more</a>`;
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -21,16 +21,17 @@ const ArticlesCard = ({ _id, title, content, _createdAt, index }) => {
             />
           </div>
           <div className="flex flex-col gap-[2rem] p-[1rem] ">
-            <div
-              className="text-[1.4rem] font-[500]  serif"
-              dangerouslySetInnerHTML={{ __html: title }}
-            />
+            <div className="text-[1.5rem] font-[500]  serif text-brown-color">
+              {title}
+            </div>
 
             <div
-              className="font-[300] "
+              className="font-[400] "
+              style={{
+                fontWeight: 300,
+              }}
               dangerouslySetInnerHTML={{ __html: data }}
             />
-
             <div className="flex gap-1 justify-end  hover:text-brown-color ">
               {" "}
               <p className="cta_btn">Continue Reading</p>

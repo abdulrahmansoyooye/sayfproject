@@ -24,7 +24,7 @@ const page = () => {
         setTag(res.tag);
         setLink(res.link);
       } catch (error) {
-        setError("Failed to fetch courses");
+        setError("Something went wrong. Try Againcourses");
       }
     }
     fetchcourses();

@@ -39,7 +39,7 @@ const Podcasts = () => {
 
         setAllPodcasts(res);
       } catch (error) {
-        setError("Failed to fetch podcasts");
+        setError("Something went wrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againpodcasts");
       }
     }
     async function fetchPodcastCategories() {
@@ -61,7 +61,7 @@ const Podcasts = () => {
 
       setAllPodcasts(res);
     } catch (error) {
-      setError("Failed to fetch Podcasts");
+      setError("Something went wrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try Againrong. Try AgainPodcasts");
     }
   };
   console.log(categories);

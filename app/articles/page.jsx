@@ -19,7 +19,7 @@ const Articles = () => {
         const res = await getsayfArticle("All");
         setArticles(res.reverse());
       } catch (error) {
-        setError("Failed to fetch articles");
+        setError("Something went wrong. Try Again");
       }
     }
     async function fetchCatrogries() {
@@ -27,7 +27,7 @@ const Articles = () => {
         const res = await getCategory();
         setCategories(res);
       } catch (error) {
-        setError("Failed to fetch articles");
+        setError("Something went wrong. Try Again");
       }
     }
     fetchCatrogries();
@@ -42,7 +42,7 @@ const Articles = () => {
 
       setArticles(res.reverse());
     } catch (error) {
-      setError("Failed to fetch articles");
+      setError("Something went wrong. Try Again");
     }
   };
   return (
@@ -70,7 +70,7 @@ const Articles = () => {
             }`}
             onClick={() => handleCategoryClick("All")}
           >
-            <h1 className="font-[500]">All</h1>
+            <h1 className="font-[400]">All</h1>
           </div>
           {categories &&
             categories.map((item, index) => (
@@ -81,7 +81,7 @@ const Articles = () => {
                 onClick={() => handleCategoryClick(item)}
                 key={`${item}-${index}`}
               >
-                <h1 className="font-[500]">{item}</h1>
+                <h1 className="font-[400]">{item}</h1>
               </div>
             ))}
         </div>
@@ -103,7 +103,13 @@ export default Articles;
 
 const OtherCategories = ({ articles }) => {
   return articles.map(({ _id, title, content }, index) => (
-    <ArticlesCard title={title} content={content} key={_id} index={index} />
+    <ArticlesCard
+      title={title}
+      content={content}
+      key={_id}
+      index={index}
+      _id={_id}
+    />
   ));
 };
 

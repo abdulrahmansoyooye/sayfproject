@@ -1,4 +1,3 @@
-import Underline from "./Underline";
 
 const Welcome = ({ title, text }) => {
   return (

@@ -17,7 +17,7 @@ const EachArticle = () => {
         setTitle(res.title);
         setContent(res.content);
       } catch (error) {
-        setError("Failed to fetch Articles");
+        setError("Something went wrong. Try Again");
       }
     }
     fetchArticles();
@@ -31,7 +31,7 @@ const EachArticle = () => {
         )}
         <div>
           <a href="/articles">
-            <button className="black_btn w-[40%] flex gap-[1rem]">
+            <button className="black_btn w-[40%] max-lg:w-full flex gap-[1rem]">
               <Image src={"/assets/back.png"} width={15} height={30} alt />
               Go Back
             </button>

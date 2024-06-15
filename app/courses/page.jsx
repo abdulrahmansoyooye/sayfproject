@@ -34,7 +34,7 @@ const Courses = () => {
         console.log(res);
         setAllCourses(res.reverse());
       } catch (error) {
-        setError("Failed to fetch Courses");
+        setError("Something went wrong. Try AgainCourses");
       }
     }
     fetchCourses();
