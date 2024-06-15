@@ -41,7 +41,7 @@ const page = () => {
         <div className="flex flex-col gap-[2rem] justify-between w-full">
           <div className="flex flex-col  gap-[0.5rem] flex-wrap">
             <div className="text-[2rem] font-[500] dark-text ">{title}</div>
-            <div className="bg-slate-100 p-[0.5rem] text-slate-700 rounded-md text-[0.75rem] flex-0 max-w-[30%] font-[300]">
+            <div className="bg-slate-100 p-[0.5rem]  rounded-md text-[0.75rem] flex-0 max-w-[30%] font-[300]">
               #{tag}
             </div>
             <div className="text-slate-700 ">{description}</div>
