@@ -12,6 +12,7 @@ const page = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [link, setLink] = useState("");
   const router = useRouter();
 
@@ -23,6 +24,7 @@ const page = () => {
         setDescription(res.description);
         setTag(res.tag);
         setLink(res.link);
+        setImageUrl(res.imageUrl);
       } catch (error) {
         setError("Something went wrong. Try Again");
       }
@@ -36,7 +38,7 @@ const page = () => {
 
       <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-md ">
         <img
-          src={"/assets/article3.jpg"}
+          src={imageUrl}
           className="max-lg:w-full w-[60%] h-[250px] object-cover rounded-md "
           alt="article-img"
         />
@@ -54,7 +56,7 @@ const page = () => {
             <button className="black_btn sm:w-[50%] flex gap-[1rem]">
               {" "}
               <Image src={"/assets/cart.png"} width={30} height={30} alt />{" "}
-              <a href={link} target="_blank">
+              <a href={`${link}/`} target="_blank">
                 {" "}
                 Get Course
               </a>

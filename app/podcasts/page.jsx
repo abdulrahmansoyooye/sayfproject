@@ -76,12 +76,6 @@ const Podcasts = () => {
 
         {/* Search */}
         <div className="flex flex-col gap-[1rem]">
-          <div className="text-[2rem] text-center flex items-center gap-[1rem] flex-col">
-            <div>
-              Daily <span className="text-gradient-brown">Podcasts</span>
-              <br className="breaker-style" />
-            </div>
-          </div>
           <div className="relative flex  justify-center gap-[1rem] items-center">
             <input
               value={searchText}
@@ -145,17 +139,14 @@ const Podcasts = () => {
 };
 export const PodcastCardList = ({ data }) => {
   return data.map(
-    (
-      { _id, title, createdAt, description, tag, audioUrl, imageUrl },
-      index
-    ) => (
+    ({ _id, title, createdAt, description, tag, audio, imageUrl }, index) => (
       <PodcastCard
         key={_id}
         title={title}
         createdAt={createdAt}
         description={description}
         tag={tag}
-        audioUrl={audioUrl}
+        audio={audio}
         imageUrl={imageUrl}
         _id={_id}
       />
@@ -168,7 +159,7 @@ export const PodcastCard = ({
   createdAt,
   description,
   tag,
-  audioUrl,
+  audio,
   imageUrl,
 }) => {
   const router = useRouter();
@@ -219,20 +210,21 @@ export const PodcastCard = ({
       </div>
       <div className="flex flex-col ">
         <img
-          src={"/assets/article3.jpg"}
+          src={imageUrl}
           className="w-full h-[250px] object-cover rounded-md "
           alt="article-img"
         />
       </div>
       <div className="flex-between">
         <div>
-          <audio controls>
+          <audio controls src={audio}>
             Your browser does not support the audio element.
           </audio>
         </div>
         <a
+          href={audio}
           className="bg-slate-100  hover:bg-slate-200 transition-all duration-500 p-[1rem] rounded-[50%]"
-          download=""
+          download
         >
           <Image
             src={"/assets/download.png"}

@@ -5,7 +5,7 @@ const CoursesSchema = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
-    // image: { type: String, required: true },
+    imageUrl: { type: String, required: true },
     tag: { type: String, required: true },
     link: { type: String, required: true },
   },

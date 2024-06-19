@@ -1,7 +1,7 @@
 import { mongoose, models } from "mongoose";
 import { Schema } from "mongoose";
 
-export const ArticleSchema = new Schema(
+export const articleSchema = new Schema(
   {
     title: String,
     content: String,
@@ -13,5 +13,5 @@ export const ArticleSchema = new Schema(
   }
 );
 
-export const sayfArticle =
-  models.sayfArticle || mongoose.model("sayfArticle", ArticleSchema);
+export const article =
+  models.sayfArticle || mongoose.model("article", article);

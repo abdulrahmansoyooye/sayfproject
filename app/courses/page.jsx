@@ -42,23 +42,14 @@ const Courses = () => {
 
   return (
     <div className="flex flex-col gap-[4rem]">
-      <Welcome
-        title="See Availabe Courses"
-        text="Some courses for you to read"
-      />
+      <Welcome title="Availabe Courses" text="Some courses for you to see" />
 
       <div className="flex gap-[2rem] flex-col p-[1rem]">
-        <h1 className="text-[2rem] text-center flex items-center gap-[1rem] flex-col">
-          <div>
-            The Ultimate <span className="text-gradient-brown">Course</span>
-            <br className="breaker-style" />
-          </div>
-        </h1>
         <div className="relative flex  justify-center gap-[1rem] items-center">
           <input
             value={searchText}
             className="search_input container "
-            placeholder="Search For Podcasts"
+            placeholder="Search For Courses"
             onChange={handleSearchCourse}
           />
           <div className="max-lg:absolute right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
@@ -164,7 +155,7 @@ export const CourseCard = ({
       </div>
       <div className="flex flex-col ">
         <img
-          src={"/assets/article3.jpg"}
+          src={imageUrl}
           className="w-full h-[250px] object-cover rounded-md "
           alt="article-img"
         />

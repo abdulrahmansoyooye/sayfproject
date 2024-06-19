@@ -7,6 +7,8 @@ const PodcstSchema = new Schema(
     description: { type: String, required: true },
     category: { type: String, required: true },
     tag: { type: String, required: true },
+    imageUrl: { type: String, required: true },
+    audio: { type: String, required: true },
   },
   {
     timestamps: true,

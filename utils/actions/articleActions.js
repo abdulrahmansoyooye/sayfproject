@@ -13,7 +13,7 @@ export const getsayfArticle = async (category) => {
     } else {
       const foundArticle = await sayfArticle.find({ category });
 
-      return JSON.parse(JSON.stringify(foundArticle));
+      return JSON.parse(JSON.stringify(foundArticle.reverse()));
     }
   } catch (error) {
     console.log(error);
@@ -39,7 +39,7 @@ export const getCategory = async () => {
     const foundCategory = article.map(({ category }) => category);
     const formattedCateogries = [...new Set(foundCategory)];
     const response = JSON.parse(JSON.stringify(formattedCateogries));
-    
+
     return response;
   } catch (error) {
     console.log(error);

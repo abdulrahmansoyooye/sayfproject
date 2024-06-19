@@ -11,6 +11,8 @@ const page = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tag, setTag] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [audio, setAudio] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -20,6 +22,8 @@ const page = () => {
         setTitle(res.title);
         setDescription(res.description);
         setTag(res.tag);
+        setAudio(res.audio);
+        setImageUrl(res.imageUrl);
       } catch (error) {
         setError("Something went wrong. Try Again");
       }
@@ -33,7 +37,7 @@ const page = () => {
 
       <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-md ">
         <img
-          src={"/assets/article3.jpg"}
+          src={imageUrl}
           className="max-lg:w-full h-[250px] object-cover rounded-md "
           alt="article-img"
         />
@@ -48,11 +52,11 @@ const page = () => {
           </div>
           <div className="flex flex-col gap-[1rem] ">
             <div className="flex justify-between items-center gap-[1rem] rounded-[1rem] cursor-pointer">
-              <audio src={""} controls>
+              <audio src={audio} controls>
                 Your browser does not support the audio element.
               </audio>
               <a
-                href={""}
+                href={audio}
                 className="bg-[#f1f3f4] rounded-[50%] p-4 hover:bg-slate-200 transition-colors duration-300 ease-in-out "
                 download
               >

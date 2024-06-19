@@ -17,7 +17,7 @@ const Articles = () => {
     async function fetchArticles() {
       try {
         const res = await getsayfArticle("All");
-        setArticles(res.reverse());
+        setArticles(res);
       } catch (error) {
         setError("Something went wrong. Try Again");
       }
@@ -40,7 +40,7 @@ const Articles = () => {
     try {
       const res = await getsayfArticle(name);
 
-      setArticles(res.reverse());
+      setArticles(res);
     } catch (error) {
       setError("Something went wrong. Try Again");
     }
@@ -55,7 +55,7 @@ const Articles = () => {
           className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
           onClick={() => setIsCategoryToggle(!isCategoryToggle)}
         >
-          {!isCategoryToggle ? " Show All Catrgories" : " Show less"}
+          {!isCategoryToggle ? " See All" : " Show less"}
         </div>
         <div
           className={`flex gap-[1rem] justify-center flex-wrap max-lg:${
@@ -102,9 +102,10 @@ const Articles = () => {
 export default Articles;
 
 const OtherCategories = ({ articles }) => {
-  return articles.map(({ _id, title, content }, index) => (
+  return articles.map(({ _id, title, content, imageUrl }, index) => (
     <ArticlesCard
       title={title}
+      imageUrl={imageUrl}
       content={content}
       key={_id}
       index={index}
@@ -113,10 +114,11 @@ const OtherCategories = ({ articles }) => {
   ));
 };
 
-const AllCategories = ({ articles, categoryId }) => {
-  return articles.map(({ _id, title, content }, index) => (
+const AllCategories = ({ articles }) => {
+  return articles.map(({ _id, title, content, imageUrl }, index) => (
     <ArticlesCard
       _id={_id}
+      imageUrl={imageUrl}
       title={title}
       content={content}
       key={_id}

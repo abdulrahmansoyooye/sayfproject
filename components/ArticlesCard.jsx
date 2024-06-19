@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-const ArticlesCard = ({ _id, title, content, _createdAt, index }) => {
+const ArticlesCard = ({ _id, title, content, _createdAt, index, imageUrl }) => {
   const data = `${content.slice(0, 220)}...<a>Read more</a>`;
   return (
     <motion.div
@@ -9,14 +9,14 @@ const ArticlesCard = ({ _id, title, content, _createdAt, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: `0.${index}` }}
       key={`${index}-image`}
-      className=" border-alt-color border-2 rounded-md w-[45%] max-lg:w-full transition-all duration-300"
+      className="border border-alt-color rounded-md w-[45%] max-lg:w-full transition-all duration-300"
     >
       <div className="">
         <Link href={`/articles/${_id}`} className="font-[400] cursor-pointer">
           <div className="w-full">
             <img
-              src={"/assets/article3.jpg"}
-              className="w-full h-[250px] object-cover rounded-md "
+              src={imageUrl}
+              className="w-full  rounded-md "
               alt="article-img"
             />
           </div>
