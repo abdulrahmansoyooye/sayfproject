@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-const socials = ["whatsapp", "telegram", "facebook", "instagram"];
+const socials = ["whatsapp", "telegram", "facebook"];
 const Footer = () => {
   const variants = {
     hidden: { opacity: 0, y: 10 },

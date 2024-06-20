@@ -29,42 +29,32 @@ export default function Home() {
           className="flex flex-col gap-[2rem] p-[2rem] w-full justify-center bg-[#ffffff] pb-[5rem]"
         >
           <div className="flex m-auto  items-center ">
-            <div className="text-[2rem] max-lg:text-[2rem] text-center">
-              What is Sayf -
+            <div className="text-[2rem] text-center">
               <span className="text-gradient-blue"> Our Story</span>
             </div>{" "}
           </div>
 
-          <div className="flex text-left gap-[2rem] max-lg:flex-col-reverse justify-center items-start m-auto  w-[80%] max-lg:w-full">
-            <div className="space-y-[0.75rem] text-left w-[50%] max-lg:w-full max-lg:text-center">
-              <p className="dark-text font-[400]">
-                In a world overflowing with self-help books and advice from
-                countless sources,many of us find ourselves seeking happiness,
-                fulfillment,successful relationships,productivity, and ways to
-                overcome bad habits.Yet, despite consuming all this information,
-                the answers often remian elusive.
-              </p>
-              <p className="dark-text font-[400]">
-                {"     "} At Sayf, we belive there's a better way. As young
-                Muslims,we relized that true contentment and success come from
-                within our own rich tradition.The secrets to happiness,
-                fulfillment,and personal growth are embedded in the principles
-                of Islam-principles that are not only incredibly effective but
-                also beautifully simple.
-              </p>
-            </div>
-            <Image
-              src={"/assets/story.png"}
-              width={450}
-              height={300}
-              alt="story"
-              className="rotate-45 m-auto"
-            />
+          <div className="space-y-[0.75rem] text-left w-[50%] max-lg:w-full max-lg:text-left">
+            <p className="dark-text font-[400]">
+              In a world overflowing with self-help books and advice from
+              countless sources,many of us find ourselves seeking happiness,
+              fulfillment,successful relationships,productivity, and ways to
+              overcome bad habits.Yet, despite consuming all this information,
+              the answers often remian elusive.
+            </p>
+            <p className="dark-text font-[400]">
+              {"     "} At Sayf, we belive there's a better way. As young
+              Muslims,we relized that true contentment and success come from
+              within our own rich tradition.The secrets to happiness,
+              fulfillment,and personal growth are embedded in the principles of
+              Islam-principles that are not only incredibly effective but also
+              beautifully simple.
+            </p>
           </div>
         </motion.div>{" "}
         {/* Ideas */}
         <div className="flex flex-col  p-[2rem] w-full justify-center bg-[#ffffff] gap-[2rem]">
-          <div className="text-[2rem] text-center">
+          <div className="text-[2rem] text-center serif">
             What Others Are Saying{" "}
             <span className="text-gradient-blue">About Our Ideas</span>
           </div>
@@ -109,7 +99,7 @@ export default function Home() {
         </div>
         {/* offer */}
         <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section bg-primary-color z-10">
-          <div className="text-[2rem] text-gradient-blue ">We Offer</div>
+          <div className="text-[2rem] text-gradient-blue serif">We Offer</div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -153,6 +143,14 @@ export default function Home() {
             transition={{ ease: "easeOut", duration: 1 }}
             className="flex flex-col gap-[1rem] "
           >
+            <div className="flex-end">
+              <Image
+                src={"/assets/article1.jpg"}
+                width={700}
+                height={900}
+                className="rounded-[1rem] max-lg:w-full"
+              />
+            </div>
             <div className="font-[400] dark-text">
               The one course that will insha Allah transform everything about
               you: your productivity, habits, relationships, cofidence,
@@ -166,7 +164,7 @@ export default function Home() {
             <button className="black_btn w-full">Learn More</button>
           </motion.div>{" "}
         </div>
-        <div className="flex-end">
+        <div className="flex-end max-lg:hidden">
           <Image
             src={"/assets/article1.jpg"}
             width={700}
@@ -203,8 +201,41 @@ export default function Home() {
       </motion.div>
 
       {/* Section 5 */}
+      <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section bg-primary-color">
+        <div className="space-y-[2rem]">
+          <div className="text-[3rem] max-lg:text-[2rem] text-center">
+            The Brutally <span className="text-gradient-blue">Honest</span>{" "}
+            Podcast
+          </div>
+        </div>
 
-      <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-primary-color ">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
+          className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border "
+        >
+          <Image
+            src={"/assets/podcast-pic.jpg"}
+            width={300}
+            height={200}
+            className="rounded-[1rem] w-full object-cover"
+          />
+          <div className="font-[400] dark-text text-center">
+            Our weekly podcast where we share little-known tips on getting
+            closer to your Lord, having better relationships, and living a more
+            productive life.
+          </div>
+
+          <button className="black_btn sm:w-[60%] w-full m-auto">
+            See latest Episodes
+          </button>
+        </motion.div>
+      </div>
+      {/* Section 6 */}
+
+      <div className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center  ">
         <div className="flex justify-center sm:w-[80%] m-auto  items-center max-lg:flex-col max-lg:w-[100%] border-b-2 pb-[1rem]">
           <div className="text-[3rem] max-lg:text-[2rem] text-center">
             Read a <span className="text-gradient-blue">popular</span> Article
@@ -224,11 +255,7 @@ export default function Home() {
             <p className="dark-text font-[400] text-left">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet
               voluptas ipsam obcaecati, sint aliquid voluptates deleniti odit,
-              laboriosam maxime esse eaque reprehenderit illum odio neque
-              accusamus quo veritatis expedita. Nihil possimus at, optio
-              repudiandae tempora totam fuga nisi corporis! Cumque velit at
-              soluta doloribus quidem consectetur, ea accusantium esse nihil
-              quod similique fugit, cum, laborum harum excepturi expedita ab.
+              laboriosam maxime esse eaque
             </p>
           </div>
 
@@ -265,11 +292,7 @@ export default function Home() {
             <p className="dark-text font-[400] text-left">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet
               voluptas ipsam obcaecati, sint aliquid voluptates deleniti odit,
-              laboriosam maxime esse eaque reprehenderit illum odio neque
-              accusamus quo veritatis expedita. Nihil possimus at, optio
-              repudiandae tempora totam fuga nisi corporis! Cumque velit at
-              soluta doloribus quidem consectetur, ea accusantium esse nihil
-              quod similique fugit, cum, laborum harum excepturi expedita ab.
+              laboriosam maxime esse eaque reprehenderit
             </p>
           </div>
         </motion.div>
@@ -287,11 +310,7 @@ export default function Home() {
             <p className="dark-text font-[400] text-left">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet
               voluptas ipsam obcaecati, sint aliquid voluptates deleniti odit,
-              laboriosam maxime esse eaque reprehenderit illum odio neque
-              accusamus quo veritatis expedita. Nihil possimus at, optio
-              repudiandae tempora totam fuga nisi corporis! Cumque velit at
-              soluta doloribus quidem consectetur, ea accusantium esse nihil
-              quod similique fugit, cum, laborum harum excepturi expedita ab.
+              laboriosam maxime esse eaque reprehenderit
             </p>
           </div>
 
@@ -305,40 +324,9 @@ export default function Home() {
             />
           </div>
         </motion.div>
-      </div>
-
-      {/* Section 6 */}
-      <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[1rem_auto] section ">
-        <div className="space-y-[2rem]">
-          <div className="text-[3rem] max-lg:text-[2rem] text-center">
-            The Brutally <span className="text-gradient-blue">Honest</span>{" "}
-            Podcast
-          </div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ ease: "easeOut", duration: 1 }}
-          className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border "
-        >
-          <Image
-            src={"/assets/podcast-pic.jpg"}
-            width={300}
-            height={200}
-            className="rounded-[1rem] w-full object-cover"
-          />
-          <div className="font-[400] dark-text text-center">
-            Our weekly podcast where we share little-known tips on getting
-            closer to your Lord, having better relationships, and living a more
-            productive life.
-          </div>
-
-          <button className="black_btn sm:w-[60%] w-full m-auto">
-            See latest Episodes
-          </button>
-        </motion.div>
+        <p className="serif  font-[400] underline cursor-pointer text-brown-color">
+          Read More Articles
+        </p>
       </div>
     </main>
   );
