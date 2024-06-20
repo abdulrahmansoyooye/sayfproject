@@ -55,7 +55,7 @@ const Articles = () => {
           className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
           onClick={() => setIsCategoryToggle(!isCategoryToggle)}
         >
-          {!isCategoryToggle ? " See All" : " Show less"}
+          {!isCategoryToggle ? "Show Categories" : "Hide Categories"}
         </div>
         <div
           className={`flex gap-[1rem] justify-center flex-wrap max-lg:${
@@ -70,7 +70,7 @@ const Articles = () => {
             }`}
             onClick={() => handleCategoryClick("All")}
           >
-            <h1 className="font-[400]">All</h1>
+            <h1 className="font-[400]">All articles</h1>
           </div>
           {categories &&
             categories.map((item, index) => (

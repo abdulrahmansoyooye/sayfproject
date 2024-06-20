@@ -74,26 +74,6 @@ const Podcasts = () => {
       <div className="flex flex-col gap-[2rem] p-[1rem] ">
         {/* {error && <p>{error}</p>} */}
 
-        {/* Search */}
-        <div className="flex flex-col gap-[1rem]">
-          <div className="relative flex  justify-center gap-[1rem] items-center">
-            <input
-              value={searchText}
-              className="search_input container "
-              placeholder="Search For Podcasts"
-              onChange={handleSearchPodcast}
-            />
-            <div className="max-lg:absolute right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
-              {" "}
-              <Image
-                src={"/assets/search.png"}
-                width={20}
-                height={20}
-                alt="search"
-              />
-            </div>
-          </div>
-        </div>
         {/* Categories */}
 
         <div className="flex gap-[1rem] justify-center flex-wrap  items-center">
@@ -118,7 +98,26 @@ const Podcasts = () => {
               </div>
             ))}
         </div>
-
+        {/* Search */}
+        <div className="flex flex-col gap-[1rem]">
+          <div className="relative flex  justify-center gap-[1rem] items-center">
+            <input
+              value={searchText}
+              className="search_input container "
+              placeholder="Search For Podcasts"
+              onChange={handleSearchPodcast}
+            />
+            <div className="max-lg:absolute right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+              {" "}
+              <Image
+                src={"/assets/search.png"}
+                width={20}
+                height={20}
+                alt="search"
+              />
+            </div>
+          </div>
+        </div>
         {/* Podcast Item */}
         <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center m-auto">
           {searchText ? (
@@ -215,21 +214,19 @@ export const PodcastCard = ({
           alt="article-img"
         />
       </div>
-      <div className="flex-between">
-        <div>
-          <audio controls src={audio}>
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+      <div className="flex justify-between items-center gap-[1rem] rounded-[1rem] cursor-pointer">
+        <audio src={audio} controls>
+          Your browser does not support the audio element.
+        </audio>
         <a
           href={audio}
-          className="bg-slate-100  hover:bg-slate-200 transition-all duration-500 p-[1rem] rounded-[50%]"
+          className="bg-[#f1f3f4] rounded-[50%] p-4 hover:bg-slate-200 transition-colors duration-300 ease-in-out "
           download
         >
           <Image
-            src={"/assets/download.png"}
             width={20}
             height={20}
+            src={"/assets/download.png"}
             alt="download"
           />
         </a>
