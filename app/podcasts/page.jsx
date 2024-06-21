@@ -14,6 +14,7 @@ const Podcasts = () => {
   const [currentCategory, setCurrentCategory] = useState("All");
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState("");
+  const [isCategoryToggle, setIsCategoryToggle] = useState(false);
 
   // Search
   const [searchText, setSearchText] = useState("");
@@ -78,25 +79,39 @@ const Podcasts = () => {
 
         <div className="flex gap-[1rem] justify-center flex-wrap  items-center">
           <div
-            className={`cursor-pointer  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-primary-color rounded-md  text-center w-[150px]  ${
-              currentCategory == "All" && "border border-1 border-brown-color"
-            }`}
-            onClick={() => handleCategoryClick("All")}
+            className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
+            onClick={() => setIsCategoryToggle(!isCategoryToggle)}
           >
-            <h1 className="font-[400]">All</h1>
+            {!isCategoryToggle ? "Show Categories" : "Hide Categories"}
           </div>
-          {categories &&
-            categories.map((category) => (
-              <div
-                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-primary-color  border-1 rounded-md  text-center  ${
-                  category == currentCategory && "border-brown-color"
-                }`}
-                onClick={() => handleCategoryClick(category)}
-                key={category}
-              >
-                <div className="font-[400]">{category}</div>
-              </div>
-            ))}
+          <div
+            className={`flex gap-[1rem] justify-center flex-wrap max-lg:${
+              isCategoryToggle
+                ? " flex w-[100%] flex-wrap"
+                : " absolute right-[100000px] w-[10%]"
+            } transition-all duration-500`}
+          >
+            <div
+              className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-md  text-center max-w-[150px] ${
+                currentCategory == "All" && "border border-1 border-brown-color"
+              }`}
+              onClick={() => handleCategoryClick("All")}
+            >
+              <h1 className="font-[400]">All Podcasts</h1>
+            </div>
+            {categories &&
+              categories.map((item, index) => (
+                <div
+                  className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-md  text-center  min-w-[150px] ${
+                    item == currentCategory && "border-brown-color"
+                  }`}
+                  onClick={() => handleCategoryClick(item)}
+                  key={`${item}-${index}`}
+                >
+                  <h1 className="font-[400]">{item}</h1>
+                </div>
+              ))}
+          </div>
         </div>
         {/* Search */}
         <div className="flex flex-col gap-[1rem]">
