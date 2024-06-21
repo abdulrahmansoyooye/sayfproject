@@ -28,7 +28,7 @@ const Nav = () => {
   const [istoggle, setIstoggle] = useState(false);
   return (
     <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif glassmorphism">
-      <div className="flex justify-around items-center max-lg:w-[60%]">
+      <a href="/" className="flex justify-around items-center max-lg:w-[60%]">
         <Image
           src={"/assets/sayf.png"}
           width={80}
@@ -36,10 +36,13 @@ const Nav = () => {
           alt="footer-img"
           className="cursor-pointer"
         />{" "}
-        <div className=" text-[1.1rem] cursor-pointer navitem  text-center font-[400]">
+        <div
+          
+          className=" text-[1.1rem] cursor-pointer navitem  text-center font-[400]"
+        >
           Sayf Network
         </div>
-      </div>
+      </a>
 
       {/* Desktop */}
       <div className="max-md:hidden flex-between gap-[2rem]">

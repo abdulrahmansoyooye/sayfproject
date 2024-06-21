@@ -46,19 +46,16 @@ export const getCategory = async () => {
   }
 };
 
-export const getRelatedsayfArticle = async (podcastId) => {
+export const getRelatedsayfArticle = async (articlecategory) => {
   await connectToDb();
   try {
-    const foundArticle = await sayfArticle.findById(podcastId);
+    const foundArticle = await sayfArticle.find({});
 
-    const relatedsayfArticle = await sayfArticle.find({
-      category: foundArticle.category,
-    });
-
-    const filteredArticle = relatedsayfArticle.filter(
-      ({ _id }) => _id == JSON.stringify(foundPodcast._id)
+    const relatedsayfArticle = foundArticle.filter(
+      ({ category }) => category === articlecategory
     );
-    const response = JSON.parse(JSON.stringify(filteredArticle));
+    console.log(articlecategory);
+    const response = JSON.parse(JSON.stringify(relatedsayfArticle));
     return response;
   } catch (error) {
     console.log(error);

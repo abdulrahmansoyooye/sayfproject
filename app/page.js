@@ -131,7 +131,7 @@ export default function Home() {
               src={"/assets/article1.jpg"}
               width={700}
               height={900}
-              className="rounded-[1rem] max-lg:w-full"
+              className="rounded-md max-lg:w-full"
             />
           </div>
         </motion.div>{" "}
@@ -296,9 +296,9 @@ export default function Home() {
             />
           </div>
         </motion.div>
-        <p className="serif text-center max-lg:text-left font-[400] underline cursor-pointer text-brown-color">
+        <a href="/articles" className="serif text-center max-lg:text-left font-[400] underline cursor-pointer text-brown-color">
           Read More Articles
-        </p>
+        </a>
       </div>
     </main>
   );

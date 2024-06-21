@@ -141,7 +141,7 @@ span {
   @apply text-slate-400;
 }
 .container {
-  @apply break-inside-avoid rounded-lg bg-white/10 shadow-[inset_10px_100px_180px_0_rgb(199,199,199,0.2)]  bg-clip-padding p-6 pb-4 backdrop-blur-[3rem] backdrop-filter md:w-[450px] w-[100%] h-fit space-y-[2rem];
+  @apply break-inside-avoid rounded-lg bg-white/10 shadow-[inset_10px_100px_180px_0_rgb(199,199,199,0.3)]  bg-clip-padding p-6 pb-4 backdrop-blur-[3rem] backdrop-filter md:w-[450px] w-[100%] h-fit space-y-[2rem];
 }
 .glassmorphism {
   @apply bg-white/5 shadow-[inset_10px_10px_18px_0_rgb(199,199,199,0.2)] backdrop-blur-[1rem]  p-5;

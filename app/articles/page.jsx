@@ -102,27 +102,33 @@ const Articles = () => {
 export default Articles;
 
 const OtherCategories = ({ articles }) => {
-  return articles.map(({ _id, title, content, imageUrl }, index) => (
-    <ArticlesCard
-      title={title}
-      imageUrl={imageUrl}
-      content={content}
-      key={_id}
-      index={index}
-      _id={_id}
-    />
-  ));
+  return articles.map(
+    ({ _id, title, content, imageUrl, _createdAt }, index) => (
+      <ArticlesCard
+        title={title}
+        _createdAt={_createdAt}
+        imageUrl={imageUrl}
+        content={content}
+        key={_id}
+        index={index}
+        _id={_id}
+      />
+    )
+  );
 };
 
 const AllCategories = ({ articles }) => {
-  return articles.map(({ _id, title, content, imageUrl }, index) => (
-    <ArticlesCard
-      _id={_id}
-      imageUrl={imageUrl}
-      title={title}
-      content={content}
-      key={_id}
-      index={index}
-    />
-  ));
+  return articles.map(
+    ({ _id, title, content, imageUrl, _createdAt }, index) => (
+      <ArticlesCard
+        _id={_id}
+        imageUrl={imageUrl}
+        title={title}
+        content={content}
+        key={_id}
+        _createdAt={_createdAt}
+        index={index}
+      />
+    )
+  );
 };

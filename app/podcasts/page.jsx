@@ -255,28 +255,3 @@ export const PodcastCard = ({
 };
 export default Podcasts;
 
-// const format = (type, createdAt) => {
-//   if (type == "date") {
-//     return `${new Date(createdAt)
-//       .getDate()
-//       .toString()
-//       .padStart(2, "0")}/${new Date(createdAt)
-//       .getMonth()
-//       .toString()
-//       .padStart(2, "0")}/${new Date(createdAt)
-//       .getFullYear()
-//       .toString()
-//       .padStart(2, "0")}`;
-//   } else {
-//     return `${new Date(createdAt)
-//       .getHours()
-//       .toString()
-//       .padStart(2, "0")}:${new Date(createdAt)
-//       .getMinutes()
-//       .toString()
-//       .padStart(2, "0")}:${new Date(createdAt)
-//       .getSeconds()
-//       .toString()
-//       .padStart(2, "0")}`;
-//   }
-// };
