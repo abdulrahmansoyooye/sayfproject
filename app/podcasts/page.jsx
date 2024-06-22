@@ -134,7 +134,7 @@ const Podcasts = () => {
           </div>
         </div>
         {/* Podcast Item */}
-        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center m-auto">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full">
           {searchText ? (
             searchedPodcast.length > 0 ? (
               <PodcastCardList data={searchedPodcast} />
@@ -254,4 +254,3 @@ export const PodcastCard = ({
   );
 };
 export default Podcasts;
-

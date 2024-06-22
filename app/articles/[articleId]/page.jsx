@@ -10,11 +10,11 @@ import { useEffect, useState } from "react";
 const EachArticle = () => {
   const { articleId } = useParams();
   const [error, setError] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const [articleData, setArticleData] = useState({});
   const [relatedArticleData, setrelatedArticleData] = useState([]);
-  const { title, content, imageUrl, category } = articleData;
-  console.log(relatedArticleData);
+  const { _id,title, content, imageUrl, category } = articleData;
+  const router = useRouter();
   useEffect(() => {
     async function fetchArticles() {
       try {
@@ -30,7 +30,7 @@ const EachArticle = () => {
   useEffect(() => {
     async function fetchRelatedArticles() {
       try {
-        const res = await getRelatedsayfArticle(category);
+        const res = await getRelatedsayfArticle(category,_id);
         setrelatedArticleData(res);
       } catch (error) {
         setError("Something went wrong. Try Again");
@@ -46,14 +46,14 @@ const EachArticle = () => {
         )}
 
         <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-md ">
-          <div className="text-[0.9rem] bg-brown-color text-white rounded-md w-[30%] m-auto font-[300] text-center">
+          <div className="text-[0.9rem] bg-brown-color text-white rounded-md w-[30%] max-lg:w-full m-auto font-[300] text-center">
             {category}
           </div>
 
           <div className="text-[1.7rem] text-center">{title}</div>
           <img
             src={imageUrl}
-            className="max-lg:w-full w-full h-[400px] object-fill max-lg:object-scale-down rounded-md "
+            className="max-lg:w-full w-full h-[450px] object-cover max-lg:object-scale-down rounded-md "
             alt="article-img"
           />
           <div
@@ -71,21 +71,33 @@ const EachArticle = () => {
         </div>
       </div>
       {/*  */}
-      <div className="border flex flex-col justify-start">
-        <div className="text-[1.2rem] font-[500] bg-white p-[1rem] mt-[4rem] rounded-md w-full">
-          See Related Articles
+      <div className=" flex flex-col max-lg:w-full w-[30%] gap-[1rem]">
+        <div className="text-[1.2rem] font-[500]  bg-white p-[1rem] rounded-md w-full">
+          Related Articles
         </div>
-        <div>
-          {relatedArticleData ? (
-            <div>
-              {relatedArticleData.map(({ title, imageUrl }) => {
-                <div>{title}</div>;
-              })}
-            </div>
-          ) : (
-            <div>Not Found</div>
-          )}
-        </div>
+
+        {relatedArticleData ? (
+          <div className="flex flex-col gap-[1rem]">
+            {relatedArticleData.map(({ _id, title, imageUrl }) => (
+              <div
+                className="flex bg-white p-[1rem] rounded-md gap-[1rem] cursor-pointer"
+                key={_id}
+                onClick={() => router.push(`/articles/${_id}`)}
+              >
+                <div>
+                  <div> {title}</div>
+                </div>
+                <img
+                  src={imageUrl}
+                  className=" w-full h-[150px] object-cover rounded-md "
+                  alt="article-img"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div>Not Found</div>
+        )}
       </div>
     </div>
   );

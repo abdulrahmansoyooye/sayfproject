@@ -46,13 +46,13 @@ export const getCategory = async () => {
   }
 };
 
-export const getRelatedsayfArticle = async (articlecategory) => {
+export const getRelatedsayfArticle = async (articlecategory, articleId) => {
   await connectToDb();
   try {
     const foundArticle = await sayfArticle.find({});
 
     const relatedsayfArticle = foundArticle.filter(
-      ({ category }) => category === articlecategory
+      ({ _id, category }) => category === articlecategory && _id != articleId
     );
     console.log(articlecategory);
     const response = JSON.parse(JSON.stringify(relatedsayfArticle));

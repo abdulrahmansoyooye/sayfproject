@@ -27,7 +27,7 @@ const Nav = () => {
   const isActive = (href) => pathname === href;
   const [istoggle, setIstoggle] = useState(false);
   return (
-    <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif glassmorphism">
+    <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif ">
       <a href="/" className="flex justify-around items-center max-lg:w-[60%]">
         <Image
           src={"/assets/sayf.png"}
@@ -36,10 +36,7 @@ const Nav = () => {
           alt="footer-img"
           className="cursor-pointer"
         />{" "}
-        <div
-          
-          className=" text-[1.1rem] cursor-pointer navitem  text-center font-[400]"
-        >
+        <div className=" text-[1.1rem] cursor-pointer navitem  text-center font-[400]">
           Sayf Network
         </div>
       </a>
