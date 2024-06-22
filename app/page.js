@@ -124,7 +124,9 @@ export default function Home() {
               start achieving your goals.
             </div>
 
-            <button className="black_btn w-full">Learn More</button>
+            <button className="black_btn w-full">
+              <a href="/courses">Learn More</a>
+            </button>
           </div>{" "}
           <div className="flex-end">
             <Image
@@ -161,7 +163,10 @@ export default function Home() {
               faulty relationships, lack of purpose, etc...
             </p>
           </div>
-          <button className="black_btn">Subscribe For Free</button>
+          <button className="black_btn">
+            {" "}
+            <a href="/newsletter">Subscribe For Free</a>
+          </button>
         </div>
       </motion.div>
 
@@ -195,7 +200,7 @@ export default function Home() {
             </div>
 
             <button className="black_btn sm:w-[60%] w-full m-auto">
-              See latest Episodes
+              <a href="/podcasts">See latest Episodes</a>
             </button>
           </motion.div>
         </div>
@@ -296,7 +301,10 @@ export default function Home() {
             />
           </div>
         </motion.div>
-        <a href="/articles" className="serif text-center max-lg:text-left font-[400] underline cursor-pointer text-brown-color">
+        <a
+          href="/articles"
+          className="serif text-center max-lg:text-left font-[400] underline cursor-pointer text-brown-color"
+        >
           Read More Articles
         </a>
       </div>
