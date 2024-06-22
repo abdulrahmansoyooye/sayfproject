@@ -13,7 +13,7 @@ const EachArticle = () => {
   const [loading, setLoading] = useState(false);
   const [articleData, setArticleData] = useState({});
   const [relatedArticleData, setrelatedArticleData] = useState([]);
-  const { _id,title, content, imageUrl, category } = articleData;
+  const { _id, title, content, imageUrl, category } = articleData;
   const router = useRouter();
   useEffect(() => {
     async function fetchArticles() {
@@ -30,7 +30,7 @@ const EachArticle = () => {
   useEffect(() => {
     async function fetchRelatedArticles() {
       try {
-        const res = await getRelatedsayfArticle(category,_id);
+        const res = await getRelatedsayfArticle(category, _id);
         setrelatedArticleData(res);
       } catch (error) {
         setError("Something went wrong. Try Again");
@@ -73,7 +73,7 @@ const EachArticle = () => {
       {/*  */}
       <div className=" flex flex-col max-lg:w-full w-[30%] gap-[1rem]">
         <div className="text-[1.2rem] font-[500]  bg-white p-[1rem] rounded-md w-full">
-          Related Articles
+          More Articles
         </div>
 
         {relatedArticleData ? (

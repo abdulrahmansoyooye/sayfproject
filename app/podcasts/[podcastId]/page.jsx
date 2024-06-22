@@ -87,7 +87,7 @@ const page = () => {
       {/*  */}
       <div className=" flex flex-col max-lg:w-full w-[30%] gap-[1rem]">
         <div className="text-[1.2rem] font-[500]  bg-white p-[1rem] rounded-md w-full">
-          Related Podcasts
+          More Podcasts
         </div>
 
         {relatedPodcastData ? (

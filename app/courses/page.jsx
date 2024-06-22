@@ -31,7 +31,7 @@ const Courses = () => {
     async function fetchCourses() {
       try {
         const res = await getCourses();
-        console.log(res);
+
         setAllCourses(res.reverse());
       } catch (error) {
         setError("Something went wrong. Try AgainCourses");

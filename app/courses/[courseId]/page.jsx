@@ -55,7 +55,7 @@ const page = () => {
           <div className="flex flex-col gap-[1rem] justify-between">
             <button className="black_btn sm:w-[50%] flex gap-[1rem]">
               {" "}
-              <Image src={"/assets/cart.png"} width={30} height={30} alt />{" "}
+              <Image src={"/assets/cart.png"} width={30} height={30} />{" "}
               <a href={`${link}/`} target="_blank">
                 {" "}
                 Get Course
