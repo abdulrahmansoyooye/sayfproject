@@ -103,13 +103,14 @@ export default Articles;
 
 const OtherCategories = ({ articles }) => {
   return articles.map(
-    ({ _id, title, content, imageUrl, _createdAt }, index) => (
+    ({ _id, title, content, imageUrl, _createdAt, tag }, index) => (
       <ArticlesCard
         title={title}
         _createdAt={_createdAt}
         imageUrl={imageUrl}
         content={content}
         key={_id}
+        tag={tag}
         index={index}
         _id={_id}
       />
@@ -119,9 +120,10 @@ const OtherCategories = ({ articles }) => {
 
 const AllCategories = ({ articles }) => {
   return articles.map(
-    ({ _id, title, content, imageUrl, _createdAt }, index) => (
+    ({ _id, title, content, imageUrl, _createdAt, tag }, index) => (
       <ArticlesCard
         _id={_id}
+        tag={tag}
         imageUrl={imageUrl}
         title={title}
         content={content}

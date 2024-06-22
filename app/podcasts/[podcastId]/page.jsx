@@ -40,7 +40,7 @@ const page = () => {
     fetchRelatedPodcasts();
   }, [category]);
   return (
-    <div className="flex max-lg:flex-col gap-[4rem] mt-[3rem] p-[4rem_2rem] max-lg:p-[4rem_1rem]  serif bg-[#f6f6f6] border">
+    <div className="flex max-lg:flex-col gap-[4rem] mt-[3rem] p-[5rem_2rem] max-lg:p-[4rem_1rem]  serif bg-[#f6f6f6] border">
       {error && <Error />}
 
       <div className="flex flex-col gap-[1rem] bg-white w-[70%] max-lg:w-full p-[1rem] rounded-md ">

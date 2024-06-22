@@ -7,6 +7,7 @@ export const ArticleSchema = new Schema(
     content: String,
     category: String,
     imageUrl: String,
+    tag:String,
   },
   {
     timestamps: true,

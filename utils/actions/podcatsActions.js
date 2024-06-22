@@ -51,13 +51,13 @@ export const getPodcastCategories = async () => {
   }
 };
 
-export const getRelatedPodcasts = async (podcastCategory, podcastId) => {
+export const getRelatedPodcasts = async (podcastCategory,podcastId) => {
   await connectToDb();
   try {
     const foundPodcast = await Podcasts.find({});
 
     const relatedPodcast = foundPodcast.filter(
-      ({ _id, category }) => category === podcastCategory && _id != podcastId
+      ({_id, category }) => category === podcastCategory && _id != podcastId
     );
     const response = JSON.parse(JSON.stringify(relatedPodcast));
     return response;

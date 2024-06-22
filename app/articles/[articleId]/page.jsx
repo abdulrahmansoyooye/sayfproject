@@ -13,7 +13,7 @@ const EachArticle = () => {
   const [loading, setLoading] = useState(false);
   const [articleData, setArticleData] = useState({});
   const [relatedArticleData, setrelatedArticleData] = useState([]);
-  const { _id, title, content, imageUrl, category } = articleData;
+  const { _id, title, content, imageUrl, category, tag } = articleData;
   const router = useRouter();
   useEffect(() => {
     async function fetchArticles() {
@@ -51,6 +51,9 @@ const EachArticle = () => {
           </div>
 
           <div className="text-[1.7rem] text-center">{title}</div>
+          <div className="text-[0.9rem] w-full m-auto font-[300] text-center">
+            {tag && tag}
+          </div>
           <img
             src={imageUrl}
             className="max-lg:w-full w-full h-[450px] object-cover max-lg:object-scale-down rounded-md "

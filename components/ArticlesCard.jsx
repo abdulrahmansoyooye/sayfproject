@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-const ArticlesCard = ({ _id, title, content, _createdAt, index, imageUrl }) => {
+const ArticlesCard = ({ _id, title, content, _createdAt, index, imageUrl,tag }) => {
   const router = useRouter();
   const format = (type, createdAt) => {
     if (type == "date") {
@@ -43,7 +43,7 @@ const ArticlesCard = ({ _id, title, content, _createdAt, index, imageUrl }) => {
         <div className="flex flex-wrap gap-[0.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
           <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
-            #tag
+            {tag ? tag : "#tag"}
           </div>
         </div>
         <div className="flex flex-col ">
