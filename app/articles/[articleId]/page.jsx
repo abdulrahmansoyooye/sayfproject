@@ -39,7 +39,7 @@ const EachArticle = () => {
     fetchRelatedArticles();
   }, [category]);
   return (
-    <div className="flex max-lg:flex-col gap-[2rem] mt-[10rem] p-[3rem_2rem] max-lg:p-[4rem_1rem] border serif  bg-[#f6f6f6] items-start">
+    <div className="flex max-lg:flex-col gap-[2rem] mt-[5rem] p-[4rem_2rem] max-lg:p-[4rem_1rem] serif border bg-[#f6f6f6] items-start">
       <div className="flex flex-col gap-[2rem] w-[70%] max-lg:w-full">
         {error && (
           <p className="text-[2rem] text-center text-red-500">{error}</p>

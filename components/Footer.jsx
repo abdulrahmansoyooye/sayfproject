@@ -9,7 +9,7 @@ const Footer = () => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <div className="footer p-[2rem] pt-[4rem] mt-[2rem]">
+    <div className="footer p-[2rem] pt-[4rem] ">
       {/* Section 1 */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
