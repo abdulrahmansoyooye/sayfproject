@@ -3,6 +3,7 @@ import {
   getEachArticle,
   getRelatedsayfArticle,
 } from "@/utils/actions/articleActions";
+import parse from "html-react-parser";
 import moment from "moment";
 
 import Image from "next/image";
@@ -59,7 +60,9 @@ const EachArticle = () => {
             {category}
           </div>
 
-          <div className="text-[1.7rem] text-center">{title}</div>
+          <div className="text-[1.7rem] text-center font-[500]">
+            {title && title.replace()}
+          </div>
           <div className="text-[0.9rem] w-full m-auto font-[300] text-center">
             {tag && tag}
           </div>
@@ -72,10 +75,8 @@ const EachArticle = () => {
             <div>{format("time", createdAt)}</div>
             <div>{format("date", createdAt)}</div>
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: content }}
-            className="font-[300]"
-          />
+
+          <div>{content && parse(content)}</div>
         </div>
         <div>
           <a href="/articles">
@@ -101,7 +102,7 @@ const EachArticle = () => {
                 onClick={() => router.push(`/articles/${_id}`)}
               >
                 <div>
-                  <div> {title}</div>
+                  <div>{title}</div>
                 </div>
                 <img
                   src={imageUrl}

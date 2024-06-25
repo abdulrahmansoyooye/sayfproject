@@ -1,6 +1,8 @@
 import moment from "moment";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import parse from "html-react-parser";
+
 const ArticlesCard = ({
   _id,
   title,
@@ -20,7 +22,7 @@ const ArticlesCard = ({
       return moment(createdAt).format("dddd");
     }
   };
-  const data = `${content.slice(0, 220)}...`;
+  const data = `${content.slice(0, 150)}...`;
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -32,7 +34,7 @@ const ArticlesCard = ({
     >
       <div className="flex flex-col gap-[1rem]">
         <div className="flex flex-wrap gap-[0.75rem]">
-          <h2 className="text-[1.5rem]">{title}</h2>
+          <h2 className="text-[1.5rem] font-[500]">{title}</h2>
           <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
             {tag ? tag : "#tag"}
           </div>
@@ -44,10 +46,7 @@ const ArticlesCard = ({
             alt="article-img"
           />
         </div>
-        <div
-          className="text-[13px] text-gray-500 font-[400]"
-          dangerouslySetInnerHTML={{ __html: data }}
-        />{" "}
+        <div>{parse(data)}</div>
       </div>
 
       <div className="">
