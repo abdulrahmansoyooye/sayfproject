@@ -119,7 +119,6 @@ const OtherCategories = ({ articles }) => {
 };
 
 const AllCategories = ({ articles }) => {
-  console.log(articles);
   return articles.map(
     ({ _id, title, content, imageUrl, createdAt, tag }, index) => (
       <ArticlesCard

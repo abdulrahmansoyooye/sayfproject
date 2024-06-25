@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getCourses } from "@/utils/actions/courseActions";
 import Loading from "../loading";
+import moment from "moment";
 
 const Courses = () => {
   const [allcourses, setAllCourses] = useState([]);
@@ -62,7 +63,7 @@ const Courses = () => {
             />
           </div>
         </div>
-        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center sm:m-auto">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full">
           {searchText ? (
             searchedCourse.length > 0 ? (
               <CourseCardList data={searchedCourse} />
@@ -111,30 +112,11 @@ export const CourseCard = ({
 
   const format = (type, createdAt) => {
     if (type == "date") {
-      return `${new Date(createdAt)
-        .getDate()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getMonth()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getFullYear()
-        .toString()
-        .padStart(2, "0")}`;
+      return moment(createdAt).format("hh:mm A");
     } else {
-      return `${new Date(createdAt)
-        .getHours()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getSeconds()
-        .toString()
-        .padStart(2, "0")}`;
+      return moment(createdAt).format("dddd");
     }
   };
-
   return (
     <div
       className="container flex-col gap-[4rem] cursor-pointer"

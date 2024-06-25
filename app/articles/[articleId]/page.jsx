@@ -3,6 +3,7 @@ import {
   getEachArticle,
   getRelatedsayfArticle,
 } from "@/utils/actions/articleActions";
+import moment from "moment";
 
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -13,7 +14,15 @@ const EachArticle = () => {
   const [loading, setLoading] = useState(false);
   const [articleData, setArticleData] = useState({});
   const [relatedArticleData, setrelatedArticleData] = useState([]);
-  const { _id, title, content, imageUrl, category, tag } = articleData;
+  const { _id, title, content, imageUrl, category, tag, createdAt } =
+    articleData;
+  const format = (type, createdAt) => {
+    if (type == "date") {
+      return moment(createdAt).format("hh:mm A");
+    } else {
+      return moment(createdAt).format("dddd");
+    }
+  };
   const router = useRouter();
   useEffect(() => {
     async function fetchArticles() {
@@ -59,6 +68,10 @@ const EachArticle = () => {
             className="max-lg:w-full w-full h-[450px] object-cover max-lg:object-scale-down rounded-md "
             alt="article-img"
           />
+          <div className="flex-between text-[11px] text-slate-500">
+            <div>{format("time", createdAt)}</div>
+            <div>{format("date", createdAt)}</div>
+          </div>
           <div
             dangerouslySetInnerHTML={{ __html: content }}
             className="font-[300]"

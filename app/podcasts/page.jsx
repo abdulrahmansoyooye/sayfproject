@@ -8,6 +8,7 @@ import {
   getPodcasts,
 } from "@/utils/actions/podcatsActions";
 import Loading from "../loading";
+import moment from "moment";
 
 const Podcasts = () => {
   const [allpodcasts, setAllPodcasts] = useState([]);
@@ -180,27 +181,9 @@ export const PodcastCard = ({
 
   const format = (type, createdAt) => {
     if (type == "date") {
-      return `${new Date(createdAt)
-        .getDate()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getMonth()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getFullYear()
-        .toString()
-        .padStart(2, "0")}`;
+      return moment(createdAt).format("hh:mm A");
     } else {
-      return `${new Date(createdAt)
-        .getHours()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getSeconds()
-        .toString()
-        .padStart(2, "0")}`;
+      return moment(createdAt).format("dddd");
     }
   };
 

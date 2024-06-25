@@ -1,32 +1,23 @@
-import Image from "next/image";
-import Link from "next/link";
+import moment from "moment";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-const ArticlesCard = ({ _id, title, content, createdAt, index, imageUrl,tag }) => {
+const ArticlesCard = ({
+  _id,
+  title,
+  content,
+  createdAt,
+  index,
+  imageUrl,
+  tag,
+}) => {
+  console.log(moment(createdAt).format("dddd hh:mm A"));
+
   const router = useRouter();
   const format = (type, createdAt) => {
     if (type == "date") {
-      return `${new Date(createdAt)
-        .getDate()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getMonth()
-        .toString()
-        .padStart(2, "0")}/${new Date(createdAt)
-        .getFullYear()
-        .toString()
-        .padStart(2, "0")}`;
+      return moment(createdAt).format("hh:mm A");
     } else {
-      return `${new Date(createdAt)
-        .getHours()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}:${new Date(createdAt)
-        .getSeconds()
-        .toString()
-        .padStart(2, "0")}`;
+      return moment(createdAt).format("dddd");
     }
   };
   const data = `${content.slice(0, 220)}...`;
