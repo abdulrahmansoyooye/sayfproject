@@ -60,7 +60,7 @@ const EachArticle = () => {
             {category}
           </div>
 
-          <div className="text-[1.7rem] text-center font-[500]">
+          <div className="text-[1.7rem] text-center ">
             {title && title.replace()}
           </div>
           <div className="text-[0.9rem] w-full m-auto font-[300] text-center">
@@ -76,7 +76,7 @@ const EachArticle = () => {
             <div>{format("date", createdAt)}</div>
           </div>
 
-          <div>{content && parse(content)}</div>
+          <div className="text-[1rem]">{content && parse(content)}</div>
         </div>
         <div>
           <a href="/articles">

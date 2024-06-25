@@ -195,10 +195,7 @@ export const PodcastCard = ({
       <div className="flex-between flex-wrap gap-[0.75rem]">
         <div className="flex flex-col gap-[.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
-          <p className="text-[12px] text-gray-500 font-[400]">
-            {" "}
-            {description.slice(0, 80)}
-          </p>
+          <p className="text-[13px] font-[400]">{description.slice(0, 80)}</p>
         </div>
 
         <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">

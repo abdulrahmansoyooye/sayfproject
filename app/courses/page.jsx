@@ -125,7 +125,7 @@ export const CourseCard = ({
       <div className="flex-between flex-wrap gap-[1rem]">
         <div className="flex flex-col gap-[0.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
-          <p className="text-[12px] text-gray-500 font-[400]">
+          <p className="text-[13px] font-[400]">
             {" "}
             {description.slice(0, 80)}
           </p>

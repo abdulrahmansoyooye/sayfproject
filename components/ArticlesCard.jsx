@@ -12,8 +12,6 @@ const ArticlesCard = ({
   imageUrl,
   tag,
 }) => {
-  console.log(moment(createdAt).format("dddd hh:mm A"));
-
   const router = useRouter();
   const format = (type, createdAt) => {
     if (type == "date") {
@@ -34,7 +32,7 @@ const ArticlesCard = ({
     >
       <div className="flex flex-col gap-[1rem]">
         <div className="flex flex-wrap gap-[0.75rem]">
-          <h2 className="text-[1.5rem] font-[500]">{title}</h2>
+          <h2 className="text-[1.5rem] ">{title}</h2>
           <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
             {tag ? tag : "#tag"}
           </div>
@@ -46,7 +44,7 @@ const ArticlesCard = ({
             alt="article-img"
           />
         </div>
-        <div>{parse(data)}</div>
+        <div className="text-[0.9rem]">{parse(data)}</div>
       </div>
 
       <div className="">
