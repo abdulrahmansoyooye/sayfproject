@@ -79,7 +79,7 @@ const EachArticle = () => {
           More Articles
         </div>
 
-        {relatedArticleData ? (
+        {relatedArticleData.length > 0 ? (
           <div className="flex flex-col gap-[1rem]">
             {relatedArticleData.map(({ _id, title, imageUrl }) => (
               <div
@@ -99,7 +99,9 @@ const EachArticle = () => {
             ))}
           </div>
         ) : (
-          <div>Not Found</div>
+          <div className="flex justify-center bg-white p-[1rem] rounded-md cursor-pointer">
+            No related Article
+          </div>
         )}
       </div>
     </div>

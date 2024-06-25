@@ -40,7 +40,7 @@ const page = () => {
     fetchRelatedPodcasts();
   }, [category]);
   return (
-    <div className="flex max-lg:flex-col gap-[4rem] mt-[3rem] p-[5rem_2rem] max-lg:p-[4rem_1rem]  serif bg-[#f6f6f6] border">
+    <div className="flex max-lg:flex-col gap-[4rem] mt-[3rem] p-[5rem_2rem] max-lg:p-[4rem_1rem]  serif bg-[#f6f6f6]">
       {error && <Error />}
 
       <div className="flex flex-col gap-[1rem] bg-white w-[70%] max-lg:w-full p-[1rem] rounded-md ">
@@ -50,7 +50,7 @@ const page = () => {
         <div className="flex max-lg:flex-col gap-[2rem]">
           <img
             src={imageUrl}
-            className="max-lg:w-full h-[250px] object-cover rounded-md "
+            className="max-lg:w-full w-[300px] h-[250px] object-cover rounded-md "
             alt="article-img"
           />
 
@@ -90,7 +90,7 @@ const page = () => {
           More Podcasts
         </div>
 
-        {relatedPodcastData ? (
+        {relatedPodcastData.length > 0 ? (
           <div className="flex flex-col gap-[1rem]">
             {relatedPodcastData.map(({ _id, title, imageUrl }) => (
               <div
@@ -110,7 +110,9 @@ const page = () => {
             ))}
           </div>
         ) : (
-          <div>Not Found</div>
+          <div className="flex justify-center bg-white p-[1rem] rounded-md cursor-pointer">
+            No related Podcast
+          </div>
         )}
       </div>
     </div>

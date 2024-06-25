@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-const ArticlesCard = ({ _id, title, content, _createdAt, index, imageUrl,tag }) => {
+const ArticlesCard = ({ _id, title, content, createdAt, index, imageUrl,tag }) => {
   const router = useRouter();
   const format = (type, createdAt) => {
     if (type == "date") {
@@ -63,8 +63,8 @@ const ArticlesCard = ({ _id, title, content, _createdAt, index, imageUrl,tag }) 
         <button className="black_btn w-full">Read Article</button>
       </div>
       <div className="flex-between text-[11px] text-slate-500">
-        <div>{format("time", _createdAt)}</div>
-        <div>{format("date", _createdAt)}</div>
+        <div>{format("time", createdAt)}</div>
+        <div>{format("date", createdAt)}</div>
       </div>
     </motion.div>
   );

@@ -100,16 +100,16 @@ const Nav = () => {
             </div>
           ))}
           <Link
-            href={"/about"}
+            href={"/contact"}
             className="navitem"
             onClick={() => setIstoggle(!istoggle)}
           >
-            About
+            Contact Us
           </Link>
         </motion.div>
       )}
-      <Link href={"/about"} className="navitem max-lg:hidden">
-        About
+      <Link href={"/contact"} className="navitem max-lg:hidden">
+        Contact Us
       </Link>
       <div
         className="cursor-pointer md:hidden"

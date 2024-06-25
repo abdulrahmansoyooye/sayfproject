@@ -103,10 +103,10 @@ export default Articles;
 
 const OtherCategories = ({ articles }) => {
   return articles.map(
-    ({ _id, title, content, imageUrl, _createdAt, tag }, index) => (
+    ({ _id, title, content, imageUrl, createdAt, tag }, index) => (
       <ArticlesCard
         title={title}
-        _createdAt={_createdAt}
+        createdAt={createdAt}
         imageUrl={imageUrl}
         content={content}
         key={_id}
@@ -119,8 +119,9 @@ const OtherCategories = ({ articles }) => {
 };
 
 const AllCategories = ({ articles }) => {
+  console.log(articles);
   return articles.map(
-    ({ _id, title, content, imageUrl, _createdAt, tag }, index) => (
+    ({ _id, title, content, imageUrl, createdAt, tag }, index) => (
       <ArticlesCard
         _id={_id}
         tag={tag}
@@ -128,7 +129,7 @@ const AllCategories = ({ articles }) => {
         title={title}
         content={content}
         key={_id}
-        _createdAt={_createdAt}
+        createdAt={createdAt}
         index={index}
       />
     )
