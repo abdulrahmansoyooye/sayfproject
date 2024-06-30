@@ -63,7 +63,7 @@ const Courses = () => {
             />
           </div>
         </div>
-        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full px-[1rem]">
           {searchText ? (
             searchedCourse.length > 0 ? (
               <CourseCardList data={searchedCourse} />

@@ -31,9 +31,7 @@ export default function Home() {
           className="flex flex-col gap-[2rem] p-[2rem] w-full justify-center bg-[#ffff] pb-[3rem]"
         >
           <div className="flex flex-col gap-[0.5rem] items-center ">
-            <div className="text-[2rem] text-center">
-              <span className="text-gradient-blue">Our Story</span>
-            </div>{" "}
+            <div className="text-[2rem] text-center">Our Story</div>{" "}
             <div className="flex justify-center">
               <Underline />
             </div>
@@ -62,7 +60,7 @@ export default function Home() {
           <div className="flex justify-center">
             <Underline />
           </div>
-          <div className="text-[1.8rem] text-center serif">
+          <div className="text-[1.8rem] text-center ">
             What Others Are Saying{" "}
             <span className="text-gradient-blue">About Our Ideas</span>
           </div>
@@ -70,7 +68,7 @@ export default function Home() {
         </div>
         {/* offer */}
         <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[auto] section bg-primary-color z-10">
-          <div className="text-[1.8rem] text-gradient-blue serif">We Offer</div>
+          <div className="text-[1.8rem] ">We Offer</div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +76,9 @@ export default function Home() {
             className="flex max-lg:flex-col gap-[2rem]"
           >
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300">
-              <p className="dark-text">Authentic Islamic Guidance</p>
+              <span className="text-gradient-blue">
+                Authentic Islamic Guidance
+              </span>
 
               <p className="font-[400] dark-text">
                 {" "}
@@ -92,7 +92,7 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300"
             >
-              <p className="dark-text">Practical Solutions</p>
+              <span className="text-gradient-blue">Practical Solutions</span>
               <p className="font-[400]  dark-text">
                 Discover actionable strategies that are easy to implement and
                 resonate with your faith, leading to lasting positive change.
@@ -102,7 +102,7 @@ export default function Home() {
         </div>
       </div>
       {/* Section 3 */}
-      <div className="flex flex-col gap-[2rem] w-full section ">
+      {/* <div className="flex flex-col gap-[2rem] w-full section ">
         <div className="text-[2rem] text-center">
           The <span className="text-gradient-blue">Ultimate</span> Life
           Discovery <span className="text-gradient-blue">Course</span>
@@ -137,10 +137,10 @@ export default function Home() {
             />
           </div>
         </motion.div>{" "}
-      </div>
-      <div className="flex justify-center">
+      </div> */}
+      {/* <div className="flex justify-center">
         <Underline />
-      </div>
+      </div> */}
       {/* Section 4 */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -163,10 +163,10 @@ export default function Home() {
               faulty relationships, lack of purpose, etc...
             </p>
           </div>
-          <button className="black_btn">
-            {" "}
-            <a href="/newsletter">Subscribe For Free</a>
-          </button>
+
+          <div className="black_btn sm:max-w-[50%] m-auto w-full">
+            Subscribe For Free
+          </div>
         </div>
       </motion.div>
 
@@ -185,7 +185,7 @@ export default function Home() {
             animate={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeOut", duration: 1 }}
-            className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border "
+            className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-[1rem] border-2 "
           >
             <Image
               src={"/assets/podcast-pic.jpg"}
@@ -207,7 +207,7 @@ export default function Home() {
       </div>
       {/* Section 6 */}
 
-      <div className="flex flex-col gap-[2rem] p-[4rem_2rem] w-full justify-center  ">
+      <div className="flex flex-col gap-[2rem] p-[4rem_3rem] w-full justify-center  ">
         <div className="flex justify-center w-[80%] m-auto  items-center flex-col pb-[1rem] gap-[2rem]">
           <div className="text-[2rem] text-center">
             Read a <span className="text-gradient-blue">popular</span> Article

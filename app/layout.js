@@ -12,7 +12,7 @@ const bree_Serif = Poppins({
 });
 export const rubik = Rubik({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "500", "700"],
+  weight: ["400", "600", "500", "700"],
 
   display: "swap",
   variable: "--font-rubik",

@@ -36,11 +36,7 @@
   font-family: var(--font-rubik);
   color: var(--text-color);
 }
-h1,
-span {
-  font-family: var(--font-bree_serif);
-  font-weight: 600;
-}
+
 .section {
   @apply p-[5rem] mb-[3rem] max-md:p-[2rem];
 }

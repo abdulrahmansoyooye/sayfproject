@@ -77,7 +77,7 @@ const Carousel = () => {
               >
                 <div className="flex flex-col gap-[1rem]">
                   <div className="text-[3rem] max-lg:text-[2rem]">
-                    <span>{applyGradient(title)}</span>
+                    <div>{applyGradient(title)}</div>
                   </div>
                   <motion.p className="font-[400] dark-text">
                     {content}

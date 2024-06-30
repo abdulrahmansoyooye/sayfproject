@@ -91,7 +91,7 @@ const Nav = () => {
               <Link
                 href={`/${name}`}
                 className={
-                  isActive(`/${name}`) ? "active" : "navitem font-[500] "
+                  isActive(`/${name}`) ? "active" : "navitem font-[400] "
                 }
                 onClick={() => setIstoggle(!istoggle)}
               >

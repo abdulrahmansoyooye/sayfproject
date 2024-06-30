@@ -94,7 +94,7 @@ const page = () => {
           <div className="flex flex-col gap-[1rem]">
             {relatedPodcastData.map(({ _id, title, imageUrl }) => (
               <div
-                className="flex bg-white p-[1rem] rounded-md gap-[1rem] cursor-pointer"
+                className="flex bg-white p-[1rem] rounded-md gap-[1rem] cursor-pointer justify-between"
                 key={_id}
                 onClick={() => router.push(`/podcasts/${_id}`)}
               >
@@ -103,7 +103,7 @@ const page = () => {
                 </div>
                 <img
                   src={imageUrl}
-                  className=" w-full h-[150px] object-cover rounded-md "
+                  className="w-[50%] h-[150px] object-cover rounded-md "
                   alt="article-img"
                 />
               </div>

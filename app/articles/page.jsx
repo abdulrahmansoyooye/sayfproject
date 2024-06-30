@@ -47,7 +47,7 @@ const Articles = () => {
   };
   return (
     <div className="flex flex-col rubik">
-      <Welcome title="Read an Article" text="Some articles for you to read" />
+      <Welcome title="Read an Article" text="Articles on productivity, time-management, personal growth relationships, spirituality & mental health" />
       {error && <Error />}
 
       <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">

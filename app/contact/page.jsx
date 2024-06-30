@@ -8,7 +8,7 @@ const ContactUs = () => {
     <div className=" text-black mt-[7rem] p-[7rem] max-lg:p-[2rem] flex max-lg:flex-col  gap-[5rem]">
       <div className="flex  flex-col gap-[3rem] w-[50%] max-lg:w-full">
         <div className="flex gap-[1rem] flex-col">
-          <div className="text-[2.5rem] ">Get Our Details</div>{" "}
+          <div className="text-[2.5rem] text-brown-color">Get Our Details</div>{" "}
           <div className="font-[400] text-[0.9rem]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem
             architecto labore dolore deserunt est, corrupti possimus sit
@@ -30,7 +30,7 @@ const ContactUs = () => {
                 src={`/socials/${icon}.png`}
                 width={20}
                 height={20}
-                alt="whatsapp-image"
+                alt={`${icon}-image`}
               />
             </div>
           ))}
@@ -42,12 +42,12 @@ const ContactUs = () => {
           <div className="flex gap-[1rem] max-lg:flex-col">
             <div className="flex gap-[1rem] font-[300]">
               {" "}
-              <Image
+              {/* <Image
                 src={`/assets/phone.png`}
                 width={20}
                 height={20}
                 alt="whatsapp-image"
-              />{" "}
+              />{" "} */}
               Phone
             </div>
             <div className="font-[300]">+234 995 149 76</div>
@@ -55,12 +55,12 @@ const ContactUs = () => {
           <div className="flex gap-[1rem] max-lg:flex-col">
             <div className="flex gap-[1rem] font-[300]">
               {" "}
-              <Image
+              {/* <Image
                 src={`/assets/email.png`}
                 width={30}
                 height={30}
                 alt="whatsapp-image"
-              />{" "}
+              />{" "} */}
               Email
             </div>
             <div className="font-[300]">sayfnetwork@email.com</div>
@@ -68,12 +68,12 @@ const ContactUs = () => {
           <div className="flex gap-[1rem] max-lg:flex-col">
             <div className="flex gap-[1rem] font-[300]">
               {" "}
-              <Image
+              {/* <Image
                 src={`/assets/address.png`}
                 width={30}
                 height={30}
                 alt="whatsapp-image"
-              />{" "}
+              />{" "} */}
               Address
             </div>
             <div className="font-[300]">Road 3, block 14 Michigan Cresent</div>

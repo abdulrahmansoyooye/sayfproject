@@ -106,7 +106,7 @@ const EachArticle = () => {
                 </div>
                 <img
                   src={imageUrl}
-                  className=" w-full h-[150px] object-cover rounded-md "
+                  className=" w-[50%] h-[150px] object-cover rounded-md "
                   alt="article-img"
                 />
               </div>
