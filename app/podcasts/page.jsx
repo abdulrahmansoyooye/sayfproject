@@ -74,10 +74,6 @@ const Podcasts = () => {
       />
 
       <div className="flex flex-col gap-[2rem] p-[1rem] ">
-        {/* {error && <p>{error}</p>} */}
-
-        {/* Categories */}
-
         <div className="flex gap-[1rem] justify-center flex-wrap  items-center">
           <div
             className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
@@ -120,10 +116,10 @@ const Podcasts = () => {
             <input
               value={searchText}
               className="search_input container "
-              placeholder="Search For Podcasts"
+              placeholder="Search Podcasts"
               onChange={handleSearchPodcast}
             />
-            <div className="max-lg:absolute right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+            <div className="max-lg:absolute hidden max-lg:flex right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
               {" "}
               <Image
                 src={"/assets/search.png"}

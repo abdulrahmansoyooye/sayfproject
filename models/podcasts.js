@@ -1,7 +1,7 @@
 import { mongoose, models } from "mongoose";
 import { Schema } from "mongoose";
 
-const PodcstSchema = new Schema(
+const PodcastSchema = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
@@ -16,4 +16,4 @@ const PodcstSchema = new Schema(
 );
 
 export const Podcasts =
-  models.Podcasts || mongoose.model("Podcasts", PodcstSchema);
+  models.Podcasts || mongoose.model("Podcasts", PodcastSchema);

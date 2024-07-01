@@ -5,14 +5,31 @@ import Welcome from "@/components/Welcome";
 import { useEffect, useState } from "react";
 import Loading from "../loading";
 import { getCategory, getsayfArticle } from "@/utils/actions/articleActions";
+import Image from "next/image";
 
 const Articles = () => {
   const [categories, setCategories] = useState([]);
   const [articles, setArticles] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("All");
   const [error, setError] = useState("");
-  const [categoryId, setcategoryId] = useState("");
   const [isCategoryToggle, setIsCategoryToggle] = useState(false);
+  // Search
+  const [searchText, setSearchText] = useState("");
+  const [searchedArticles, setsearchedArticles] = useState([]);
+  const handleSearchArticle = (e) => {
+    setSearchText(e.target.value);
+
+    const inputValue = e.target.value.toLowerCase();
+
+    const filteredArticles = articles.filter(
+      ({ title, tag }) =>
+        title.toLowerCase().includes(inputValue) ||
+        (tag && tag.toLowerCase().includes(inputValue))
+    );
+    console.log(articles);
+    setsearchedArticles(filteredArticles);
+  };
+
   useEffect(() => {
     async function fetchArticles() {
       try {
@@ -39,7 +56,6 @@ const Articles = () => {
     setArticles([]);
     try {
       const res = await getsayfArticle(name);
-
       setArticles(res);
     } catch (error) {
       setError("Something went wrong. Try Again");
@@ -47,7 +63,10 @@ const Articles = () => {
   };
   return (
     <div className="flex flex-col rubik">
-      <Welcome title="Read an Article" text="Articles on productivity, time-management, personal growth relationships, spirituality & mental health" />
+      <Welcome
+        title="Read an Article"
+        text="Articles on productivity, time-management, personal growth relationships, spirituality & mental health"
+      />
       {error && <Error />}
 
       <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
@@ -85,13 +104,37 @@ const Articles = () => {
               </div>
             ))}
         </div>
+        <div className="flex flex-col gap-[1rem]">
+          <div className="relative flex  justify-center gap-[1rem] items-center">
+            <input
+              value={searchText}
+              className="search_input container "
+              placeholder="Search Articles"
+              onChange={handleSearchArticle}
+            />
+            <div className="max-lg:absolute hidden max-lg:flex right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+              {" "}
+              <Image
+                src={"/assets/search.png"}
+                width={20}
+                height={20}
+                alt="search"
+              />
+            </div>
+          </div>
+        </div>
 
         <div className="flex gap-[2rem] justify-center flex-wrap  w-full">
-          {articles.length === 0 && <Loading />}
-          {currentCategory === "All" ? (
-            <AllCategories articles={articles} />
+          {searchText ? (
+            searchedArticles.length > 0 ? (
+              <ArticlesData articles={searchedArticles} />
+            ) : (
+              <div className="text-center">Not Found</div>
+            )
+          ) : articles.length > 0 ? (
+            <ArticlesData articles={articles} />
           ) : (
-            <OtherCategories articles={articles} />
+            <Loading />
           )}
         </div>
       </div>
@@ -101,24 +144,7 @@ const Articles = () => {
 
 export default Articles;
 
-const OtherCategories = ({ articles }) => {
-  return articles.map(
-    ({ _id, title, content, imageUrl, createdAt, tag }, index) => (
-      <ArticlesCard
-        title={title}
-        createdAt={createdAt}
-        imageUrl={imageUrl}
-        content={content}
-        key={_id}
-        tag={tag}
-        index={index}
-        _id={_id}
-      />
-    )
-  );
-};
-
-const AllCategories = ({ articles }) => {
+const ArticlesData = ({ articles }) => {
   return articles.map(
     ({ _id, title, content, imageUrl, createdAt, tag }, index) => (
       <ArticlesCard

@@ -19,7 +19,7 @@ const Footer = () => {
       >
         <div className="flex-center flex-col">
           <h2 className="text-[2rem] max-lg:text-[1.5rem] dark-text text-center">
-            Join <span className="text-gradient-brown ">20k+ Muslims</span> in
+            Join <span className="text-gradient-brown font-[500]">20k+ Muslims</span> in
             our community to never miss out our daily snippets
           </h2>
         </div>

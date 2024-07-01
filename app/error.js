@@ -17,12 +17,6 @@ const Error = () => {
         <div className="text-[1rem] font-[300] flex gap-[0.5rem] justify-center">
           {" "}
           <div>Try Again</div>
-          <Image
-            src={"/assets/reload.png"}
-            width={25}
-            height={20}
-            alt="error"
-          />
         </div>
       </div>
     </div>

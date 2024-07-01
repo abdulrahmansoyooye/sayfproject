@@ -55,7 +55,7 @@ export const getRelatedsayfArticle = async (articlecategory, articleId) => {
       ({ _id, category }) => category === articlecategory && _id != articleId
     );
     console.log(articlecategory);
-    const response = JSON.parse(JSON.stringify(relatedsayfArticle));
+    const response = JSON.parse(JSON.stringify(relatedsayfArticle.slice(0, 4)));
     return response;
   } catch (error) {
     console.log(error);
