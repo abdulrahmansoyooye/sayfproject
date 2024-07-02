@@ -1,29 +1,61 @@
+"use client";
+
 import Welcome from "@/components/Welcome";
-import React from "react";
+import { getNewsletter } from "@/utils/actions/newsletterActions";
+import moment from "moment";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 const NewsLetter = () => {
+  const [newsletter, setNewsletter] = useState([]);
+  useEffect(() => {
+    async function fetchNewsletter() {
+      try {
+        const res = await getNewsletter();
+        console.log(res);
+        setNewsletter(res.reverse());
+      } catch (error) {
+        setError("Something went wrong. Try AgainCourses");
+      }
+    }
+    fetchNewsletter();
+  }, []);
+  const format = (type, createdAt) => {
+    if (type == "date") {
+      return moment(createdAt).format("MMMM");
+    } else {
+      return moment(createdAt).format("d");
+    }
+  };
   return (
     <div>
       <Welcome title={"News Letter"} />
-      <div className="flex flex-col p-[12rem_0rem] gap-[5rem] items-center">
-        <div className=" text-center flex items-center gap-[0.5rem] flex-col">
-          <h1 className="text-[1.8rem] text-center ">
-            Subsribe to our <span className="text-gradient-brown"> News </span>{" "}
-            Letter
-          </h1>
+      <div className="flex flex-col  gap-[6rem] p-[4rem_2rem] justify-around">
+        <div className="flex gap-[2rem] justify-between flex-wrap items-center">
+          {newsletter.map(({ _id, title, createdAt, link }) => (
+            <div
+              key={_id}
+              className="border-b w-[45%] justify-center p-[1rem] rounded-md max-md:w-full"
+            >
+              <div className="flex gap-[0.5rem] text-[0.9rem] text-slate-600">
+                <div>{format("date", createdAt)}</div>
+                <div>{format("day", createdAt)}</div>
+              </div>
 
-          <p className="text-[1rem] font-[400]">
-            This is the NewsLetter you'd be reading everytime{" "}
-          </p>
+              <div className="text-[1.5rem]">
+                <Link href={link}>{title}</Link>
+              </div>
+            </div>
+          ))}
         </div>
-        <div>
-          <a href="https://sayf.ck.page/newsletter" target="_blank">
-            <button className="black_btn flex flex-col scale-[1.2] hover:scale-[1.5]">
-              <span> See All News letters</span>
-              <div></div>
-            </button>
-          </a>
-        </div>
+
+        <iframe
+          src="https://sayfnetwork.substack.com/embed"
+          frameborder="1"
+          
+          className="border m-auto w-[60%] max-md:w-full h-[320px] rounded-md"
+        ></iframe>
       </div>
     </div>
   );
