@@ -112,7 +112,7 @@ export const CourseCard = ({
 
   const format = (type, createdAt) => {
     if (type == "date") {
-      return moment(createdAt).format("hh:mm A");
+      return moment(createdAt).format("MMMM d");
     } else {
       return moment(createdAt).format("dddd");
     }
@@ -125,10 +125,7 @@ export const CourseCard = ({
       <div className="flex-between flex-wrap gap-[1rem]">
         <div className="flex flex-col gap-[0.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
-          <p className="text-[13px] font-[400]">
-            {" "}
-            {description.slice(0, 80)}
-          </p>
+          <p className="text-[13px] font-[400]"> {description.slice(0, 80)}</p>
         </div>
 
         <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">

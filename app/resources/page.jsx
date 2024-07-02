@@ -35,7 +35,7 @@ const Resources = () => {
         {/* Search */}
 
         {/* Podcast Item */}
-        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full">
+        <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full p-[1.3rem]">
           {allResources.length > 0 ? (
             <ResourcesCardList data={allResources} />
           ) : (
@@ -59,18 +59,19 @@ export const ResourcesCardList = ({ data }) => {
   ));
 };
 export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
-  const router = useRouter();
+
 
   const format = (type, createdAt) => {
     if (type == "date") {
-      return moment(createdAt).format("hh:mm A");
+      return moment(createdAt).format("MMMM d");
+
     } else {
       return moment(createdAt).format("dddd");
     }
   };
 
   return (
-    <div className="container  flex-col gap-[4rem] cursor-pointer">
+    <div className="container  flex-col gap-[4rem] cursor-pointer ">
       <div className="flex-between flex-wrap gap-[0.75rem]">
         <div className="flex flex-col gap-[.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>

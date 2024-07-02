@@ -19,7 +19,7 @@ const EachArticle = () => {
     articleData;
   const format = (type, createdAt) => {
     if (type == "date") {
-      return moment(createdAt).format("hh:mm A");
+      return moment(createdAt).format("MMMM d");
     } else {
       return moment(createdAt).format("dddd");
     }
