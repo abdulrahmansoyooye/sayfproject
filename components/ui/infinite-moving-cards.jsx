@@ -1,107 +1,79 @@
-"use client";
+import React, { useEffect, useRef } from "react";
 
-import { cn } from "@/utils/cn";
-import React, { useEffect, useState } from "react";
-
-export const InfiniteMovingCards = ({
-  items,
-  direction = "left",
-  speed = "fast",
-  pauseOnHover = true,
-  className,
-}) => {
-  const containerRef = React.useRef();
-  const scrollerRef = React.useRef();
+const InfiniteMovingCards = ({ cardIndex }) => {
+  const cardRef = useRef(null);
 
   useEffect(() => {
-    addAnimation();
-  }, []);
-  const [start, setStart] = useState(false);
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
+    const cardWidth = cardRef.current ? cardRef.current.offsetWidth : 0;
+    const containerWidth = cardRef.current.parentElement.offsetWidth;
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
+    cardRef.current.style.transform = `translateX(-${cardIndex * cardWidth}px)`;
 
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
-    }
-  };
+    // if (cardRef.current) {
+    //   const totalWidth = cardRef.current.scrollWidth;
+    //   if (totalWidth < containerWidth) {
+    //     cardRef.current.style.transform = `translateX(0px)`;
+    //   }
+    // }
+  }, [cardIndex]);
+
   return (
     <div
-      ref={containerRef}
-      className={cn(
-        "scroller relative z-20 max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_80%,transparent)]",
-        className
-      )}
+      className="flex transition-all ease-out duration-500  gap-[1rem] "
+      ref={cardRef}
     >
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap ",
-          start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}
-      >
-        {items.map((item, idx) => (
-          <li
-            className="w-[350px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[450px] bg-primary-color"
-            key={item.name}
-          >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className=" relative z-20 text-sm leading-[1.6] text-black font-normal">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className=" text-sm leading-[1.6] text-black font-normal">
-                    {item.name}
-                  </span>
-                  <span className=" text-sm leading-[1.6] text-black font-normal">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
-            </blockquote>
-          </li>
-        ))}
-      </ul>
+      {/* Your card elements go here */}
+      <div className="min-w-[100%] m-auto ">
+        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-md">
+          <div className="font-[500] text-[1.2rem]">Name</div>
+          <div className="text-[0.9rem]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            beatae quibusdam inventore quis nulla cupiditate magni? Nam unde et
+            ullam animi qui ipsum. Itaque ipsam excepturi labore doloribus cum
+            cumque!
+          </div>
+          <div className="flex flex-between text-[.8rem] dark-text">
+            <div>name</div>
+            <div>occupation</div>
+            <div>Flag</div>
+          </div>
+        </div>
+      </div>
+      <div className="min-w-[100%] m-auto ">
+        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-md">
+          <div className="font-[500] text-[1.2rem]">Name</div>
+          <div className="text-[0.9rem]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            beatae quibusdam inventore quis nulla cupiditate magni? Nam unde et
+            ullam animi qui ipsum. Itaque ipsam excepturi labore doloribus cum
+            cumque!
+          </div>
+          <div className="flex flex-between text-[.8rem] dark-text">
+            <div>name</div>
+            <div>occupation</div>
+            <div>Flag</div>
+          </div>
+        </div>
+      </div>{" "}
+      <div className="min-w-[100%] m-auto rubik">
+        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-md">
+          <div className="font-[500] text-[1.2rem] ">Lorem ipsum dolor sit</div>
+          <div className="text-[0.9rem]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+            beatae quibusdam inventore quis nulla cupiditate magni? Nam unde et
+            ullam animi qui ipsum. Itaque ipsam excepturi labore doloribus cum
+            cumque!
+          </div>
+          <div className="flex flex-between text-[.8rem] dark-text">
+            <div>name</div>
+            <div>occupation</div>
+            <div>Flag</div>
+          </div>
+        </div>
+      </div>
+      {/* Add more cards as needed */}
     </div>
   );
 };
+
+export default InfiniteMovingCards;

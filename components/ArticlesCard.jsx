@@ -11,6 +11,7 @@ const ArticlesCard = ({
   index,
   imageUrl,
   tag,
+  category,
 }) => {
   const router = useRouter();
   const format = (type, createdAt) => {
@@ -34,7 +35,7 @@ const ArticlesCard = ({
         <div className="flex flex-wrap gap-[0.75rem]">
           <h2 className="text-[1.5rem] ">{title}</h2>
           <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
-            {tag ? tag : "#tag"}
+            {category ? category : "#tag"}
           </div>
         </div>
         <div className="flex flex-col ">

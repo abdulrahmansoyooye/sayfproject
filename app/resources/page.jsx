@@ -47,7 +47,7 @@ const Resources = () => {
   );
 };
 export const ResourcesCardList = ({ data }) => {
-  return data.map(({ _id, title, tag, pdf, createdAt }, index) => (
+  return data.map(({ _id, title, tag, pdf, createdAt, }, index) => (
     <ResourcesCard
       key={_id}
       title={title}
@@ -59,12 +59,9 @@ export const ResourcesCardList = ({ data }) => {
   ));
 };
 export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
-
-
   const format = (type, createdAt) => {
     if (type == "date") {
       return moment(createdAt).format("MMMM d");
-
     } else {
       return moment(createdAt).format("dddd");
     }

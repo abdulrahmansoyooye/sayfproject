@@ -146,7 +146,7 @@ export default Articles;
 
 const ArticlesData = ({ articles }) => {
   return articles.map(
-    ({ _id, title, content, imageUrl, createdAt, tag }, index) => (
+    ({ _id, title, content, imageUrl, createdAt, tag,category }, index) => (
       <ArticlesCard
         _id={_id}
         tag={tag}
@@ -155,6 +155,7 @@ const ArticlesData = ({ articles }) => {
         content={content}
         key={_id}
         createdAt={createdAt}
+        category={category}
         index={index}
       />
     )

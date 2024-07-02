@@ -150,7 +150,10 @@ const Podcasts = () => {
 };
 export const PodcastCardList = ({ data }) => {
   return data.map(
-    ({ _id, title, createdAt, description, tag, audio, imageUrl }, index) => (
+    (
+      { _id, title, createdAt, description, tag, audio, imageUrl, category },
+      index
+    ) => (
       <PodcastCard
         key={_id}
         title={title}
@@ -159,6 +162,7 @@ export const PodcastCardList = ({ data }) => {
         tag={tag}
         audio={audio}
         imageUrl={imageUrl}
+        category={category}
         _id={_id}
       />
     )
@@ -172,6 +176,7 @@ export const PodcastCard = ({
   tag,
   audio,
   imageUrl,
+  category,
 }) => {
   const router = useRouter();
 
@@ -195,7 +200,7 @@ export const PodcastCard = ({
         </div>
 
         <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
-          #{tag}
+          #{category}
         </div>
       </div>
       <div className="flex flex-col ">

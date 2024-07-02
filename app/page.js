@@ -3,12 +3,8 @@ import Carousel from "@/components/Carousel";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Underline from "@/components/Underline";
-import { InfiniteMovingCardsDemo } from "@/components/InfiniteCarousel";
+import InfiniteCarousel from "@/components/InfiniteCarousel";
 export default function Home() {
-  const variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
-  };
   return (
     <main className="home">
       <Image
@@ -64,7 +60,7 @@ export default function Home() {
             What Others Are Saying{" "}
             <span className="text-gradient-blue">About Our Ideas</span>
           </div>
-          <InfiniteMovingCardsDemo />
+          <InfiniteCarousel />
         </div>
         {/* offer */}
         <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[auto] section bg-primary-color z-10">
@@ -208,7 +204,7 @@ export default function Home() {
       {/* Section 6 */}
 
       <div className="flex flex-col gap-[2rem] p-[4rem_3rem] w-full justify-center  ">
-        <div className="flex justify-center w-[80%] m-auto  items-center flex-col pb-[1rem] gap-[2rem]">
+        <div className="flex justify-center w-full  items-center flex-col pb-[1rem] gap-[2rem]">
           <div className="text-[2rem] text-center">
             Read a <span className="text-gradient-blue">popular</span> Article
           </div>

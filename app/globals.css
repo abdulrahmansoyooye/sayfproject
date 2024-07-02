@@ -101,7 +101,7 @@
   display: block;
   content: "";
   background-color: var(--brown-color);
-  width: 40px;
+  width: 80px;
   height: 5px;
   cursor: pointer;
   border-radius: 2px;
@@ -115,6 +115,7 @@
   cursor: pointer;
   border-radius: 2px;
 }
+
 .search_input {
   @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
 }
@@ -128,7 +129,7 @@
   @apply hover:bg-brown-color hover:text-white transition-all duration-500 border border-brown-color  p-[1rem] rounded-md w-full text-center font-[400];
 }
 .text-gradient-brown {
-  @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-t from-[#9c0f48] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;
