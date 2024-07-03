@@ -18,7 +18,7 @@ const carouselItem = [
   {
     title: "Defeat Your Biggest Obsatcles",
     content:
-      " Providing the strategies you need to excel in eve as aspect of our life.",
+      " Providing the strategies you need to excel in every as aspect of our life.",
     buttonText: "Learn more",
   },
   {
@@ -72,11 +72,11 @@ const Carousel = () => {
                 animate="visible"
                 variants={variants}
                 transition={{ duration: 0.5 }}
-                className="flex flex-col gap-[5rem] carousel-item justify-center  text-center"
+                className="flex flex-col gap-[5rem] carousel-item justify-center  text-center "
                 key={`${index}-${title}`}
               >
                 <div className="flex flex-col gap-[1rem] ">
-                  <div className="text-[3rem] max-lg:text-[2rem] ">
+                  <div className="text-[3rem] max-lg:text-[2rem] serif">
                     <div className="font-[500] dark-text">{applyGradient(title)}</div>
                   </div>
                   <motion.p className="font-[400] dark-text">
