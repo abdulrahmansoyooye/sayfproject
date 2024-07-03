@@ -95,7 +95,7 @@ const Articles = () => {
           } transition-all duration-500`}
         >
           <div
-            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-[1rem] text-center max-w-[150px] ${
+            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-[1rem] text-center  ${
               currentCategory == "All" && "border border-1 border-brown-color"
             }`}
             onClick={() => handleCategoryClick("All")}
@@ -105,7 +105,7 @@ const Articles = () => {
           {categories &&
             categories.map((item, index) => (
               <div
-                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-[1rem] text-center  min-w-[150px] ${
+                className={`cursor-pointer border hover:border-brown-color p-[0.5rem_1rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-[1rem] text-center   ${
                   item == currentCategory && "border-brown-color"
                 }`}
                 onClick={() => handleCategoryClick(item)}
