@@ -1,17 +1,30 @@
 "use client";
 import Welcome from "@/components/Welcome";
-import Image from "next/image";
-import { Link, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Loading from "../loading";
 import moment from "moment";
 import { getResources } from "@/utils/actions/resourcesActions";
+import Image from "next/image";
 
 const Resources = () => {
   const [allResources, setAllResources] = useState([]);
   const [error, setError] = useState("");
+  const [searchText, setSearchText] = useState("");
+  const [searchedResources, setSearchedResources] = useState([]);
+  const handleSearchResources = (e) => {
+    setSearchText(e.target.value);
 
+    const inputValue = e.target.value.toLowerCase();
+
+    const filteredPodcast = allResources.filter(
+      ({ title, description, tag }) =>
+        title.toLowerCase().includes(inputValue) ||
+        tag.toLowerCase().includes(inputValue)
+    );
+    setSearchedResources(filteredPodcast);
+  };
   useEffect(() => {
     async function fetchResources() {
       try {
@@ -32,10 +45,34 @@ const Resources = () => {
 
       <div className="flex flex-col gap-[2rem] p-[1rem] ">
         {/* Search */}
-
+        <div className="flex flex-col gap-[1rem]">
+          <div className="relative flex  justify-center gap-[1rem] items-center">
+            <input
+              value={searchText}
+              className="search_input container"
+              placeholder="Search Resources"
+              onChange={handleSearchResources}
+            />
+            <div className="max-lg:absolute hidden max-lg:flex right-3 top-3 cursor-pointer bg-slate-200 rounded-[50%] p-[0.5rem]">
+              {" "}
+              <Image
+                src={"/assets/search.png"}
+                width={20}
+                height={20}
+                alt="search"
+              />
+            </div>
+          </div>
+        </div>
         {/* Podcast Item */}
         <div className="flex gap-[2rem] flex-wrap max-lg:flex-col justify-center items-center w-full p-[1.3rem]">
-          {allResources.length > 0 ? (
+          {searchText ? (
+            searchedResources.length > 0 ? (
+              <ResourcesCardList data={searchedResources} />
+            ) : (
+              <div className="text-center">Not Found</div>
+            )
+          ) : allResources.length > 0 ? (
             <ResourcesCardList data={allResources} />
           ) : (
             <Loading />

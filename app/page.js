@@ -12,6 +12,7 @@ export default function Home() {
         width={900}
         height={400}
         className="absolute mt-[7rem]"
+        alt="bg-image"
       />
       {/* Carousel */}
       <div className="pt-[4rem]  bg-primary-color">
@@ -147,7 +148,12 @@ export default function Home() {
         className="flex flex-col gap-[3rem] p-[4rem_2rem] w-full justify-center bg-[#ffff]"
       >
         <div className="flex justify-center items-center max-lg:flex-col gap-[1rem]">
-          <Image src={"/assets/newsletter.png"} width={50} height={50} />
+          <Image
+            src={"/assets/newsletter.png"}
+            width={50}
+            height={50}
+            alt="newsletter-img"
+          />
           <div className="text-[2rem]  text-center">
             Sayf Weekly <span className="text-gradient-blue"> Newsletter</span>
           </div>{" "}
@@ -190,6 +196,7 @@ export default function Home() {
               width={300}
               height={200}
               className="rounded-[1rem] w-full object-cover"
+              alt="podcast-img"
             />
             <div className="font-[400] dark-text text-center">
               Our weekly podcast where we share little-known tips on getting
@@ -240,6 +247,7 @@ export default function Home() {
               width={400}
               height={200}
               className="rounded-[1rem] max-lg:w-full"
+              alt="newsletter-img"
             />
           </div>
         </motion.div>
@@ -264,10 +272,11 @@ export default function Home() {
           <div>
             {" "}
             <Image
-              src={"/assets/article1.jpg"}
+              src={"/assets/article2.jpg"}
               width={400}
               height={200}
               className="rounded-[1rem] max-lg:w-full"
+              alt="article-img"
             />
           </div>
         </motion.div>
@@ -292,10 +301,11 @@ export default function Home() {
           <div>
             {" "}
             <Image
-              src={"/assets/article1.jpg"}
+              src={"/assets/article3.jpg"}
               width={400}
               height={200}
               className="rounded-[1rem] max-lg:w-full"
+              alt="article-img"
             />
           </div>
         </motion.div>
