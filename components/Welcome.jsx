@@ -5,7 +5,7 @@ const Welcome = ({ title, text }) => {
         <h1 className="text-[3rem]  text-gradient-blue font-[400] text-gradient">
           {title}
         </h1>
-        <p className="font-[300] text-[0.95rem] text-[#AE8C56] rubik">{text}</p>
+        <p className="font-[300] text-[0.95rem]  rubik">{text}</p>
       </div>
     </div>
   );
