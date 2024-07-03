@@ -36,7 +36,7 @@ const ContactUs = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-md justify-evenly">
+      <div className="flex flex-col gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-[1rem]rem] justify-evenly">
         <div className="font-[400]">Contact Details</div>
         <div className="flex flex-col  w-full gap-[2rem]">
           <div className="flex gap-[1rem] max-lg:flex-col">

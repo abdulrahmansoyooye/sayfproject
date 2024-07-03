@@ -25,7 +25,7 @@
   --brown-color: #d67d3ee5;
   --light-color: #f9e4d4;
 
-  --secandary-color: #9c0f48;
+  --secandary-color: #ae8c56;
   --dark-color: #470d21;
 
   --text-color: #111111;
@@ -48,8 +48,7 @@
   width: 100%;
 }
 .serif {
-  font-family: var(--font-bree_serif);
-  font-weight: 600;
+  font-family: var(--font-serif);
 }
 .rubik {
   font-family: var(--font-rubik);
@@ -101,7 +100,7 @@
   display: block;
   content: "";
   background-color: var(--brown-color);
-  width: 80px;
+  width: 50px;
   height: 5px;
   cursor: pointer;
   border-radius: 2px;
@@ -117,19 +116,19 @@
 }
 
 .search_input {
-  @apply w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
+  @apply w-full rounded-[1rem] border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
 }
 .text-gradient-blue {
   @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .black_btn {
-  @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#9C0F48]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
+  @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#AE8C56]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
 }
 .cta_btn {
-  @apply hover:bg-brown-color hover:text-white transition-all duration-500 border border-brown-color  p-[1rem] rounded-md w-full text-center font-[400];
+  @apply hover:bg-brown-color hover:text-white transition-all duration-500 border border-brown-color  p-[1rem] rounded-[1rem] w-full text-center font-[400];
 }
 .text-gradient-brown {
-  @apply bg-gradient-to-t from-[#9c0f48] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-t from-[#AE8C56] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .dark-text {
   @apply text-slate-700;

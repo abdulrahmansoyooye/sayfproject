@@ -32,30 +32,29 @@ const NewsLetter = () => {
     <div>
       <Welcome title={"News Letter"} />
       <div className="flex flex-col  gap-[6rem] p-[4rem_2rem] justify-around">
+        <iframe
+          src="https://sayfnetwork.substack.com/embed"
+          frameborder="1"
+          className="border m-auto w-[60%] max-md:w-full h-[320px] rounded-[1rem]"
+        ></iframe>
         <div className="flex gap-[2rem] justify-between flex-wrap items-center">
           {newsletter.map(({ _id, title, createdAt, link }) => (
             <div
               key={_id}
-              className="border-b w-[45%] justify-center p-[1rem] rounded-md max-md:w-full"
+              className="border-b w-[45%] justify-center p-[1rem] rounded-[1rem]rem] max-md:w-full"
             >
-              <div className="flex gap-[0.5rem] text-[0.9rem] text-slate-600">
+              <div className="flex gap-[0.5rem] text-[0.8rem] text-slate-600">
                 <div>{format("date", createdAt)}</div>
                 <div>{format("day", createdAt)}</div>
               </div>
-
               <div className="text-[1.5rem]">
-                <Link href={link}>{title}</Link>
+                <Link href={link} className="text-black  text-[1.2rem] serif">
+                  {title.slice(0, 50)}...
+                </Link>
               </div>
             </div>
           ))}
         </div>
-
-        <iframe
-          src="https://sayfnetwork.substack.com/embed"
-          frameborder="1"
-          
-          className="border m-auto w-[60%] max-md:w-full h-[320px] rounded-md"
-        ></iframe>
       </div>
     </div>
   );

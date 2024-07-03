@@ -27,13 +27,13 @@ export default function Home() {
           className="flex flex-col gap-[2rem] p-[2rem] w-full justify-center bg-[#ffff] pb-[3rem]"
         >
           <div className="flex flex-col gap-[0.5rem] items-center ">
-            <div className="text-[2rem] text-center">Our Story</div>{" "}
+            <div className="text-[2rem] text-center ">Our Story</div>{" "}
             <div className="flex justify-center">
               <Underline />
             </div>
           </div>
 
-          <div className="space-y-[0.75rem] text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-md">
+          <div className="space-y-[0.75rem] text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-[1rem]">
             <p className="dark-text font-[400]">
               In a world overflowing with self-help books and advice from
               countless sources,many of us find ourselves seeking happiness,
@@ -63,7 +63,7 @@ export default function Home() {
           <InfiniteCarousel />
         </div>
         {/* offer */}
-        <div className="flex flex-col flex-center gap-[2rem] w-full sm:max-w-[70%] m-[auto] section bg-primary-color z-10">
+        <div className="flex flex-col flex-center gap-[2rem] w-full max-lg:p-[2rem] p-[4rem_6rem] m-[auto] border bg-primary-color z-10">
           <div className="text-[1.8rem] ">We Offer</div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -72,7 +72,7 @@ export default function Home() {
             className="flex max-lg:flex-col gap-[2rem]"
           >
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300">
-              <span className="text-gradient-blue">
+              <span className="text-gradient-blue font-[500]">
                 Authentic Islamic Guidance
               </span>
 
@@ -88,7 +88,9 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-[1rem] border border-slate-300"
             >
-              <span className="text-gradient-blue">Practical Solutions</span>
+              <span className="text-gradient-blue font-[500]">
+                Practical Solutions
+              </span>
               <p className="font-[400]  dark-text">
                 Discover actionable strategies that are easy to implement and
                 resonate with your faith, leading to lasting positive change.
@@ -107,7 +109,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 1 }}
-          className="flex max-lg:flex-col-reverse gap-[2rem] border-2 p-[1rem] rounded-md"
+          className="flex max-lg:flex-col-reverse gap-[2rem] border-2 p-[1rem] rounded-[1rem]rem]rem]"
         >
           <div className="flex flex-col justify-around max-lg:w-full w-[60%] gap-[2rem]">
             <div className="font-[400] dark-text">
@@ -129,7 +131,7 @@ export default function Home() {
               src={"/assets/article1.jpg"}
               width={700}
               height={900}
-              className="rounded-md max-lg:w-full"
+              className="rounded-[1rem]rem]rem] max-lg:w-full"
             />
           </div>
         </motion.div>{" "}
@@ -151,7 +153,7 @@ export default function Home() {
           </div>{" "}
         </div>
 
-        <div className="flex flex-col gap-[2rem] w-[70%] m-auto max-lg:w-full">
+        <div className="flex flex-col gap-[2rem] w-[60%] m-auto max-lg:w-full border-2 p-[2rem] rounded-[1rem]">
           <div className="space-y-[0.75rem]">
             <p className="dark-text font-[400] text-center">
               Every week, we will send you weapons o fight your deadliest

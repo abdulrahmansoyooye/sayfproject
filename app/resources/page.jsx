@@ -10,7 +10,6 @@ import { getResources } from "@/utils/actions/resourcesActions";
 
 const Resources = () => {
   const [allResources, setAllResources] = useState([]);
-
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -47,7 +46,7 @@ const Resources = () => {
   );
 };
 export const ResourcesCardList = ({ data }) => {
-  return data.map(({ _id, title, tag, pdf, createdAt, }, index) => (
+  return data.map(({ _id, title, tag, pdf, createdAt }, index) => (
     <ResourcesCard
       key={_id}
       title={title}
@@ -59,6 +58,7 @@ export const ResourcesCardList = ({ data }) => {
   ));
 };
 export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
+  const router = useRouter();
   const format = (type, createdAt) => {
     if (type == "date") {
       return moment(createdAt).format("MMMM d");
@@ -74,30 +74,22 @@ export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
           <h2 className="text-[1.5rem]">{title}</h2>
         </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem] font-[300]">
           #{tag}
         </div>
       </div>
       <div className="flex flex-col ">
         <img
           src={"/assets/pdf.png"}
-          className="w-full h-[250px] object-cover rounded-md "
+          className="w-full h-[250px] object-cover rounded-[1rem] "
           alt="article-img"
         />
       </div>
-      <div className="flex justify-center">
-        <a
-          href={pdf}
-          className="bg-[#f1f3f4] rounded-[50%] p-4 hover:bg-slate-200 transition-colors duration-300 ease-in-out "
-          download
-        >
-          <Image
-            width={20}
-            height={20}
-            src={"/assets/download.png"}
-            alt="download"
-          />
-        </a>
+      <div
+        className="black_btn"
+        onClick={() => router.push(`/resources/${_id}`)}
+      >
+        Download PDF
       </div>
       <div className="flex-between text-[11px] text-slate-500">
         <div>{format("time", createdAt)}</div>

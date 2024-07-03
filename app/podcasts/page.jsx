@@ -9,14 +9,22 @@ import {
 } from "@/utils/actions/podcatsActions";
 import Loading from "../loading";
 import moment from "moment";
-
+import Paginate from "@/components/Paginate";
+const PODCAST_PER_PAGE = 2;
 const Podcasts = () => {
   const [allpodcasts, setAllPodcasts] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("All");
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState("");
   const [isCategoryToggle, setIsCategoryToggle] = useState(false);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const indexofLastArticle = currentPage * PODCAST_PER_PAGE;
+  const indexofFirstArticle = indexofLastArticle - PODCAST_PER_PAGE;
+  const currentPodcast = allpodcasts.slice(
+    indexofFirstArticle,
+    indexofLastArticle
+  );
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   // Search
   const [searchText, setSearchText] = useState("");
   const [searchedPodcast, setSearchedPodcasts] = useState([]);
@@ -38,7 +46,6 @@ const Podcasts = () => {
     async function fetchpodcasts() {
       try {
         const res = await getPodcasts("All");
-
         setAllPodcasts(res);
       } catch (error) {
         setError("Something went wrong. Try Again");
@@ -58,6 +65,8 @@ const Podcasts = () => {
   const handleCategoryClick = async (category) => {
     setCurrentCategory(category);
     setAllPodcasts([]);
+    setCurrentPage(1);
+
     try {
       const res = await getPodcasts(category);
 
@@ -76,7 +85,7 @@ const Podcasts = () => {
       <div className="flex flex-col gap-[2rem] p-[1rem] ">
         <div className="flex gap-[1rem] justify-center flex-wrap  items-center">
           <div
-            className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
+            className=" font-[400] border border-brown-color p-[1rem] rounded-[1rem] w-[45%] max-lg:w-full m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
             onClick={() => setIsCategoryToggle(!isCategoryToggle)}
           >
             {!isCategoryToggle ? "Show Categories" : "Hide Categories"}
@@ -89,7 +98,7 @@ const Podcasts = () => {
             } transition-all duration-500`}
           >
             <div
-              className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-md  text-center max-w-[150px] ${
+              className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-[1rem]  text-center max-w-[150px] ${
                 currentCategory == "All" && "border border-1 border-brown-color"
               }`}
               onClick={() => handleCategoryClick("All")}
@@ -99,7 +108,7 @@ const Podcasts = () => {
             {categories &&
               categories.map((item, index) => (
                 <div
-                  className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-md  text-center  min-w-[150px] ${
+                  className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-[1rem]  text-center  min-w-[150px] ${
                     item == currentCategory && "border-brown-color"
                   }`}
                   onClick={() => handleCategoryClick(item)}
@@ -138,12 +147,18 @@ const Podcasts = () => {
             ) : (
               <div className="text-center">Not Found</div>
             )
-          ) : allpodcasts.length > 0 ? (
-            <PodcastCardList data={allpodcasts} />
+          ) : currentPodcast.length > 0 ? (
+            <PodcastCardList data={currentPodcast} />
           ) : (
             <Loading />
           )}
         </div>
+        <Paginate
+          totalArticles={allpodcasts.length}
+          paginate={paginate}
+          articlesPerPage={PODCAST_PER_PAGE}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );
@@ -173,7 +188,6 @@ export const PodcastCard = ({
   title,
   createdAt,
   description,
-  tag,
   audio,
   imageUrl,
   category,
@@ -199,14 +213,14 @@ export const PodcastCard = ({
           <p className="text-[13px] font-[400]">{description.slice(0, 80)}</p>
         </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-md font-[300]">
-          #{category}
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem] font-[300]">
+          {category}
         </div>
       </div>
       <div className="flex flex-col ">
         <img
           src={imageUrl}
-          className="w-full h-[250px] object-cover rounded-md "
+          className="w-full h-[250px] object-cover rounded-[1rem] "
           alt="article-img"
         />
       </div>

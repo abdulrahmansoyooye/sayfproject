@@ -6,13 +6,23 @@ import { useEffect, useState } from "react";
 import Loading from "../loading";
 import { getCategory, getsayfArticle } from "@/utils/actions/articleActions";
 import Image from "next/image";
-
+import Paginate from "@/components/Paginate";
+const ARTICLES_PER_PAGE = 2;
 const Articles = () => {
   const [categories, setCategories] = useState([]);
   const [articles, setArticles] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("All");
   const [error, setError] = useState("");
   const [isCategoryToggle, setIsCategoryToggle] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const indexofLastArticle = currentPage * ARTICLES_PER_PAGE;
+  const indexofFirstArticle = indexofLastArticle - ARTICLES_PER_PAGE;
+  const currentArticle = articles.slice(
+    indexofFirstArticle,
+    indexofLastArticle
+  );
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  console.log(currentArticle);
   // Search
   const [searchText, setSearchText] = useState("");
   const [searchedArticles, setsearchedArticles] = useState([]);
@@ -21,7 +31,7 @@ const Articles = () => {
 
     const inputValue = e.target.value.toLowerCase();
 
-    const filteredArticles = articles.filter(
+    const filteredArticles = currentArticle.filter(
       ({ title, tag }) =>
         title.toLowerCase().includes(inputValue) ||
         (tag && tag.toLowerCase().includes(inputValue))
@@ -54,6 +64,7 @@ const Articles = () => {
   const handleCategoryClick = async (name, _id) => {
     setCurrentCategory(name);
     setArticles([]);
+    setCurrentPage(1);
     try {
       const res = await getsayfArticle(name);
       setArticles(res);
@@ -71,7 +82,7 @@ const Articles = () => {
 
       <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
         <div
-          className=" font-[400] border border-brown-color p-[1rem] rounded-md w-[80%]  m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
+          className=" font-[400] border border-brown-color p-[1rem] rounded-[1rem] w-[45%]  max-lg:w-full m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
           onClick={() => setIsCategoryToggle(!isCategoryToggle)}
         >
           {!isCategoryToggle ? "Show Categories" : "Hide Categories"}
@@ -84,7 +95,7 @@ const Articles = () => {
           } transition-all duration-500`}
         >
           <div
-            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-md  text-center max-w-[150px] ${
+            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-[1rem] text-center max-w-[150px] ${
               currentCategory == "All" && "border border-1 border-brown-color"
             }`}
             onClick={() => handleCategoryClick("All")}
@@ -94,7 +105,7 @@ const Articles = () => {
           {categories &&
             categories.map((item, index) => (
               <div
-                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-md  text-center  min-w-[150px] ${
+                className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-[1rem] text-center  min-w-[150px] ${
                   item == currentCategory && "border-brown-color"
                 }`}
                 onClick={() => handleCategoryClick(item)}
@@ -123,7 +134,6 @@ const Articles = () => {
             </div>
           </div>
         </div>
-
         <div className="flex gap-[2rem] justify-center flex-wrap  w-full">
           {searchText ? (
             searchedArticles.length > 0 ? (
@@ -131,12 +141,18 @@ const Articles = () => {
             ) : (
               <div className="text-center">Not Found</div>
             )
-          ) : articles.length > 0 ? (
-            <ArticlesData articles={articles} />
+          ) : currentArticle.length > 0 ? (
+            <ArticlesData articles={currentArticle} />
           ) : (
             <Loading />
           )}
         </div>
+        <Paginate
+          totalArticles={articles.length}
+          paginate={paginate}
+          articlesPerPage={ARTICLES_PER_PAGE}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );
@@ -146,7 +162,7 @@ export default Articles;
 
 const ArticlesData = ({ articles }) => {
   return articles.map(
-    ({ _id, title, content, imageUrl, createdAt, tag,category }, index) => (
+    ({ _id, title, content, imageUrl, createdAt, tag, category }, index) => (
       <ArticlesCard
         _id={_id}
         tag={tag}

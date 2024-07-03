@@ -1,21 +1,22 @@
-import { Poppins, Rubik } from "next/font/google";
+import { Bree_Serif, Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const bree_Serif = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "600", "500", "700"],
-
-  display: "swap",
-  variable: "--font-bree_serif",
-});
 export const rubik = Rubik({
   subsets: ["latin"],
   weight: ["400", "600", "500", "700"],
 
   display: "swap",
   variable: "--font-rubik",
+});
+
+export const bree_serif = Bree_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+
+  display: "swap",
+  variable: "--font-serif",
 });
 
 export const metadata = {
@@ -26,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="app">
-      <body className={`${rubik.variable} ${bree_Serif.variable}`}>
+      <body className={`${rubik.variable} ${bree_serif.variable}`}>
         <main className="app">
           <Nav />
           {children}
