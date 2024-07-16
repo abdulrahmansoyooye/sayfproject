@@ -116,16 +116,16 @@
 }
 
 .search_input {
-  @apply w-full rounded-[1rem] border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
+  @apply w-full rounded-lg border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
 }
-.text-gradient-blue {
-  @apply bg-gradient-to-r from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
+.text-gradient {
+  @apply bg-gradient-to-tr from-[#D67D3E] via-[#D67D3E] to-[#311a0ae8]  bg-clip-text text-transparent;
 }
 .black_btn {
   @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#AE8C56]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
 }
 .cta_btn {
-  @apply hover:bg-brown-color hover:text-white transition-all duration-500 border border-brown-color  p-[1rem] rounded-[1rem] w-full text-center font-[400];
+  @apply hover:bg-brown-color hover:text-white transition-all duration-500 border border-brown-color  p-[1rem] rounded-lg w-full text-center font-[400];
 }
 .text-gradient-brown {
   @apply bg-gradient-to-t from-[#AE8C56] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;

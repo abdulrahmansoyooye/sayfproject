@@ -15,7 +15,7 @@ const InfiniteMovingCards = ({ cardIndex }) => {
     >
       {/* Your card elements go here */}
       <div className="min-w-[100%] m-auto ">
-        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-[1rem]">
+        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-lg">
           <div className="font-[500] text-[1.2rem]">Name</div>
           <div className="text-[0.9rem]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
@@ -31,7 +31,7 @@ const InfiniteMovingCards = ({ cardIndex }) => {
         </div>
       </div>
       <div className="min-w-[100%] m-auto ">
-        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-[1rem]">
+        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-lg">
           <div className="font-[500] text-[1.2rem]">Name</div>
           <div className="text-[0.9rem]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
@@ -47,7 +47,7 @@ const InfiniteMovingCards = ({ cardIndex }) => {
         </div>
       </div>{" "}
       <div className="min-w-[100%] m-auto rubik">
-        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-[1rem]">
+        <div className="max-lg:w-full w-[70%] m-auto bg-primary-color p-[2rem] flex flex-col gap-[2rem] rounded-lg">
           <div className="font-[500] text-[1.2rem] ">Lorem ipsum dolor sit</div>
           <div className="text-[0.9rem]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis

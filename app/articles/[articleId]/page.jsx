@@ -49,14 +49,14 @@ const EachArticle = () => {
     fetchRelatedArticles();
   }, [category]);
   return (
-    <div className="flex max-lg:flex-col gap-[2rem] mt-[5rem] p-[4rem_2rem] max-lg:p-[4rem_1rem] serif border bg-[#f6f6f6] items-start rubik">
+    <div className="flex max-lg:flex-col gap-[2rem] mt-[3rem] p-[4rem_2rem] max-lg:p-[4rem_1rem] serif border bg-[#f6f6f6] items-start rubik">
       <div className="flex flex-col gap-[2rem] w-[70%] max-lg:w-full">
         {error && (
           <p className="text-[2rem] text-center text-red-500">{error}</p>
         )}
 
-        <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-[1rem] ">
-          <div className="text-[0.9rem] bg-brown-color text-white rounded-[1rem] w-[30%] max-lg:w-full m-auto font-[300] text-center">
+        <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-lg">
+          <div className="text-[0.9rem] bg-brown-color text-white rounded-lg w-full m-auto font-[300] text-center">
             {category}
           </div>
 
@@ -66,11 +66,13 @@ const EachArticle = () => {
           <div className="text-[0.9rem] w-full m-auto font-[300] text-center">
             {tag && tag}
           </div>
-          <img
-            src={imageUrl}
-            className="max-lg:w-full w-full h-[450px] object-cover max-lg:object-scale-down rounded-[1rem] "
-            alt="article-img"
-          />
+          {imageUrl && (
+            <img
+              src={imageUrl}
+              className=" w-full h-[200px] border object-contain  rounded-lg"
+              alt="article-img"
+            />
+          )}
           <div className="flex-between text-[11px] text-slate-500">
             <div>{format("time", createdAt)}</div>
             <div>{format("date", createdAt)}</div>
@@ -89,7 +91,7 @@ const EachArticle = () => {
       </div>
       {/*  */}
       <div className=" flex flex-col max-lg:w-full w-[30%] gap-[1rem]">
-        <div className="text-[1.2rem] font-[500]  bg-white p-[1rem] rounded-[1rem] w-full">
+        <div className="text-[1.2rem] font-[500]  bg-white p-[1rem] rounded-lg w-full">
           More Articles
         </div>
 
@@ -97,7 +99,7 @@ const EachArticle = () => {
           <div className="flex flex-col gap-[1rem]">
             {relatedArticleData.map(({ _id, title, imageUrl }) => (
               <div
-                className="flex bg-white p-[1rem] rounded-[1rem] gap-[1rem] cursor-pointer"
+                className="flex bg-white p-[1rem] rounded-lg cursor-pointer"
                 key={_id}
                 onClick={() => router.push(`/articles/${_id}`)}
               >
@@ -106,14 +108,14 @@ const EachArticle = () => {
                 </div>
                 <img
                   src={imageUrl}
-                  className=" w-[50%] h-[150px] object-cover rounded-[1rem] "
+                  className=" w-[50%] h-[150px] object-cover rounded-lg"
                   alt="article-img"
                 />
               </div>
             ))}
           </div>
         ) : (
-          <div className="flex justify-center bg-white p-[1rem] rounded-[1rem] cursor-pointer">
+          <div className="flex justify-center bg-white p-[1rem] rounded-lg">
             No related Article
           </div>
         )}

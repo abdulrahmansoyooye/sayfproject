@@ -35,13 +35,13 @@ const NewsLetter = () => {
         <iframe
           src="https://sayfnetwork.substack.com/embed"
           frameborder="1"
-          className="border m-auto w-[60%] max-md:w-full h-[320px] rounded-[1rem]"
+          className="border m-auto w-[60%] max-md:w-full h-[320px] rounded-lg"
         ></iframe>
         <div className="flex gap-[2rem] justify-between flex-wrap items-center">
           {newsletter.map(({ _id, title, createdAt, link }) => (
             <div
               key={_id}
-              className="border-b w-[45%] justify-center p-[1rem] rounded-[1rem]rem] max-md:w-full"
+              className="border-b w-[45%] justify-center p-[1rem] rounded-lgll"
             >
               <div className="flex gap-[0.5rem] text-[0.8rem] text-slate-600">
                 <div>{format("date", createdAt)}</div>

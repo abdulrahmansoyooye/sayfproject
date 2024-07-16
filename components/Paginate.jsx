@@ -16,8 +16,10 @@ const Paginate = ({
         <div
           key={`page-${number}`}
           className={`cursor-pointer ${
-            currentPage === number ? "bg-brown-color" : "bg-black"
-          } p-[0.5rem_1rem] rounded-md text-white `}
+            currentPage === number
+              ? "bg-brown-color  text-white"
+              : "bg-slate-300 text-slate-700"
+          } p-[0.5rem_1rem] rounded-md `}
           onClick={() => paginate(number)}
         >
           <div>{number}</div>

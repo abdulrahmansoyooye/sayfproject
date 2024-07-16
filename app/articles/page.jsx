@@ -7,7 +7,7 @@ import Loading from "../loading";
 import { getCategory, getsayfArticle } from "@/utils/actions/articleActions";
 import Image from "next/image";
 import Paginate from "@/components/Paginate";
-const ARTICLES_PER_PAGE = 2;
+const ARTICLES_PER_PAGE = 10;
 const Articles = () => {
   const [categories, setCategories] = useState([]);
   const [articles, setArticles] = useState([]);
@@ -82,7 +82,7 @@ const Articles = () => {
 
       <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
         <div
-          className=" font-[400] border border-brown-color p-[1rem] rounded-[1rem] w-[45%]  max-lg:w-full m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
+          className=" font-[400] border border-brown-color p-[1rem] rounded-lg w-[45%]  max-lg:w-full m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
           onClick={() => setIsCategoryToggle(!isCategoryToggle)}
         >
           {!isCategoryToggle ? "Show Categories" : "Hide Categories"}
@@ -95,7 +95,7 @@ const Articles = () => {
           } transition-all duration-500`}
         >
           <div
-            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-[1rem] text-center  ${
+            className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-lg text-center  ${
               currentCategory == "All" && "border border-1 border-brown-color"
             }`}
             onClick={() => handleCategoryClick("All")}
@@ -105,7 +105,7 @@ const Articles = () => {
           {categories &&
             categories.map((item, index) => (
               <div
-                className={`cursor-pointer border hover:border-brown-color p-[0.5rem_1rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-[1rem] text-center   ${
+                className={`cursor-pointer border hover:border-brown-color p-[0.5rem_1rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-lg
                   item == currentCategory && "border-brown-color"
                 }`}
                 onClick={() => handleCategoryClick(item)}

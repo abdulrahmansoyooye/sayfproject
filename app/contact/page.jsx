@@ -5,7 +5,7 @@ const socials = ["whatsapp", "telegram", "facebook"];
 
 const ContactUs = () => {
   return (
-    <div className=" text-black mt-[7rem] p-[7rem] max-lg:p-[2rem] flex max-lg:flex-col  gap-[5rem]">
+    <div className=" text-black mt-[7rem] p-[7rem]  max-lg:p-[2rem_4rem]  flex max-lg:flex-col  gap-[5rem]">
       <div className="flex  flex-col gap-[3rem] w-[50%] max-lg:w-full">
         <div className="flex gap-[1rem] flex-col">
           <div className="text-[2.5rem] text-brown-color">Get Our Details</div>{" "}
@@ -36,7 +36,7 @@ const ContactUs = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-[1rem]rem] justify-evenly">
+      <div className="flex flex-col gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-lg">
         <div className="font-[400]">Contact Details</div>
         <div className="flex flex-col  w-full gap-[2rem]">
           <div className="flex gap-[1rem] max-lg:flex-col">

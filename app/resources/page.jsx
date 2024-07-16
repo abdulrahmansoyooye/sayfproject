@@ -105,29 +105,27 @@ export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
   };
 
   return (
-    <div className="container  flex-col gap-[4rem] cursor-pointer ">
+    <div
+      className="container  flex-col gap-[4rem] cursor-pointer "
+      onClick={() => router.push(`/resources/${_id}`)}
+    >
       <div className="flex-between flex-wrap gap-[0.75rem]">
         <div className="flex flex-col gap-[.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
         </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem] font-[300]">
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">
           #{tag}
         </div>
       </div>
       <div className="flex flex-col ">
         <img
           src={"/assets/pdf.png"}
-          className="w-full h-[250px] object-cover rounded-[1rem] "
+          className="w-full h-[250px] object-cover rounded-lg "
           alt="article-img"
         />
       </div>
-      <div
-        className="black_btn"
-        onClick={() => router.push(`/resources/${_id}`)}
-      >
-        Download PDF
-      </div>
+      <div className="black_btn">Download PDF</div>
       <div className="flex-between text-[11px] text-slate-500">
         <div>{format("time", createdAt)}</div>
         <div>{format("date", createdAt)}</div>

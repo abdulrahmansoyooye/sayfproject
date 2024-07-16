@@ -128,14 +128,14 @@ export const CourseCard = ({
           <p className="text-[13px] font-[400]"> {description.slice(0, 80)}</p>
         </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem] font-[300]">
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">
           #{tag}
         </div>
       </div>
       <div className="flex flex-col ">
         <img
           src={imageUrl}
-          className="w-full h-[250px] object-cover rounded-[1rem] "
+          className="w-full h-[250px] object-cover rounded-lg"
           alt="article-img"
         />
       </div>
