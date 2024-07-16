@@ -21,6 +21,7 @@ const navLinks = [
   {
     name: "newsletter",
   },
+ 
 ];
 const Nav = () => {
   const pathname = usePathname();

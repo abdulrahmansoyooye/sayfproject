@@ -49,7 +49,7 @@ const Carousel = () => {
         word.toLowerCase().includes("sayf")
       ) {
         return (
-          <span key={index} className={"text-gradient font-[500]"}>
+          <span key={index} className={"text-gradient font-[700]"}>
             {word}{" "}
           </span>
         );
@@ -75,9 +75,9 @@ const Carousel = () => {
                 className="flex flex-col gap-[5rem] carousel-item justify-center  text-center "
                 key={`${index}-${title}`}
               >
-                <div className="flex flex-col gap-[1rem] ">
+                <div className=" flex flex-col gap-[1rem] ">
                   <div className="text-[3rem] max-lg:text-[2rem] serif">
-                    <div className="font-[500] dark-text">
+                    <div className="dark-text">
                       {applyGradient(title)}
                     </div>
                   </div>

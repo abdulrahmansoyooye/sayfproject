@@ -1,4 +1,4 @@
-import { Bree_Serif, Poppins, Rubik } from "next/font/google";
+import { Bree_Serif, Inika, Poppins, Rubik } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -11,9 +11,9 @@ export const rubik = Rubik({
   variable: "--font-rubik",
 });
 
-export const bree_serif = Bree_Serif({
+export const bree_serif = Inika({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400","700"],
 
   display: "swap",
   variable: "--font-serif",

@@ -82,10 +82,10 @@ const Podcasts = () => {
         text="Some podcasts for you to read"
       />
 
-      <div className="flex flex-col gap-[2rem] sm:w-[80%] m-[2rem_auto] p-[2rem] ">
+      <div className="flex flex-col gap-[2rem] p-[3rem] ">
         <div className="flex gap-[1rem] justify-center flex-wrap  items-center">
           <div
-            className=" font-[400] border border-brown-color p-[1rem] rounded-lg w-[45%] max-lg:w-full m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
+            className=" font-[400] border border-brown-color p-[1rem] rounded-[1rem] w-[45%] max-lg:w-full m-auto text-center hover:bg-[#f6f6f6] cursor-pointer transition-all duration-500"
             onClick={() => setIsCategoryToggle(!isCategoryToggle)}
           >
             {!isCategoryToggle ? "Show Categories" : "Hide Categories"}
@@ -98,7 +98,7 @@ const Podcasts = () => {
             } transition-all duration-500`}
           >
             <div
-              className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-lg  text-center max-w-[150px] ${
+              className={`cursor-pointer border  hover:border-brown-color p-[0.5rem] transition-all duration-500   bg-alt-color rounded-[1rem]  text-center max-w-[150px] ${
                 currentCategory == "All" && "border border-1 border-brown-color"
               }`}
               onClick={() => handleCategoryClick("All")}
@@ -108,7 +108,7 @@ const Podcasts = () => {
             {categories &&
               categories.map((item, index) => (
                 <div
-                  className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-lg  text-center  min-w-[150px] ${
+                  className={`cursor-pointer border hover:border-brown-color p-[0.5rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-[1rem]  text-center  min-w-[150px] ${
                     item == currentCategory && "border-brown-color"
                   }`}
                   onClick={() => handleCategoryClick(item)}
@@ -213,18 +213,18 @@ export const PodcastCard = ({
           <p className="text-[13px] font-[400]">{description.slice(0, 80)}</p>
         </div>
 
-        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">
+        <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-[1rem] font-[300]">
           {category}
         </div>
       </div>
       <div className="flex flex-col ">
         <img
           src={imageUrl}
-          className="w-full h-[250px] object-cover rounded-lg "
+          className="w-full h-[250px] object-cover rounded-[1rem] "
           alt="article-img"
         />
       </div>
-      <div className="flex justify-between items-center gap-[1rem] rounded-lgsor-pointer">
+      <div className="flex justify-between items-center gap-[1rem] rounded-[1rem] cursor-pointer">
         <audio src={audio} controls>
           Your browser does not support the audio element.
         </audio>
