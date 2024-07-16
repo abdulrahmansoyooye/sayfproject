@@ -65,6 +65,13 @@ export default function Home() {
         </div>
         {/* offer */}
         <div className="flex flex-col flex-center gap-[2rem] w-full max-lg:p-[2rem] p-[4rem_6rem] m-[auto] border bg-primary-color z-10">
+          <Image
+            src={"/assets/svg-shape.svg"}
+            width={1000}
+            height={500}
+            className="absolute -z-30"
+            alt="bg-image"
+          />
           <div className="text-[1.8rem] ">We Offer</div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -73,7 +80,7 @@ export default function Home() {
             className="flex max-lg:flex-col gap-[2rem]"
           >
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300">
-              <span className="text-gradient font-[500]">
+              <span className="text-gradient font-[700]">
                 Authentic Islamic Guidance
               </span>
 

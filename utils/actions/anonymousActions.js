@@ -4,7 +4,6 @@ import { connectToDb } from "../db";
 
 export const createMessage = async (content) => {
   await connectToDb();
-
   try {
     await Anonymous.create({
       content,

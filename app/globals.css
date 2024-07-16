@@ -47,7 +47,8 @@
   color: var(--text-color);
   width: 100%;
 }
-.serif {
+.serif,
+span {
   font-family: var(--font-serif);
 }
 .rubik {
@@ -105,14 +106,23 @@
   cursor: pointer;
   border-radius: 2px;
 }
+.circle::after {
+  display: block;
+  content: "";
+  background-color: var(--brown-color);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
 .active-carousel {
   display: block;
   content: "";
-  background-color: var(--secandary-color);
+  background-color: var(--brown-color);
   width: 40px;
-  height: 5px;
+  height: 16px;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .search_input {

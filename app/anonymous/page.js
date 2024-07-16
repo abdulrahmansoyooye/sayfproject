@@ -23,7 +23,7 @@ const Anonymous = () => {
     }
   };
   return (
-    <div className="flex flex-col  gap-[5rem] [100vh] mt-[7rem] sm:mt-[10rem] p-[2rem] sm:w-[50%] m-auto">
+    <div className="flex flex-col  gap-[5rem] [100vh] mt-[7rem] sm:mt-[10rem] p-[2rem] sm:w-[60%] m-auto">
       <div className="flex flex-col gap-[2rem]">
         <div className="serif text-[1.5rem] w-full text-center text-gradient">
           Write an Anonymous Message
@@ -35,19 +35,32 @@ const Anonymous = () => {
           nesciunt. A, tempora? Beatae!
         </div>
       </div>
-      <div className="flex flex-col gap-[1rem] w-full" >
-        <div>
-          <ReactQuill
-            value={content}
-            onChange={setContent}
-            required
-            className="rounded-lg"
-          />
+      {!success ? (
+        <div className="flex flex-col gap-[1rem] w-full">
+          <div>
+            <input
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Write us a message..."
+              className="border p-[1rem_2rem] w-full rounded-lg focus:border-brown-color h-[100px]"
+            />
+          </div>
+          <button type="submit" className="black_btn" onClick={handleSubmit}>
+            Send message
+          </button>
         </div>
-        <button type="submit" className="black_btn">
-          Create Article
-        </button>
-      </div>
+      ) : (
+        <div className="text-center ">
+          Thanks for that message.
+          <span
+            className="underline cursor-pointer"
+            onClick={() => setsuccess(false)}
+          >
+            {" "}
+            Click here to send another message
+          </span>
+        </div>
+      )}
     </div>
   );
 };
