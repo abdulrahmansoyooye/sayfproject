@@ -63,7 +63,7 @@ const EachArticle = () => {
           <div className="text-[1.7rem] text-center ">
             {title && title.replace()}
           </div>
-          <div className="text-[0.9rem] w-full m-auto font-[300] text-center">
+          <div className="text-[0.9rem] w-full m-auto font-[300] text-center underline">
             {tag && tag}
           </div>
           {imageUrl && (
