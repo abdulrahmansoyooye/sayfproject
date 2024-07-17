@@ -49,7 +49,7 @@ const Footer = () => {
             <p className="font-[400]">
               Developed by{" "}
               <Link
-                href="https://www.linkedin.com/in/abdulrahman-soyooye-814435294/"
+                href="https://abdulrahmansoyooye.vercel.app/"
                 target="_blank"
               >
                 Soyooye
