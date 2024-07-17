@@ -41,7 +41,7 @@ const NewsLetter = () => {
           {newsletter.map(({ _id, title, createdAt, link }) => (
             <div
               key={_id}
-              className="border-b w-[45%] justify-center p-[1rem] rounded-lgll"
+              className="border-b sm:w-[45%] w-full  justify-center p-[1rem] rounded-lgll"
             >
               <div className="flex gap-[0.5rem] text-[0.8rem] text-slate-600">
                 <div>{format("date", createdAt)}</div>
