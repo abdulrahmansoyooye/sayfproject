@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 const carouselItem = [
   {
@@ -31,10 +31,11 @@ const carouselItem = [
 const Carousel = () => {
   const [page, setPage] = useState(0);
   const length = carouselItem.length;
-
-  setTimeout(() => {
-    setPage(page === length - 1 ? 0 : page + 1);
-  }, 4000);
+  useEffect(() => {
+    setTimeout(() => {
+      setPage(page === length - 1 ? 0 : page + 1);
+    }, 4000);
+  });
 
   const applyGradient = (text) => {
     const words = text.split(" ");

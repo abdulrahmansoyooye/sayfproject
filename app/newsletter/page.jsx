@@ -13,7 +13,7 @@ const NewsLetter = () => {
     async function fetchNewsletter() {
       try {
         const res = await getNewsletter();
-        console.log(res);
+      
         setNewsletter(res.reverse());
       } catch (error) {
         setError("Something went wrong. Try AgainCourses");

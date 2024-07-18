@@ -3,7 +3,7 @@ import { Newsletter } from "@/models/newsletter";
 import { connectToDb } from "../db";
 
 export const getNewsletter = async () => {
-  console.log("fetching Newsletter");
+
   await connectToDb();
   try {
     const newsletter = await Newsletter.find({});

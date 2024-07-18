@@ -4,7 +4,7 @@ import { sayfArticle } from "@/models/sayfArticle";
 import { connectToDb } from "../db";
 
 export const getsayfArticle = async (category) => {
-  console.log("fetching sayfArticle");
+
   await connectToDb();
   try {
     if (category == "All") {
@@ -20,7 +20,7 @@ export const getsayfArticle = async (category) => {
   }
 };
 export const getEachArticle = async (id) => {
-  console.log("fetching this Article");
+
   await connectToDb();
   try {
     const article = await sayfArticle.findById(id);
@@ -54,7 +54,6 @@ export const getRelatedsayfArticle = async (articlecategory, articleId) => {
     const relatedsayfArticle = foundArticle.filter(
       ({ _id, category }) => category === articlecategory && _id != articleId
     );
-    console.log(articlecategory);
     const response = JSON.parse(JSON.stringify(relatedsayfArticle.slice(0, 4)));
     return response;
   } catch (error) {

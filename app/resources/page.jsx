@@ -30,7 +30,7 @@ const Resources = () => {
       try {
         const res = await getResources();
         setAllResources(res);
-        console.log(res);
+       
       } catch (error) {
         setError("Something went wrong. Try Again");
       }

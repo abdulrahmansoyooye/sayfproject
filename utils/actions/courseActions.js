@@ -4,7 +4,6 @@ import { Courses } from "@/models/courses";
 import { connectToDb } from "../db";
 
 export const getCourses = async () => {
-    console.log("fetching Courses");
     await connectToDb();
     try {
       const courses = await Courses.find({});
@@ -16,7 +15,7 @@ export const getCourses = async () => {
     }
   };
   export const getEachCourse = async (id) => {
-    console.log("fetching this course");
+
     await connectToDb();
     try {
       const course = await Courses.findById(id);

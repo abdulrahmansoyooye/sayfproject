@@ -3,7 +3,7 @@ import { Podcasts } from "@/models/podcasts";
 import { connectToDb } from "../db";
 
 export const getPodcasts = async (category) => {
-  console.log("fetching Podcasts");
+
   await connectToDb();
   try {
     if (category == "All") {
@@ -25,7 +25,7 @@ export const getPodcasts = async (category) => {
   }
 };
 export const getEachPodcast = async (id) => {
-  console.log("fetching this podcast");
+
   await connectToDb();
   try {
     const podcast = await Podcasts.findById(id);

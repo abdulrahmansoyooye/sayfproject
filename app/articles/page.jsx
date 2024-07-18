@@ -22,7 +22,7 @@ const Articles = () => {
     indexofLastArticle
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  console.log(currentArticle);
+
   // Search
   const [searchText, setSearchText] = useState("");
   const [searchedArticles, setsearchedArticles] = useState([]);
@@ -36,7 +36,6 @@ const Articles = () => {
         title.toLowerCase().includes(inputValue) ||
         (tag && tag.toLowerCase().includes(inputValue))
     );
-    console.log(articles);
     setsearchedArticles(filteredArticles);
   };
 
