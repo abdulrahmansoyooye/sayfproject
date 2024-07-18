@@ -34,7 +34,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="space-y-[0.75rem] text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-lg">
+          <div className="space-y-[0.75rem] leading-8 text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-lg">
             <p className="dark-text font-[400]">
               In a world overflowing with self-help books and advice from
               countless sources,many of us find ourselves seeking happiness,
@@ -96,7 +96,7 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[500]">
+              <span className="text-gradient font-[700]">
                 Practical Solutions
               </span>
               <p className="font-[400]  dark-text">
@@ -251,8 +251,8 @@ export default function Home() {
             <Image
               src={"/assets/article1.jpg"}
               width={400}
-              height={200}
-              className="rounded-lg h-[250px] object-cover"
+              height={150}
+              className="rounded-lg h-[200px] object-cover"
               alt="newsletter-img"
             />
           </div>
@@ -280,8 +280,8 @@ export default function Home() {
             <Image
               src={"/assets/article2.jpg"}
               width={400}
-              height={200}
-              className="rounded-lg h-[250px] object-cover"
+              height={150}
+              className="rounded-lg h-[200px] object-cover"
               alt="article-img"
             />
           </div>
@@ -309,15 +309,15 @@ export default function Home() {
             <Image
               src={"/assets/article3.jpg"}
               width={400}
-              height={200}
-              className="rounded-lg h-[250px] object-cover"
+              height={150}
+              className="rounded-lg h-[200px] object-cover"
               alt="article-img"
             />
           </div>
         </motion.div>
         <a
           href="/articles"
-          className="serif text-center max-lg:text-left font-[400] underline cursor-pointer text-brown-color"
+          className="serif text-center max-lg:text-left font-[700] underline cursor-pointer text-brown-color"
         >
           Read More Articles
         </a>

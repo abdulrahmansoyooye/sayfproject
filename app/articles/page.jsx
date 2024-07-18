@@ -106,7 +106,7 @@ const Articles = () => {
             categories.map((item, index) => (
               <div
                 className={`cursor-pointer border hover:border-brown-color p-[0.5rem_1rem] transition-all duration-500 bg-alt-color border-alt-color border-1 rounded-lg
-                  item == currentCategory && "border-brown-color"
+                 ${item == currentCategory && "border-brown-color"} 
                 }`}
                 onClick={() => handleCategoryClick(item)}
                 key={`${item}-${index}`}

@@ -110,26 +110,26 @@ span {
   display: block;
   content: "";
   background-color: var(--brown-color);
-  width: 16px;
-  height: 16px;
+  width: 40px;
+  height: 10px;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 0.5rem;
 }
 .active-carousel {
   display: block;
   content: "";
-  background-color: var(--brown-color);
+  background-color: var(--secandary-color);
   width: 40px;
-  height: 16px;
+  height: 10px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 0.5rem;
 }
 
 .search_input {
   @apply w-full rounded-lg border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
 }
 .text-gradient {
-  @apply bg-gradient-to-tr from-[#D67D3E] via-[#D67D3E] to-[#311a0ae8]  bg-clip-text text-transparent;
+  @apply bg-gradient-to-tr from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
 }
 .black_btn {
   @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#AE8C56]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];

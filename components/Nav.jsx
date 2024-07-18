@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import OutsideClick from "@/config/sidebarRef";
 const navLinks = [
   {
     name: "resources",
@@ -21,14 +22,37 @@ const navLinks = [
   {
     name: "newsletter",
   },
- 
 ];
 const Nav = () => {
   const pathname = usePathname();
   const isActive = (href) => pathname === href;
   const [istoggle, setIstoggle] = useState(false);
+
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIstoggle(false);
+      }
+    };
+
+    if (istoggle) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [istoggle]);
+
   return (
-    <div className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif ">
+    <div
+      className="nav flex-between sm:p-[1rem_6rem] max-lg:justify-around z-[1000] serif "
+      ref={sidebarRef}
+    >
       <a href="/" className="flex justify-around items-center max-lg:w-[60%]">
         <Image
           src={"/assets/sayf.png"}
@@ -41,7 +65,6 @@ const Nav = () => {
           Sayf Network
         </div>
       </a>
-
       {/* Desktop */}
       <div className="max-md:hidden flex-between gap-[2rem]">
         <Link href={"/"} className="navitem">
@@ -79,7 +102,6 @@ const Nav = () => {
               alt="close-img"
             />
           </div>
-
           <Link
             href={"/"}
             className="navitem"

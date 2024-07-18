@@ -24,7 +24,7 @@ const page = () => {
         setTitle(res.title);
         setTag(res.tag);
         setpdf(res.pdf);
-        setDescription(res.pdf);
+        setDescription(res.description);
       } catch (error) {
         setError("Something went wrong. Try Again");
       }

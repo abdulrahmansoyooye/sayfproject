@@ -8,7 +8,9 @@ const ContactUs = () => {
     <div className=" text-black mt-[7rem] p-[7rem]  max-lg:p-[2rem_4rem]  flex max-lg:flex-col  gap-[5rem]">
       <div className="flex  flex-col gap-[3rem] w-[50%] max-lg:w-full">
         <div className="flex gap-[1rem] flex-col">
-          <div className="text-[2.5rem] text-brown-color">Get Our Details</div>{" "}
+          <div className="text-[2.5rem] text-brown-color font-serif">
+            Get Our Details
+          </div>{" "}
           <div className="font-[400] text-[0.9rem]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem
             architecto labore dolore deserunt est, corrupti possimus sit
@@ -37,7 +39,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-lg">
-        <div className="font-[400]">Contact Details</div>
+        <div className="font-[400] serif">Contact Details</div>
         <div className="flex flex-col  w-full gap-[2rem]">
           <div className="flex gap-[1rem] max-lg:flex-col">
             <div className="flex gap-[1rem] font-[300]">
@@ -53,7 +55,7 @@ const ContactUs = () => {
             <div className="font-[300]">+234 995 149 76</div>
           </div>
           <div className="flex gap-[1rem] max-lg:flex-col">
-            <div className="flex gap-[1rem] font-[300]">
+            <div className="flex gap-[1rem] font-[300] serif">
               {" "}
               {/* <Image
                 src={`/assets/email.png`}
@@ -66,7 +68,7 @@ const ContactUs = () => {
             <div className="font-[300]">sayfnetwork@email.com</div>
           </div>
           <div className="flex gap-[1rem] max-lg:flex-col">
-            <div className="flex gap-[1rem] font-[300]">
+            <div className="flex gap-[1rem] font-[300] serif">
               {" "}
               {/* <Image
                 src={`/assets/address.png`}
