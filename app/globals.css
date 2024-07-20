@@ -129,7 +129,7 @@ span {
   @apply w-full rounded-lg border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium focus:border-[#D67D3E] focus:outline-none focus:ring-0;
 }
 .text-gradient {
-  @apply bg-gradient-to-tr from-[#D67D3E] via-[#D67D3E] to-[#D67D3E]  bg-clip-text text-transparent;
+  @apply bg-brown-color;
 }
 .black_btn {
   @apply rounded-[0.4rem]  bg-[#D67D3E] p-[1rem_3rem] text-white transition-all duration-500  hover:bg-[#AE8C56]  cursor-pointer text-center text-sm  flex items-center justify-center shadow-[8px_5px_0_0_#f9e4d4];
