@@ -106,7 +106,7 @@ export default function Home() {
             className="flex max-lg:flex-col gap-[2rem]"
           >
             <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300">
-              <span className="text-gradient font-[700]">
+              <span className="text-gradient font-[400]">
                 Authentic Islamic Guidance
               </span>
 
@@ -122,7 +122,7 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[700]">
+              <span className="text-gradient font-[400]">
                 Practical Solutions
               </span>
               <p className="font-[400]  dark-text">

@@ -8,10 +8,10 @@ const ContactUs = () => {
     <div className=" text-black mt-[7rem] p-[7rem]  max-lg:p-[2rem_4rem]  flex max-lg:flex-col  gap-[5rem]">
       <div className="flex  flex-col gap-[3rem] w-[50%] max-lg:w-full">
         <div className="flex gap-[1rem] flex-col">
-          <div className="text-[2.5rem] text-brown-color font-serif">
+          <div className="text-[2.5rem] text-brown-color serif">
             Get Our Details
           </div>{" "}
-          <div className="font-[400] text-[0.9rem]">
+          <div className="space-y-[0.75rem] leading-8 text-left ">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem
             architecto labore dolore deserunt est, corrupti possimus sit
             praesentium nostrum saepe enim ipsa nesciunt illum! Numquam error
@@ -21,8 +21,7 @@ const ContactUs = () => {
             consequuntur sunt illo minima harum, incidunt consectetur?
           </div>
         </div>
-
-        <div className="flex gap-[2rem] ">
+        <div className="flex  max-lg:justify-evenly  gap-[4rem]">
           {socials.map((icon, index) => (
             <div
               key={`${index}-${icon}`}
@@ -38,11 +37,14 @@ const ContactUs = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-lg">
-        <div className="font-[400] serif">Contact Details</div>
-        <div className="flex flex-col  w-full gap-[2rem]">
-          <div className="flex gap-[1rem] max-lg:flex-col">
-            <div className="flex gap-[1rem] font-[300]">
+
+      <div className="flex flex-col  gap-[1rem] w-[50%] max-lg:w-full border p-[1rem] rounded-lg">
+        <div className="font-[600] serif text-center border-b-2 pb-2">
+          Contact Details
+        </div>
+        <div className="flex  flex-wrap w-full gap-[3rem]">
+          <div className="flex gap-[1rem] items-center max-lg:flex-col">
+            <div className="flex text-center gap-[1rem] font-[300]">
               {" "}
               {/* <Image
                 src={`/assets/phone.png`}
@@ -54,7 +56,7 @@ const ContactUs = () => {
             </div>
             <div className="font-[300]">+234 995 149 76</div>
           </div>
-          <div className="flex gap-[1rem] max-lg:flex-col">
+          <div className="flex items-center gap-[1rem] max-lg:flex-col">
             <div className="flex gap-[1rem] font-[300] serif">
               {" "}
               {/* <Image
@@ -67,7 +69,7 @@ const ContactUs = () => {
             </div>
             <div className="font-[300]">sayfnetwork@email.com</div>
           </div>
-          <div className="flex gap-[1rem] max-lg:flex-col">
+          <div className="flex  w-full items-center gap-[1rem] max-lg:flex-col">
             <div className="flex gap-[1rem] font-[300] serif">
               {" "}
               {/* <Image
