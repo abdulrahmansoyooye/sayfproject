@@ -36,20 +36,46 @@ export default function Home() {
 
           <div className="space-y-[0.75rem] leading-8 text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-lg">
             <p className="dark-text font-[400]">
-              In a world overflowing with self-help books and advice from
-              countless sources,many of us find ourselves seeking happiness,
-              fulfillment,successful relationships,productivity, and ways to
-              overcome bad habits.Yet, despite consuming all this information,
-              the answers often remian elusive.
+              Every idea starts with a problem. Ours was simple: Life for young
+              Muslims can be overwhelming. <br></br><br></br>
+              One of our founders was only 16 years old when he suffered a great
+              deal of depression and mental health issues. When he eventually
+              overcame his issues, he saw that things were not getting simpler:
+              not achieving goals, career, getting closer to Allah, finding his
+              purpose, and navigating marriage presented another set of
+              problems.<br></br>
+              <br></br>
+              We realized that the problem was not the challenges themselves but
+              the lack of a simplified approach to tackle them. We were amazed
+              at how complicated everything seemed when, in reality, there is a
+              simpler way. <br></br>
+              <br></br>
+              We realized that productivity, procrastination, addictions, lack
+              of self-esteem, anxiety, depression, marital issues, can all be
+              solved using one simple weapon - and that is where our name "Sayf"
+              comes from. <br></br><br></br>
+              Sayf was born out of this realization. We discovered that by
+              following some basic principles like Faqr and Shukr, the
+              complexities of life could be significantly reduced. <br></br><br></br>
+              Our mission is to help young Muslims navigate their lives more
+              smoothly by simplifying these overwhelming aspects. We offer
+              resources, guidance, and a supportive community to make
+              self-improvement, mental well-being, productive living, and
+              spiritual growth more seamless.<br></br><br></br>
+              We believe that leading a fulfilling life should be simple and
+              within everyone's reach. At Sayf, we also believe in giving back.
+              We partner with various organizations to support mental health
+              initiatives and educational programs within the Muslim community,
+              ensuring that our efforts contribute to a greater good.
             </p>
-            <p className="dark-text font-[400]">
+            {/* <p className="dark-text font-[400]">
               {"     "} At Sayf, we belive there's a better way. As young
               Muslims,we relized that true contentment and success come from
               within our own rich tradition.The secrets to happiness,
               fulfillment,and personal growth are embedded in the principles of
               Islam-principles that are not only incredibly effective but also
               beautifully simple.
-            </p>
+            </p> */}
           </div>
         </motion.div>{" "}
         {/* Ideas */}

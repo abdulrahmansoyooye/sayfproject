@@ -3,28 +3,28 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 const carouselItem = [
   {
-    title: `Sayf; For Productive Muslims`,
+    title: `Life Is Too Complex`,
 
     content:
-      "Join a movement of 20k+ Muslims committed to maximizing their time,reaching their goals, and living joyfully.",
+      "Learn simple principles that erase your worries about life, career, marriage & productivity",
     buttonText: " Learn more",
   },
   {
-    title: "Productivity and Purpose",
+    title: "Get back motivation and happiness in life – get rid of burnout",
     content:
-      "Inspiring Muslims to make the most of every moment and lead a life of purpose and fulfilment.",
+      "Simple strategies to overcome addictions, depression, anxiety, procrastination, inconsistency, and low self-esteem.",
     buttonText: "Learn more",
   },
   {
-    title: "Defeat Your Biggest Obsatcles",
+    title: "The Solution Has Always Been There",
     content:
-      " Providing the strategies you need to excel in every as aspect of our life.",
+      "Affirmations, meditation & self-talk won't solve your problems! Our deen has little-known, yet more effective alternatives.",
     buttonText: "Learn more",
   },
   {
-    title: "Overcome Your Inner Battles",
+    title: "Sayf; For Productive Muslims",
     content:
-      "Tools and strategies for enhanced personal, professional, and spiritual",
+      "Join a movement of 20k+ Muslims committed to maximizing their time,reaching their goals, and living joyfully.",
     buttonText: "Learn more",
   },
 ];
@@ -41,10 +41,10 @@ const Carousel = () => {
     const words = text.split(" ");
     return words.map((word, index) => {
       if (
-        word.toLowerCase().includes("productivity") ||
-        word.toLowerCase().includes("muslims") ||
-        word.toLowerCase().includes("obsatcles") ||
-        word.toLowerCase().includes("overcome") ||
+        word.toLowerCase().includes("compl") ||
+        word.toLowerCase().includes("motivation") ||
+        word.toLowerCase().includes("burnout") ||
+        word.toLowerCase().includes("solution") ||
         word.toLowerCase().includes("battles") ||
         word.toLowerCase().includes("defeat") ||
         word.toLowerCase().includes("sayf")
@@ -78,7 +78,7 @@ const Carousel = () => {
               >
                 <div className=" flex flex-col gap-[1rem] ">
                   <div className="text-[3rem] max-lg:text-[2rem] serif">
-                    <div className="dark-text">{applyGradient(title)}</div>
+                    <div className="dark-text">{title}</div>
                   </div>
                   <motion.p className="font-[400] dark-text">
                     {content}
