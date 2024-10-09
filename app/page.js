@@ -9,7 +9,7 @@ export default function Home() {
     <main className="home">
       <img
         src={"/assets/svg-shape.svg"}
-        className="absolute mt-[7rem] object-cover max-lg:rotate-180 h-full w-full"
+        className="absolute mt-[7rem] object-cover max-lg:rotate-180 h-full w-full "
         alt="bg-image"
       />
 
@@ -132,7 +132,7 @@ export default function Home() {
         </div>
       </div>
       {/* Section 3 */}
-      <div className="flex flex-col gap-[2rem] w-full section ">
+      {/* <div className="flex flex-col gap-[2rem] w-full section ">
         <div className="text-[2rem] text-center">
           The <span className="text-gradient">Ultimate</span> Life
           Discovery <span className="text-gradient">Course</span>
@@ -167,7 +167,7 @@ export default function Home() {
             />
           </div>
         </motion.div>{" "}
-      </div>
+      </div> */}
       {/* <div className="flex justify-center">
         <Underline />
       </div> */}
