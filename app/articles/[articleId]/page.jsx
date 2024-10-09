@@ -5,6 +5,7 @@ import {
 } from "@/utils/actions/articleActions";
 import parse from "html-react-parser";
 import moment from "moment";
+import { LoadingHorizontal } from "../../loading";
 
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -12,7 +13,6 @@ import { useEffect, useState } from "react";
 const EachArticle = () => {
   const { articleId } = useParams();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const [articleData, setArticleData] = useState({});
   const [relatedArticleData, setrelatedArticleData] = useState([]);
   const { _id, title, content, imageUrl, category, tag, createdAt } =
@@ -25,6 +25,7 @@ const EachArticle = () => {
     }
   };
   const router = useRouter();
+
   useEffect(() => {
     async function fetchArticles() {
       try {
@@ -37,6 +38,7 @@ const EachArticle = () => {
 
     fetchArticles();
   }, []);
+
   useEffect(() => {
     async function fetchRelatedArticles() {
       try {
@@ -55,28 +57,32 @@ const EachArticle = () => {
           <p className="text-[2rem] text-center text-red-500">{error}</p>
         )}
 
-        <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-lg">
-          <div className="text-[0.9rem] bg-brown-color text-white rounded-lg w-full m-auto font-[300] text-center">
-            {category}
-          </div>
+        {!articleData.title ? (
+          <LoadingHorizontal />
+        ) : (
+          <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-lg">
+            <div className="text-[0.9rem] bg-brown-color text-white rounded-lg w-full m-auto font-[300] text-center">
+              {category}
+            </div>
 
-          <div className="text-[1.7rem] text-center ">
-            {title && title.replace()}
-          </div>
-          {imageUrl && (
-            <img
-              src={imageUrl}
-              className=" w-full h-[200px] border object-contain  rounded-lg"
-              alt="article-img"
-            />
-          )}
-          <div className="flex-between text-[11px] text-slate-500">
-            <div>{format("time", createdAt)}</div>
-            <div>{format("date", createdAt)}</div>
-          </div>
+            <div className="text-[1.7rem] text-center ">
+              {title && title.replace()}
+            </div>
+            {imageUrl && (
+              <img
+                src={imageUrl}
+                className=" w-full h-[200px] border object-cover  rounded-lg"
+                alt="article-img"
+              />
+            )}
+            <div className="flex-between text-[11px] text-slate-500">
+              <div>{format("time", createdAt)}</div>
+              <div>{format("date", createdAt)}</div>
+            </div>
 
-          <div className="text-[1rem]">{content && parse(content)}</div>
-        </div>
+            <div className="text-[1rem]">{content && parse(content)}</div>
+          </div>
+        )}
         <div>
           <a href="/articles">
             <button className="black_btn w-[40%] max-lg:w-full flex gap-[1rem]">
@@ -94,18 +100,21 @@ const EachArticle = () => {
 
         {relatedArticleData.length > 0 ? (
           <div className="flex flex-col gap-[1rem]">
-            {relatedArticleData.map(({ _id, title, imageUrl }) => (
+            {relatedArticleData.map(({ _id, title, imageUrl, content }) => (
               <div
-                className="flex bg-white p-[1rem] rounded-lg cursor-pointer"
+                className="flex flex-col  bg-white gap-[1.5rem] p-[1rem] rounded-lg cursor-pointer"
                 key={_id}
                 onClick={() => router.push(`/articles/${_id}`)}
               >
-                <div>
-                  <div>{title}</div>
+                <div className="flex flex-col gap-[0.5rem] ">
+                  <div className="text-[1.2rem]">{title}</div>
+                  <div className="text-[0.8rem] ">
+                    {content && parse(content.slice(0, 50))}
+                  </div>
                 </div>
                 <img
                   src={imageUrl}
-                  className=" w-[50%] h-[150px] object-cover rounded-lg"
+                  className="sm:w-full h-[150px] object-cover rounded-lg"
                   alt="article-img"
                 />
               </div>

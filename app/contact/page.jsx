@@ -9,16 +9,16 @@ const ContactUs = () => {
       <div className="flex  flex-col gap-[3rem] w-[50%] max-lg:w-full">
         <div className="flex gap-[1rem] flex-col">
           <div className="text-[2.5rem] text-brown-color serif">
-            Get Our Details
+            Reach Out To Us
           </div>{" "}
           <div className="space-y-[0.75rem] leading-8 text-left ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolorem
-            architecto labore dolore deserunt est, corrupti possimus sit
-            praesentium nostrum saepe enim ipsa nesciunt illum! Numquam error
-            consequuntur id obcaecati. Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Mollitia enim doloremque alias facilis ea animi
-            perspiciatis laudantium, minus et provident quos hic maiores
-            consequuntur sunt illo minima harum, incidunt consectetur?
+            We’d love to hear from you! At Sayf Network, we are dedicated to
+            fostering productivity, personal growth, and spiritual well-being
+            within our community. Whether you have questions, feedback, or ideas
+            to share, please don’t hesitate to reach out. <br />
+            <br /> At Sayf Network, we believe in the power of community and
+            collaboration, and we welcome your thoughts, questions, and
+            feedback.
           </div>
         </div>
         <div className="flex  max-lg:justify-evenly  gap-[4rem]">
@@ -43,44 +43,17 @@ const ContactUs = () => {
           Contact Details
         </div>
         <div className="flex  flex-wrap w-full gap-[3rem]">
-          <div className="flex gap-[1rem] items-center max-lg:flex-col">
-            <div className="flex text-center gap-[1rem] font-[300]">
-              {" "}
-              {/* <Image
-                src={`/assets/phone.png`}
-                width={20}
-                height={20}
-                alt="whatsapp-image"
-              />{" "} */}
-              Phone
+          <div className="flex gap-[1rem] w-full items-center flex-col">
+            <div className="flex text-center  gap-[1rem] font-[300]">Phone</div>
+            <div className="flex flex-wrap gap-[2rem]  w-full justify-center font-[300]">
+              <p>+234 916 4532 355</p>
+              <p>+234 814 3629 024</p>
+              <p>+234 813 5316 840</p>
             </div>
-            <div className="font-[300]">+234 995 149 76</div>
           </div>
-          <div className="flex items-center gap-[1rem] max-lg:flex-col">
-            <div className="flex gap-[1rem] font-[300] serif">
-              {" "}
-              {/* <Image
-                src={`/assets/email.png`}
-                width={30}
-                height={30}
-                alt="whatsapp-image"
-              />{" "} */}
-              Email
-            </div>
-            <div className="font-[300]">sayfnetwork@email.com</div>
-          </div>
-          <div className="flex  w-full items-center gap-[1rem] max-lg:flex-col">
-            <div className="flex gap-[1rem] font-[300] serif">
-              {" "}
-              {/* <Image
-                src={`/assets/address.png`}
-                width={30}
-                height={30}
-                alt="whatsapp-image"
-              />{" "} */}
-              Address
-            </div>
-            <div className="font-[300]">Road 3, block 14 Michigan Cresent</div>
+          <div className="flex items-center gap-[1rem] w-full flex-col">
+            <div className="flex gap-[1rem] font-[300] serif"> Email</div>
+            <div className="font-[300]">sayfnetwork@gmail.com</div>
           </div>
         </div>
       </div>

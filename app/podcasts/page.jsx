@@ -78,8 +78,8 @@ const Podcasts = () => {
   return (
     <div className="flex flex-col gap-[4rem]">
       <Welcome
-        title="Listen to a Podcast"
-        text="Some podcasts for you to read"
+        title="The Brutally Honest Podcast"
+        text="A weekly podcast on productivity, personal growth, relationships, spirituality & mental health for Muslims"
       />
 
       <div className="flex flex-col gap-[2rem] p-[2rem] ">
@@ -204,13 +204,13 @@ export const PodcastCard = ({
 
   return (
     <div
-      className="container  flex-col gap-[4rem] cursor-pointer"
+      className="container border border-brown-color flex-col gap-[4rem] cursor-pointer"
       onClick={() => router.push(`/podcasts/${_id}`)}
     >
       <div className="flex-between flex-wrap gap-[0.75rem]">
         <div className="flex flex-col gap-[.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
-          <p className="text-[13px] font-[400]">{description.slice(0, 80)}</p>
+          {/* <p className="text-[13px] font-[400]">{description.slice(0, 80)}</p> */}
         </div>
 
         <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">

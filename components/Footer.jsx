@@ -21,7 +21,7 @@ const Footer = () => {
           <h2 className="text-[2rem] max-lg:text-[1.5rem] dark-text text-center">
             Join{" "}
             <span className="text-gradient font-[500]">20k+ Muslims</span>{" "}
-            in our community to never miss out our daily snippets
+            in our community to never miss out on our daily snippets
           </h2>
         </div>
         <div className="space-y-[3rem]">
@@ -49,7 +49,7 @@ const Footer = () => {
             <p className="font-[400]">
               Developed by{" "}
               <Link
-                href="https://abdulrahmansoyooye.vercel.app/"
+                href="https://abdulrahmansoyooye.online/"
                 target="_blank"
               >
                 Soyooye

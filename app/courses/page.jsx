@@ -43,7 +43,10 @@ const Courses = () => {
 
   return (
     <div className="flex flex-col gap-[4rem]">
-      <Welcome title="Availabe Courses" text="Some courses for you to see" />
+      <Welcome
+        title="Availabe Courses"
+        text="Courses on productivity, personal growth, relationships, spirituality & mental health"
+      />
 
       <div className="flex gap-[2rem] flex-col p-[1rem]">
         <div className="relative flex  justify-center gap-[1rem] items-center">

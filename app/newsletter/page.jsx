@@ -30,7 +30,7 @@ const NewsLetter = () => {
   };
   return (
     <div>
-      <Welcome title={"News Letter"} />
+      <Welcome title={"Sayf Weekly Newsletter"} />
       <div className="flex flex-col  gap-[6rem] p-[4rem_2rem] justify-around">
         <iframe
           src="https://sayfnetwork.substack.com/embed"

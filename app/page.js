@@ -7,11 +7,14 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 export default function Home() {
   return (
     <main className="home">
-      <Image
+      <img
         src={"/assets/svg-shape.svg"}
-        width={900}
-        height={400}
-        className="absolute mt-[7rem]"
+        className="absolute mt-[7rem] sm:hidden rotate-180 object-cover h-[60vh] w-full"
+        alt="bg-image"
+      />
+      <img
+        src={"/assets/svg-shapelarge.svg"}
+        className="absolute mt-[7rem] max-lg:hidden rotate-180 object-cover h-[200vh] w-full"
         alt="bg-image"
       />
       {/* Carousel */}
@@ -37,36 +40,28 @@ export default function Home() {
           <div className="space-y-[0.75rem] leading-8 text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-lg">
             <p className="dark-text font-[400]">
               Every idea starts with a problem. Ours was simple: Life for young
-              Muslims can be overwhelming. <br></br><br></br>
-              One of our founders was only 16 years old when he suffered a great
-              deal of depression and mental health issues. When he eventually
-              overcame his issues, he saw that things were not getting simpler:
-              not achieving goals, career, getting closer to Allah, finding his
-              purpose, and navigating marriage presented another set of
-              problems.<br></br>
-              <br></br>
-              We realized that the problem was not the challenges themselves but
-              the lack of a simplified approach to tackle them. We were amazed
-              at how complicated everything seemed when, in reality, there is a
-              simpler way. <br></br>
-              <br></br>
-              We realized that productivity, procrastination, addictions, lack
-              of self-esteem, anxiety, depression, marital issues, can all be
-              solved using one simple weapon - and that is where our name "Sayf"
-              comes from. <br></br><br></br>
-              Sayf was born out of this realization. We discovered that by
-              following some basic principles like Faqr and Shukr, the
-              complexities of life could be significantly reduced. <br></br><br></br>
+              Muslims can be overwhelming. <br />
+              <br />
+              One of our founders was only 16 years old when he suffered severe
+              depression. After overcoming his struggles, he found that new
+              challenges emerged: achieving goals, anxiety, self-esteem, being
+              confident among peers, growing closer to Allah, dealing with
+              addictions, navigating relationships, and lots more. We realized
+              the issue wasn’t the challenges themselves, but the lack of a
+              simplified approach to address them.
+              <br /> <br />
+              We discovered that all of these issues could be tackled with a
+              few, little-known but very powerful weapons, and that inspired our
+              name, "Sayf."
+              <br />
+              <br /> Sayf was born from the understanding that basic principles
+              like Faqr and Shukr could reduce life’s complexities tremendously.
               Our mission is to help young Muslims navigate their lives more
-              smoothly by simplifying these overwhelming aspects. We offer
-              resources, guidance, and a supportive community to make
-              self-improvement, mental well-being, productive living, and
-              spiritual growth more seamless.<br></br><br></br>
-              We believe that leading a fulfilling life should be simple and
-              within everyone's reach. At Sayf, we also believe in giving back.
-              We partner with various organizations to support mental health
-              initiatives and educational programs within the Muslim community,
-              ensuring that our efforts contribute to a greater good.
+              smoothly by simplifying these overwhelming aspects. We provide
+              resources, guidance, courses, and a supportive community focused
+              on self-improvement, mental well-being, and spiritual growth
+              because we believe that a fulfilling life should be accessible to
+              every Muslim.
             </p>
             {/* <p className="dark-text font-[400]">
               {"     "} At Sayf, we belive there's a better way. As young
@@ -90,47 +85,54 @@ export default function Home() {
           <InfiniteCarousel />
         </div>
         {/* offer */}
-        <div className="flex flex-col flex-center gap-[2rem] w-full max-lg:p-[2rem] p-[4rem_6rem] m-[auto] border bg-primary-color z-10">
-          <Image
-            src={"/assets/svg-shape.svg"}
-            width={1000}
-            height={500}
-            className="absolute -z-30"
-            alt="bg-image"
-          />
-          <div className="text-[1.8rem] ">We Offer</div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ ease: "easeOut", duration: 1 }}
-            className="flex max-lg:flex-col gap-[2rem]"
-          >
-            <div className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300">
-              <span className="text-gradient font-[400]">
-                Authentic Islamic Guidance
-              </span>
-
-              <p className="font-[400] dark-text">
-                {" "}
-                Timeless wisdom of the Quran and Sunnah, tailored to address the
-                unique challenges of modern life.
-              </p>
-            </div>
+        <div className="flex flex-col p-[2rem] pb-[3rem] gap-[2rem] items-center">
+          <div>
+            <div className="text-[1.8rem] ">We Offer</div>
+          </div>{" "}
+          <div className="flex flex-wrap justify-center gap-[1.5rem]">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ ease: "easeOut", duration: 1 }}
-              className="flex flex-col gap-[1rem] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
+              className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]">
-                Practical Solutions
-              </span>
-              <p className="font-[400]  dark-text">
-                Discover actionable strategies that are easy to implement and
-                resonate with your faith, leading to lasting positive change.
+              <span className="text-gradient font-[400]">Courses:</span>
+
+              <p className="font-[400] text-[0.9rem] dark-text">
+                Explore our range of courses designed to enhance your
+                time-management skills, spirituality, and personal growth
               </p>
             </motion.div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 1 }}
+              className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
+            >
+              <span className="text-gradient font-[400]">Free Resources:</span>
+              <p className="font-[400] text-[0.9rem] dark-text">
+                Access a variety of free resources and guides that support your
+                journey towards improved mental health and well-being. Our
+                resources are crafted to simplify complex concepts and help
+                eliminate your biggest worries.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 1 }}
+              className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
+            >
+              <span className="text-gradient font-[400]">Articles:</span>
+              <p className="font-[400] text-[0.9rem] dark-text">
+                Dive into our collection of articles that cover topics on
+                productivity, spirituality, relationships, and personal
+                development. Each piece aims to inspire you to live a fulfilling
+                life while navigating the unique challenges faced by young
+                Muslims.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
       {/* Section 3 */}
@@ -224,7 +226,7 @@ export default function Home() {
             className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-lg border-2 "
           >
             <Image
-              src={"/assets/podcast-pic.jpg"}
+              src={"/assets/podcast.jpg"}
               width={300}
               height={200}
               className="rounded-lg w-full object-cover"
@@ -244,7 +246,7 @@ export default function Home() {
       </div>
       {/* Section 6 */}
 
-      <div className="flex flex-col gap-[2rem] p-[4rem_3rem] w-full justify-center  ">
+      <div className="flex flex-col gap-[2rem] p-[4rem_3rem] w-full justify-center">
         <div className="flex justify-center w-full  items-center flex-col pb-[1rem] gap-[2rem]">
           <div className="text-[2rem] text-center">
             Read a <span className="text-gradient">popular</span> Article

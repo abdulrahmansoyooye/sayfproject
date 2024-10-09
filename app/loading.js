@@ -13,5 +13,17 @@ const Loading = () => {
     </div>
   );
 };
-
+export const LoadingHorizontal = () => {
+  return (
+    <div className="flex justify-center">
+      <Image
+        src={"/assets/loaderhorizontal.gif"}
+        width={70}
+        height={70}
+        alt="Loading"
+        unoptimized={true}
+      />
+    </div>
+  );
+};
 export default Loading;

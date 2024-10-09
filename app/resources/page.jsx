@@ -30,7 +30,6 @@ const Resources = () => {
       try {
         const res = await getResources();
         setAllResources(res);
-       
       } catch (error) {
         setError("Something went wrong. Try Again");
       }
@@ -41,7 +40,10 @@ const Resources = () => {
 
   return (
     <div className="flex flex-col gap-[4rem]">
-      <Welcome title="Free Resources" text="Some Resources for you to read" />
+      <Welcome
+        title="Free Resources"
+        text="Free resources to aid your journey to becoming a better version of yourself"
+      />
 
       <div className="flex flex-col gap-[2rem] p-[1rem] ">
         {/* Search */}
@@ -125,7 +127,7 @@ export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
           alt="article-img"
         />
       </div>
-      <div className="black_btn">Download PDF</div>
+      <div className="black_btn">Learn more</div>
       <div className="flex-between text-[11px] text-slate-500">
         <div>{format("time", createdAt)}</div>
         <div>{format("date", createdAt)}</div>

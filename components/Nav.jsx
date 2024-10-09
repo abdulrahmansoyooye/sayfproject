@@ -56,8 +56,8 @@ const Nav = () => {
       <a href="/" className="flex justify-around items-center max-lg:w-[60%]">
         <Image
           src={"/assets/sayf.png"}
-          width={80}
-          height={50}
+          width={70}
+          height={40}
           alt="footer-img"
           className="cursor-pointer"
         />{" "}

@@ -22,7 +22,7 @@
   --background-color: #ffffff;
   --primary-color: #f6f6f6;
 
-  --brown-color: #d67d3ee5;
+  --brown-color: #683f21e5;
   --light-color: #f9e4d4;
 
   --secandary-color: #ae8c56;
@@ -109,7 +109,7 @@ span {
 .circle::after {
   display: block;
   content: "";
-  background-color: var(--brown-color);
+  background-color: #c5c1c1;
   width: 40px;
   height: 10px;
   cursor: pointer;
@@ -152,6 +152,7 @@ span {
 .glassmorphism {
   @apply bg-white/5 shadow-[inset_10px_10px_18px_0_rgb(199,199,199,0.2)] backdrop-blur-[1rem]  p-5;
 }
+
 .skeleton_container {
   /* @apply bg-slate-500; */
 }
