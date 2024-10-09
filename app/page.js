@@ -9,14 +9,10 @@ export default function Home() {
     <main className="home">
       <img
         src={"/assets/svg-shape.svg"}
-        className="absolute mt-[7rem] sm:hidden rotate-180 object-cover h-[60vh] w-full"
+        className="absolute mt-[7rem] object-cover max-lg:rotate-180 h-full w-full"
         alt="bg-image"
       />
-      <img
-        src={"/assets/svg-shapelarge.svg"}
-        className="absolute mt-[7rem] max-lg:hidden rotate-180 object-cover h-[200vh] w-full"
-        alt="bg-image"
-      />
+
       {/* Carousel */}
       <div className="pt-[4rem]  bg-primary-color">
         <Carousel />
@@ -37,7 +33,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="space-y-[0.75rem] leading-8 text-left max-lg:w-full w-[70%] m-auto  border-2 p-[1rem] rounded-lg">
+          <div className="space-y-[0.75rem] leading-8 text-left max-lg:w-full w-[70%] m-auto border border-1 p-[1rem] rounded-lg">
             <p className="dark-text font-[400]">
               Every idea starts with a problem. Ours was simple: Life for young
               Muslims can be overwhelming. <br />
@@ -136,7 +132,7 @@ export default function Home() {
         </div>
       </div>
       {/* Section 3 */}
-      {/* <div className="flex flex-col gap-[2rem] w-full section ">
+      <div className="flex flex-col gap-[2rem] w-full section ">
         <div className="text-[2rem] text-center">
           The <span className="text-gradient">Ultimate</span> Life
           Discovery <span className="text-gradient">Course</span>
@@ -171,7 +167,7 @@ export default function Home() {
             />
           </div>
         </motion.div>{" "}
-      </div> */}
+      </div>
       {/* <div className="flex justify-center">
         <Underline />
       </div> */}
@@ -194,7 +190,7 @@ export default function Home() {
           </div>{" "}
         </div>
 
-        <div className="flex flex-col gap-[2rem] w-[60%] m-auto max-lg:w-full border-2 p-[2rem] rounded-lg">
+        <div className="flex flex-col gap-[2rem] w-[60%] m-auto max-lg:w-full border border-1 p-[2rem] rounded-lg">
           <div className="space-y-[0.75rem]">
             <p className="dark-text font-[400] text-center">
               Every week, we will send you weapons o fight your deadliest
@@ -223,7 +219,7 @@ export default function Home() {
             animate={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeOut", duration: 1 }}
-            className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-lg border-2 "
+            className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-lg border border-1 "
           >
             <Image
               src={"/assets/podcast.jpg"}

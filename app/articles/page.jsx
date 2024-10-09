@@ -74,7 +74,7 @@ const Articles = () => {
   return (
     <div className="flex flex-col rubik">
       <Welcome
-        title="Read an Article"
+        title="Articles"
         text="Articles on productivity, time-management, personal growth relationships, spirituality & mental health"
       />
       {error && <Error />}
