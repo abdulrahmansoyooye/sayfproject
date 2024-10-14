@@ -63,7 +63,7 @@ const Carousel = () => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <div className="relative flex flex-col h-[100vh] w-[100vw]  gap-[9rem] justify-center section  mt-[7rem] ">
+    <div className="relative flex flex-col  w-[100vw]  gap-[9rem] justify-center section  mt-[7rem] ">
       <div className="flex gap-[1rem] justify-center">
         {carouselItem.map(
           ({ title, content, buttonText }, index) =>
@@ -77,9 +77,9 @@ const Carousel = () => {
                 key={`${index}-${title}`}
               >
                 <div className="flex flex-col gap-[1rem] ">
-                  <p className="text-[2rem] max-lg:text-[1.5rem] dark-text serif">
+                  <div className="text-[2rem] max-lg:text-[1.5rem] dark-text serif">
                    {title}
-                  </p>
+                  </div>
 
                   <motion.p className="font-[400] dark-text text-[0.9rem] sm:text-[1rem]">
                     {content}

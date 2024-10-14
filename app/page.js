@@ -7,11 +7,11 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 export default function Home() {
   return (
     <main className="home">
-      <img
-        src={"/assets/svg-shape.svg"}
+      {/* <img
+        src={"/assets/shape3.svg"}
         className="absolute mt-[7rem] object-cover max-lg:rotate-180 h-full w-full "
         alt="bg-image"
-      />
+      /> */}
 
       {/* Carousel */}
       <div className="pt-[4rem]  bg-primary-color">

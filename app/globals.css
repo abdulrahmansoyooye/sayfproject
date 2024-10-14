@@ -109,7 +109,7 @@ span {
 .circle::after {
   display: block;
   content: "";
-  background-color: #c5c1c1;
+  background-color: var(--secandary-color);
   width: 40px;
   height: 10px;
   cursor: pointer;
@@ -118,7 +118,7 @@ span {
 .active-carousel {
   display: block;
   content: "";
-  background-color: var(--secandary-color);
+  background-color: var(--brown-color);
   width: 40px;
   height: 10px;
   cursor: pointer;
