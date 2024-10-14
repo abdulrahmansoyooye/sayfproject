@@ -57,7 +57,7 @@ span {
 .active {
   display: block;
   content: "";
-  border-bottom: solid 3px var(--brown-color);
+  border-bottom: solid 3px var(--secandary-color);
   transform: scaleX(1);
 }
 .navitem::after {

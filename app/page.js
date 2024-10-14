@@ -7,11 +7,11 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 export default function Home() {
   return (
     <main className="home">
-      {/* <img
-        src={"/assets/shape3.svg"}
+      <img
+        src={"/assets/svg-shape.svg"}
         className="absolute mt-[7rem] object-cover max-lg:rotate-180 h-full w-full "
         alt="bg-image"
-      /> */}
+      />
 
       {/* Carousel */}
       <div className="pt-[4rem]  bg-primary-color">
@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="space-y-[0.75rem] leading-8 text-left max-lg:w-full w-[70%] m-auto border border-1 p-[1rem] rounded-lg">
+          <div className="space-y-[0.75rem] leading-8 text-left  serif max-lg:w-full w-[70%] m-auto border border-1 p-[1rem] rounded-lg">
             <p className="dark-text font-[400]">
               Every idea starts with a problem. Ours was simple: Life for young
               Muslims can be overwhelming. <br />
@@ -222,7 +222,7 @@ export default function Home() {
             className="flex flex-col gap-[3rem]  text-slate-50 p-[2rem] rounded-lg border border-1 "
           >
             <Image
-              src={"/assets/podcast.jpg"}
+              src={"/assets/podcast-pic.jpg"}
               width={300}
               height={200}
               className="rounded-lg w-full object-cover"
