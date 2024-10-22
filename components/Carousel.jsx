@@ -22,7 +22,7 @@ const carouselItem = [
     buttonText: "Learn more",
   },
   {
-    title: "Sayf; For Productive Muslims",
+    title: "Sayf; For Productive Muslims ",
     content:
       "Join a movement of 20k+ Muslims committed to maximizing their time,reaching their goals, and living joyfully.",
     buttonText: "Learn more",
@@ -76,7 +76,7 @@ const Carousel = () => {
                 className="flex flex-col  gap-[5rem]  carousel-item justify-center  text-center "
                 key={`${index}-${title}`}
               >
-                <div className="break-words border space-y-[1rem]">
+                <div className="break-words space-y-[1rem]">
                   <div className="text-center text-[2.4rem] max-lg:text-[2rem] dark-text serif">
                     {title}
                   </div>
@@ -112,4 +112,31 @@ const Carousel = () => {
   );
 };
 
+//  {carouselItem.map(
+//   ({ title, content, buttonText }, index) =>
+//     index === page && (
+//       <motion.div
+//         initial="hidden"
+//         animate="visible"
+//         variants={variants}
+//         transition={{ duration: 0.5 }}
+//         className="flex flex-col  gap-[5rem]  carousel-item justify-center  text-center "
+//         key={`${index}-${title}`}
+//       >
+//         <div className="flex flex-col gap-[1rem] ">
+//           <div className="text-[2.4rem] max-lg:text-[2rem] dark-text serif">
+//            {title}
+//           </div>
+
+//           <motion.p className="font-[400] dark-text text-[0.9rem] sm:text-[1rem]">
+//             {content}
+//           </motion.p>
+//         </div>
+
+//         <div className="black_btn sm:max-w-[50%] m-auto w-full">
+//           {buttonText}
+//         </div>
+//       </motion.div>
+//     )
+// )}
 export default Carousel;
