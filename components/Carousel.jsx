@@ -22,7 +22,7 @@ const carouselItem = [
     buttonText: "Learn more",
   },
   {
-    title: "Sayf; For Productive Muslims",
+    title: "Sayf; For Productive Muslims ",
     content:
       "Join a movement of 20k+ Muslims committed to maximizing their time,reaching their goals, and living joyfully.",
     buttonText: "Learn more",
@@ -63,8 +63,8 @@ const Carousel = () => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <div className="relative flex flex-col  w-[100vw]  gap-[9rem] justify-center section  mt-[7rem] ">
-      <div className="flex gap-[1rem] justify-center">
+    <div className="relative h-[70vh]   mt-[7rem] z-[1000] ">
+      <div className="h-[45vh] pt-[3rem] px-[2rem] space-y-[1.5rem]">
         {carouselItem.map(
           ({ title, content, buttonText }, index) =>
             index === page && (
@@ -76,16 +76,16 @@ const Carousel = () => {
                 className="flex flex-col  gap-[5rem]  carousel-item justify-center  text-center "
                 key={`${index}-${title}`}
               >
-                <div className="flex flex-col gap-[1rem] ">
-                  <div className="text-[2.4rem] max-lg:text-[2rem] dark-text serif">
-                   {title}
+                <div className="break-words border space-y-[1rem]">
+                  <div className="text-center text-[2.4rem] max-lg:text-[2rem] dark-text serif">
+                    {title}
                   </div>
-
-                  <motion.p className="font-[400] dark-text text-[0.9rem] sm:text-[1rem]">
-                    {content}
-                  </motion.p>
+                  <div className="flex flex-col gap-[1rem] ">
+                    <motion.p className="font-[400] dark-text text-[0.9rem] sm:text-[1rem]">
+                      {content}
+                    </motion.p>
+                  </div>
                 </div>
-
                 <div className="black_btn sm:max-w-[50%] m-auto w-full">
                   {buttonText}
                 </div>
@@ -94,7 +94,7 @@ const Carousel = () => {
         )}
       </div>
 
-      <div className="flex gap-[2rem] m-auto">
+      <div className="w-full  flex gap-[2rem] justify-center  mt-[7rem]">
         {carouselItem.map(({ title }, index) => (
           <div
             className={`${
@@ -112,4 +112,31 @@ const Carousel = () => {
   );
 };
 
+//  {carouselItem.map(
+//   ({ title, content, buttonText }, index) =>
+//     index === page && (
+//       <motion.div
+//         initial="hidden"
+//         animate="visible"
+//         variants={variants}
+//         transition={{ duration: 0.5 }}
+//         className="flex flex-col  gap-[5rem]  carousel-item justify-center  text-center "
+//         key={`${index}-${title}`}
+//       >
+//         <div className="flex flex-col gap-[1rem] ">
+//           <div className="text-[2.4rem] max-lg:text-[2rem] dark-text serif">
+//            {title}
+//           </div>
+
+//           <motion.p className="font-[400] dark-text text-[0.9rem] sm:text-[1rem]">
+//             {content}
+//           </motion.p>
+//         </div>
+
+//         <div className="black_btn sm:max-w-[50%] m-auto w-full">
+//           {buttonText}
+//         </div>
+//       </motion.div>
+//     )
+// )}
 export default Carousel;
