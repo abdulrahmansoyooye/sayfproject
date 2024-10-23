@@ -63,8 +63,8 @@ const Carousel = () => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <div className="relative h-[70vh]   mt-[7rem] z-[1000] ">
-      <div className="h-[45vh] pt-[3rem] px-[2rem] space-y-[1.5rem]">
+    <div className="relative h-[100vh] mt-[7rem]  ">
+      <div className="h-[70vh] pt-[3rem] px-[2rem] space-y-[1.5rem]">
         {carouselItem.map(
           ({ title, content, buttonText }, index) =>
             index === page && (
