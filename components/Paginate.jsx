@@ -2,12 +2,12 @@ import React from "react";
 
 const Paginate = ({
   paginate,
-  articlesPerPage,
-  totalArticles,
+  itemsPerPage,
+  totalitems,
   currentPage,
 }) => {
   const numberofPage = [];
-  for (let i = 1; i <= Math.ceil(totalArticles / articlesPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalitems / itemsPerPage); i++) {
     numberofPage.push(i);
   }
   return (
@@ -18,7 +18,7 @@ const Paginate = ({
           className={`cursor-pointer ${
             currentPage === number
               ? "bg-brown-color  text-white"
-              : "bg-slate-300 text-slate-700"
+              : "bg-slate-300 text-slate-500"
           } p-[0.5rem_1rem] rounded-md `}
           onClick={() => paginate(number)}
         >

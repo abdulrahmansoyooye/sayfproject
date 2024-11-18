@@ -147,9 +147,9 @@ const Articles = () => {
           )}
         </div>
         <Paginate
-          totalArticles={articles.length}
+          totalitems={articles.length}
           paginate={paginate}
-          articlesPerPage={ARTICLES_PER_PAGE}
+          itemsPerPage={ARTICLES_PER_PAGE}
           currentPage={currentPage}
         />
       </div>
