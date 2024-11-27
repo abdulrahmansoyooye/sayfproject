@@ -36,7 +36,7 @@ const page = () => {
   return (
     <div className="flex flex-col gap-[4rem] mt-[3rem] p-[5rem_2rem] max-lg:p-[4rem_1rem] border rubik bg-[#f6f6f6]">
       {error && <Error />}
-      {!articleData.title ? (
+      {!title ? (
           <LoadingHorizontal />
         ) : (
       <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-lg ">

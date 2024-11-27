@@ -92,7 +92,9 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]"><a href="/courses">Courses:</a></span>
+              <span className="text-gradient font-[400]">
+                <a href="/courses">Courses:</a>
+              </span>
 
               <p className="font-[400] text-[0.9rem] dark-text">
                 Explore our range of courses designed to enhance your
@@ -105,7 +107,10 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]"> <a href="/resources">Free Resources:</a></span>
+              <span className="text-gradient font-[400]">
+                {" "}
+                <a href="/resources">Free Resources:</a>
+              </span>
               <p className="font-[400] text-[0.9rem] dark-text">
                 Access a variety of free resources and guides that support your
                 journey towards improved mental health and well-being. Our
@@ -119,7 +124,9 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]"><a href="/articles">Articles:</a></span>
+              <span className="text-gradient font-[400]">
+                <a href="/articles">Articles:</a>
+              </span>
               <p className="font-[400] text-[0.9rem] dark-text">
                 Dive into our collection of articles that cover topics on
                 productivity, spirituality, relationships, and personal
@@ -200,8 +207,8 @@ export default function Home() {
           </div>
 
           <button className="black_btn sm:max-w-[50%] m-auto w-full">
-           <a href="/newsletter">Subscribe For Free</a> 
-          </div>
+            <a href="/newsletter">Subscribe For Free</a>
+          </button>
         </div>
       </motion.div>
 
