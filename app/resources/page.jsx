@@ -121,11 +121,9 @@ export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
         </div>
       </div>
       <div className="flex flex-col ">
-        <img
-          src={"/assets/pdf.png"}
-          className="w-full h-[250px] object-cover rounded-lg "
-          alt="article-img"
-        />
+        <object width="100%" height="200" data={pdf} type="application/pdf" className="rounded-md">
+          
+        </object>
       </div>
       <div className="black_btn">Learn more</div>
       <div className="flex-between text-[11px] text-slate-500">

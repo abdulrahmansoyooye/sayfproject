@@ -92,7 +92,7 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]">Courses:</span>
+              <span className="text-gradient font-[400]"><a href="/courses">Courses:</a></span>
 
               <p className="font-[400] text-[0.9rem] dark-text">
                 Explore our range of courses designed to enhance your
@@ -105,7 +105,7 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]">Free Resources:</span>
+              <span className="text-gradient font-[400]"> <a href="/resources">Free Resources:</a></span>
               <p className="font-[400] text-[0.9rem] dark-text">
                 Access a variety of free resources and guides that support your
                 journey towards improved mental health and well-being. Our
@@ -119,7 +119,7 @@ export default function Home() {
               transition={{ ease: "easeOut", duration: 1 }}
               className="flex flex-col gap-[1rem] sm:w-[40%] bg-primary-color text-slate-50 p-[2rem] rounded-lg border border-slate-300"
             >
-              <span className="text-gradient font-[400]">Articles:</span>
+              <span className="text-gradient font-[400]"><a href="/articles">Articles:</a></span>
               <p className="font-[400] text-[0.9rem] dark-text">
                 Dive into our collection of articles that cover topics on
                 productivity, spirituality, relationships, and personal
@@ -193,14 +193,14 @@ export default function Home() {
         <div className="flex flex-col gap-[2rem] w-[60%] m-auto max-lg:w-full border border-1 p-[2rem] rounded-lg">
           <div className="space-y-[0.75rem]">
             <p className="dark-text font-[400] text-center">
-              Every week, we will send you weapons o fight your deadliest
+              Every week, we will send you weapons to fight your deadliest
               enemies: procrastination, overwhelm, inconsistency, addictions,
               faulty relationships, lack of purpose, etc...
             </p>
           </div>
 
-          <div className="black_btn sm:max-w-[50%] m-auto w-full">
-            Subscribe For Free
+          <button className="black_btn sm:max-w-[50%] m-auto w-full">
+           <a href="/newsletter">Subscribe For Free</a> 
           </div>
         </div>
       </motion.div>

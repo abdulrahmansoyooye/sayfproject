@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-const socials = ["whatsapp", "telegram", "facebook"];
+const socials = [{name:"whatsapp", link:"https://t.me/SayfProductiveMuslims"}, {name:"telegram", link:"https://t.me/SayfProductiveMuslims"},{name:"facebook", link:"https://m.facebook.com/p/Sayf-61555764028109/"}];
 const Footer = () => {
   const variants = {
     hidden: { opacity: 0, y: 10 },
@@ -27,16 +27,18 @@ const Footer = () => {
         <div className="space-y-[3rem]">
           {/* Socials */}
           <div className="flex gap-[3rem] justify-center ">
-            {socials.map((icon, index) => (
+            {socials.map(({name,link}, index) => (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: `0.${index}` }}
                 key={`${index}-image`}
+
                 className="bg-slate-200 p-[0.75rem] rounded-[50%] cursor-pointer transition-all duration-300 hover:bg-slate-300"
               >
+                <a></a>
                 <Image
-                  src={`/socials/${icon}.png`}
+                  src={`/socials/${name}.png`}
                   width={20}
                   height={20}
                   alt="whatsapp-image"

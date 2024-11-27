@@ -5,6 +5,7 @@ import Error from "next/error";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { LoadingHorizontal } from "../../loading";
 
 const page = () => {
   const { resourcesId } = useParams();
@@ -35,13 +36,13 @@ const page = () => {
   return (
     <div className="flex flex-col gap-[4rem] mt-[3rem] p-[5rem_2rem] max-lg:p-[4rem_1rem] border rubik bg-[#f6f6f6]">
       {error && <Error />}
-
+      {!articleData.title ? (
+          <LoadingHorizontal />
+        ) : (
       <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-lg ">
-        <img
-          src={"/assets/pdf.png"}
-          className="max-lg:w-full w-[60%] h-[250px] object-cover rounded-lg "
-          alt="article-img"
-        />
+        <object width="100%" height="400" data={pdf} type="application/pdf" className="overflow-hidden rounded-md">
+          {" "}
+        </object>
 
         <div className="flex flex-col gap-[4rem] justify-between w-full flex-wrap">
           <div className="flex justify-between  gap-[0.5rem] flex-wrap">
@@ -71,7 +72,7 @@ const page = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div>)}
     </div>
   );
 };
