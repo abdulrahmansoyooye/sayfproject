@@ -2,7 +2,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-const socials = [{name:"whatsapp", link:"https://t.me/SayfProductiveMuslims"}, {name:"telegram", link:"https://t.me/SayfProductiveMuslims"},{name:"facebook", link:"https://m.facebook.com/p/Sayf-61555764028109/"}];
+const socials = [
+  { name: "whatsapp", link: "https://chat.whatsapp.com/HoFWDqbCRnALQBA1wBL9Ux" },
+  { name: "telegram", link: "https://t.me/SayfProductiveMuslims" },
+  { name: "facebook", link: "https://m.facebook.com/p/Sayf-61555764028109/" },
+];
 const Footer = () => {
   const variants = {
     hidden: { opacity: 0, y: 10 },
@@ -19,30 +23,29 @@ const Footer = () => {
       >
         <div className="flex-center flex-col">
           <h2 className="text-[2rem] max-lg:text-[1.5rem] dark-text text-center">
-            Join{" "}
-            <span className="text-gradient font-[500]">20k+ Muslims</span>{" "}
+            Join <span className="text-gradient font-[500]">20k+ Muslims</span>{" "}
             in our community to never miss out on our daily snippets
           </h2>
         </div>
         <div className="space-y-[3rem]">
           {/* Socials */}
           <div className="flex gap-[3rem] justify-center ">
-            {socials.map(({name,link}, index) => (
+            {socials.map(({ name, link }, index) => (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: `0.${index}` }}
                 key={`${index}-image`}
-
                 className="bg-slate-200 p-[0.75rem] rounded-[50%] cursor-pointer transition-all duration-300 hover:bg-slate-300"
               >
-                <a></a>
-                <Image
-                  src={`/socials/${name}.png`}
-                  width={20}
-                  height={20}
-                  alt="whatsapp-image"
-                />
+                <Link href={link} target="_blank">
+                  <Image
+                    src={`/socials/${name}.png`}
+                    width={20}
+                    height={20}
+                    alt="whatsapp-image"
+                  />
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -51,7 +54,7 @@ const Footer = () => {
             <p className="font-[400]">
               Developed by{" "}
               <Link
-                href="https://abdulrahmansoyooye.online/"
+                href="https://abdulrahmansoyooye.vercel.app/"
                 target="_blank"
               >
                 Soyooye
