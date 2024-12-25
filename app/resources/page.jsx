@@ -1,5 +1,6 @@
 "use client";
 import Welcome from "@/components/Welcome";
+import PdfImage from "@/components/PdfImage";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -18,12 +19,12 @@ const Resources = () => {
 
     const inputValue = e.target.value.toLowerCase();
 
-    const filteredPodcast = allResources.filter(
-      ({ title, description, tag }) =>
+    const filteredResources = allResources.filter(
+      ({ title, tag }) =>
         title.toLowerCase().includes(inputValue) ||
         tag.toLowerCase().includes(inputValue)
     );
-    setSearchedResources(filteredPodcast);
+    setSearchedResources(filteredResources);
   };
   useEffect(() => {
     async function fetchResources() {
@@ -121,9 +122,7 @@ export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
         </div>
       </div>
       <div className="flex flex-col ">
-        <object width="100%" height="200" data={pdf} type="application/pdf" className="rounded-md">
-          
-        </object>
+      
       </div>
       <div className="black_btn">Learn more</div>
       <div className="flex-between text-[11px] text-slate-500">

@@ -4,7 +4,10 @@ import Error from "next/error";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
+import parse from "html-react-parser";
+import LoadingSkeleton from "@/components/LoadingSkeleton"
+import CardSkeleton from "@/components/CardSkeleton"
+import { CiShoppingCart } from "react-icons/ci";
 const page = () => {
   const { courseId } = useParams();
   const [error, setError] = useState("");
@@ -36,10 +39,12 @@ const page = () => {
     <div className="flex flex-col gap-[4rem] mt-[3rem] p-[5rem_2rem] max-lg:p-[4rem_1rem] border serif  bg-[#f6f6f6]">
       {error && <Error />}
 
-      <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-lg ">
+     {!title ? (
+          <LoadingSkeleton />
+        ) : ( <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-lg ">
         <img
           src={imageUrl}
-          className="max-lg:w-full w-[60%] h-[250px] object-cover rounded-lg "
+          className="max-lg:w-full w-[60%] h-[400px] object-cover rounded-lg "
           alt="article-img"
         />
 
@@ -50,7 +55,7 @@ const page = () => {
               #{tag}
             </div>
           </div>
-          <div className="">{description}</div>
+          <div className="">{parse(description)}</div>
 
           <div className="flex flex-col gap-[1rem] justify-between">
             <button className="black_btn w-full flex gap-[1rem]">
@@ -63,13 +68,8 @@ const page = () => {
             </button>
           </div>
         </div>
-      </div>
-      {/*  */}
-      {/* <div>
-        <div className="text-[1.2rem] font-[500] bg-white p-[1rem] rounded-lg
-          See Related courses
-        </div>
-      </div> */}
+      </div>) }
+      
     </div>
   );
 };

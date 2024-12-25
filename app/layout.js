@@ -3,7 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export const rubik = Rubik({
+export const rubik = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "500", "700"],
 

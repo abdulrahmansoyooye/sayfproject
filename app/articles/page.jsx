@@ -21,7 +21,10 @@ const Articles = () => {
     indexofFirstArticle,
     indexofLastArticle
   );
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handlePagination = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top on page change
+  };
 
   // Search
   const [searchText, setSearchText] = useState("");
@@ -148,7 +151,7 @@ const Articles = () => {
         </div>
         <Paginate
           totalitems={articles.length}
-          paginate={paginate}
+          paginate={handlePagination}
           itemsPerPage={ARTICLES_PER_PAGE}
           currentPage={currentPage}
         />

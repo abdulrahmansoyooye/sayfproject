@@ -12,13 +12,15 @@ const ContactUs = () => {
             Reach Out To Us
           </div>{" "}
           <div className="space-y-[0.75rem] leading-8 text-left ">
-            We’d love to hear from you! At Sayf Network, we are dedicated to
-            fostering productivity, personal growth, and spiritual well-being
-            within our community. Whether you have questions, feedback, or ideas
-            to share, please don’t hesitate to reach out. <br />
-            <br /> At Sayf Network, we believe in the power of community and
-            collaboration, and we welcome your thoughts, questions, and
-            feedback.
+          We’d love to hear from you! At Sayf, we are dedicated to improving productivity, personal growth, and spiritual well-being within our community. 
+<br />
+<br />
+We believe in the power of community and collaboration, and we welcome your thoughts, questions, and feedback.
+<br />
+<br />
+Whether you have questions, feedback, or ideas to share, please don’t hesitate to reach out.
+
+            
           </div>
         </div>
         <div className="flex  max-lg:justify-evenly  gap-[4rem]">

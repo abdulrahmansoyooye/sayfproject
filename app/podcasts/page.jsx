@@ -7,6 +7,8 @@ import {
   getPodcastCategories,
   getPodcasts,
 } from "@/utils/actions/podcatsActions";
+import {formatMonth, formatDay} from "@/constants/index"
+
 import Loading from "../loading";
 import moment from "moment";
 import Paginate from "@/components/Paginate";
@@ -194,13 +196,7 @@ export const PodcastCard = ({
 }) => {
   const router = useRouter();
 
-  const format = (type, createdAt) => {
-    if (type == "date") {
-      return moment(createdAt).format("MMMM d");
-    } else {
-      return moment(createdAt).format("dddd");
-    }
-  };
+  
 
   return (
     <div
@@ -242,8 +238,8 @@ export const PodcastCard = ({
         </a>
       </div>
       <div className="flex-between text-[11px] text-slate-500">
-        <div>{format("time", createdAt)}</div>
-        <div>{format("date", createdAt)}</div>
+        <div>{formatMonth(createdAt)}</div>
+        <div>{formatDay(createdAt)}</div>
       </div>
     </div>
   );

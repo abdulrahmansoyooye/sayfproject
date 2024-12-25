@@ -1,6 +1,8 @@
 "use client";
 import Welcome from "@/components/Welcome";
 import Image from "next/image";
+import {formatMonth, formatDay} from "@/constants/index"
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getCourses } from "@/utils/actions/courseActions";
@@ -113,13 +115,7 @@ export const CourseCard = ({
 }) => {
   const router = useRouter();
 
-  const format = (type, createdAt) => {
-    if (type == "date") {
-      return moment(createdAt).format("MMMM d");
-    } else {
-      return moment(createdAt).format("dddd");
-    }
-  };
+  
   return (
     <div
       className="container flex-col gap-[4rem] cursor-pointer"
@@ -128,7 +124,7 @@ export const CourseCard = ({
       <div className="flex-between flex-wrap gap-[1rem]">
         <div className="flex flex-col gap-[0.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
-          <p className="text-[13px] font-[400]"> {description.slice(0, 80)}</p>
+         
         </div>
 
         <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">
@@ -138,7 +134,7 @@ export const CourseCard = ({
       <div className="flex flex-col ">
         <img
           src={imageUrl}
-          className="w-full h-[250px] object-cover rounded-lg"
+          className="w-full h-[400px] object-cover rounded-lg"
           alt="article-img"
         />
       </div>
@@ -146,8 +142,8 @@ export const CourseCard = ({
         <button className="black_btn w-full">Go to Course</button>
       </div>
       <div className="flex-between text-[11px] text-slate-500">
-        <div>{format("time", createdAt)}</div>
-        <div>{format("date", createdAt)}</div>
+        <div>{formatMonth(createdAt)}</div>
+        <div>{formatDay(createdAt)}</div>
       </div>
     </div>
   );

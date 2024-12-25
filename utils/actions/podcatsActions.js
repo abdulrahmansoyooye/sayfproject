@@ -59,7 +59,7 @@ export const getRelatedPodcasts = async (podcastCategory, podcastId) => {
     const relatedPodcast = foundPodcast.filter(
       ({ _id, category }) => category === podcastCategory && _id != podcastId
     );
-    const response = JSON.parse(JSON.stringify(relatedPodcast.slice(0, 4)));
+    const response = JSON.parse(JSON.stringify(relatedPodcast.slice(0, 4).reverse()));
     return response;
   } catch (error) {
     console.log(error);

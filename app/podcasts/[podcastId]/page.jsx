@@ -5,6 +5,8 @@ import {
   getRelatedPodcasts,
 } from "@/utils/actions/podcatsActions";
 import Error from "next/error";
+import LoadingSkeleton from "@/components/LoadingSkeleton"
+import CardSkeleton from "@/components/CardSkeleton"
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -45,7 +47,8 @@ const page = () => {
       {error && <Error />}
 
       {!podcastData.title ? (
-        <LoadingHorizontal />
+        <div className="w-full">
+        <LoadingSkeleton /></div>
       ) : (
         <div className="flex flex-col gap-[1rem] bg-white w-[70%] max-lg:w-full p-[1rem] rounded-lg ">
           <div className="text-[0.9rem] bg-brown-color mb-[1rem] text-white rounded-lg w-[30%] max-lg:w-full m-auto font-[300] text-center">
@@ -56,7 +59,7 @@ const page = () => {
               {imageUrl && (
                 <img
                   src={imageUrl}
-                  className=" w-full h-[200px] border object-contain  rounded-lg "
+                  className=" w-[full] h-[200px] border object-contain  rounded-lg "
                   alt="article-img"
                 />
               )}
@@ -103,24 +106,25 @@ const page = () => {
           <div className="flex flex-col gap-[1rem]">
             {relatedPodcastData.map(({ _id, title, imageUrl }) => (
               <div
-                className="flex bg-white p-[1rem] rounded-lg gap-[1rem] cursor-pointer justify-between"
+                className="flex flex-col  bg-white gap-[1.5rem] p-[1rem] rounded-lg cursor-pointer"
                 key={_id}
                 onClick={() => router.push(`/podcasts/${_id}`)}
               >
-                <div>
-                  <div> {title}</div>
+                <div className="flex flex-col gap-[0.5rem] ">
+                  <div className="text-[1.5rem]">{title}</div>
+                
                 </div>
                 <img
                   src={imageUrl}
-                  className="w-[50%] h-[150px] object-cover rounded-lg "
-                  alt="article-img"
+                  className="w-[80%]  h-[200px] object-cover rounded-lg"
+                  alt="podcast-img"
                 />
               </div>
             ))}
           </div>
         ) : (
-          <div className="flex justify-center bg-white p-[1rem] rounded-lg cursor-pointer">
-            No related Podcast
+          <div >
+            <CardSkeleton/>
           </div>
         )}
       </div>

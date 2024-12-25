@@ -2,7 +2,7 @@ import moment from "moment";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import parse from "html-react-parser";
-
+import {formatMonth, formatDay} from "@/constants/index"
 const ArticlesCard = ({
   _id,
   title,
@@ -14,13 +14,7 @@ const ArticlesCard = ({
   category,
 }) => {
   const router = useRouter();
-  const format = (type, createdAt) => {
-    if (type == "date") {
-      return moment(createdAt).format("MMMM d");
-    } else {
-      return moment(createdAt).format("dddd");
-    }
-  };
+  
   const data = `${content.slice(0, 150)}...`;
   return (
     <motion.div
@@ -52,8 +46,8 @@ const ArticlesCard = ({
         <button className="black_btn w-full">Read Article</button>
       </div>
       <div className="flex-between text-[11px] text-slate-500">
-        <div>{format("time", createdAt)}</div>
-        <div>{format("date", createdAt)}</div>
+        <div>{formatMonth(createdAt)}</div>
+        <div>{formatDay(createdAt)}</div>
       </div>
     </motion.div>
   );

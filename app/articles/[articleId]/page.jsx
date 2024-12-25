@@ -5,8 +5,8 @@ import {
 } from "@/utils/actions/articleActions";
 import parse from "html-react-parser";
 import moment from "moment";
-import { LoadingHorizontal } from "../../loading";
-
+import LoadingSkeleton from "@/components/LoadingSkeleton"
+import CardSkeleton from "@/components/CardSkeleton"
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -58,7 +58,7 @@ const EachArticle = () => {
         )}
 
         {!articleData.title ? (
-          <LoadingHorizontal />
+          <LoadingSkeleton />
         ) : (
           <div className="flex flex-col gap-[2rem] bg-white w-full p-[1rem] rounded-lg">
             <div className="text-[0.9rem] bg-brown-color text-white rounded-lg w-full m-auto font-[300] text-center">
@@ -100,30 +100,26 @@ const EachArticle = () => {
 
         {relatedArticleData.length > 0 ? (
           <div className="flex flex-col gap-[1rem]">
-            {relatedArticleData.map(({ _id, title, imageUrl, content }) => (
+            {relatedArticleData.map(({ _id, title, imageUrl }) => (
               <div
                 className="flex flex-col  bg-white gap-[1.5rem] p-[1rem] rounded-lg cursor-pointer"
                 key={_id}
                 onClick={() => router.push(`/articles/${_id}`)}
               >
                 <div className="flex flex-col gap-[0.5rem] ">
-                  <div className="text-[1.2rem]">{title}</div>
-                  <div className="text-[0.8rem] ">
-                    {content && parse(content.slice(0, 50))}
-                  </div>
+                  <div className="text-[1.5rem]">{title}</div>
+                
                 </div>
                 <img
                   src={imageUrl}
-                  className="sm:w-full h-[150px] object-cover rounded-lg"
+                  className="w-[80%]  h-[200px] object-cover rounded-lg"
                   alt="article-img"
                 />
               </div>
             ))}
           </div>
         ) : (
-          <div className="flex justify-center bg-white p-[1rem] rounded-lg">
-            No related Article
-          </div>
+         <CardSkeleton/>
         )}
       </div>
     </div>
