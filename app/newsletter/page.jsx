@@ -9,6 +9,8 @@ import React, { useEffect, useState } from "react";
 import Loading from "../loading.js";
 import { LoadingHorizontal } from "../loading.js";
 import Paginate from "../../components/Paginate.jsx";
+import {formatMonth, formatDay} from "@/constants/index"
+import CardSkeleton from "@/components/CardSkeleton"
 
 const NewsLetter = () => {
   const newsletters_PER_PAGE = 10;
@@ -33,13 +35,7 @@ const NewsLetter = () => {
     }
     fetchNewsletter();
   }, []);
-  const format = (type, createdAt) => {
-    if (type == "date") {
-      return moment(createdAt).format("MMMM");
-    } else {
-      return moment(createdAt).format("d");
-    }
-  };
+ 
   return (
     <div>
       <Welcome title={"Sayf Weekly Newsletter"} />
@@ -51,14 +47,14 @@ const NewsLetter = () => {
         ></iframe>
         <div className="flex gap-[2rem] justify-between flex-wrap items-center">
           {newsletter.length > 0 ? (
-            currentNewsletters.map(({ _id, title, createdAt, link }) => (
+            currentNewsletters.map(({ _id, title, publishDate, link }) => (
               <div
                 key={_id}
                 className="border-b sm:w-[45%] w-full  justify-center p-[1rem] rounded-lgll"
               >
                 <div className="flex gap-[0.5rem] text-[0.8rem] text-slate-600">
-                  <div>{format("date", createdAt)}</div>
-                  <div>{format("day", createdAt)}</div>
+                  <div>{formatMonth(publishDate)}</div>
+                  <div>{formatDay(publishDate)}</div>
                 </div>
                 <div className="text-[1.5rem]">
                   <Link href={link} className="text-black  text-[1.2rem] serif">
@@ -68,9 +64,9 @@ const NewsLetter = () => {
               </div>
             ))
           ) : (
-            <div classNam="m-auto w-full">
+            <div >
               {" "}
-              <LoadingHorizontal />
+              <CardSkeleton />
             </div>
           )}
         </div>

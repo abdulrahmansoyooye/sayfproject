@@ -4,7 +4,8 @@ import {
   getRelatedsayfArticle,
 } from "@/utils/actions/articleActions";
 import parse from "html-react-parser";
-import moment from "moment";
+import {formatMonth, formatDay} from "@/constants/index"
+
 import LoadingSkeleton from "@/components/LoadingSkeleton"
 import CardSkeleton from "@/components/CardSkeleton"
 import Image from "next/image";
@@ -17,13 +18,7 @@ const EachArticle = () => {
   const [relatedArticleData, setrelatedArticleData] = useState([]);
   const { _id, title, content, imageUrl, category, tag, createdAt } =
     articleData;
-  const format = (type, createdAt) => {
-    if (type == "date") {
-      return moment(createdAt).format("MMMM d");
-    } else {
-      return moment(createdAt).format("dddd");
-    }
-  };
+ 
   const router = useRouter();
 
   useEffect(() => {
@@ -76,8 +71,8 @@ const EachArticle = () => {
               />
             )}
             <div className="flex-between text-[11px] text-slate-500">
-              <div>{format("time", createdAt)}</div>
-              <div>{format("date", createdAt)}</div>
+              <div>{formatMonth(createdAt)}</div>
+              <div>{formatDay(createdAt)}</div>
             </div>
 
             <div className="text-[1rem]">{content && parse(content)}</div>

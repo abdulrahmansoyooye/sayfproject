@@ -168,13 +168,13 @@ const Podcasts = () => {
 export const PodcastCardList = ({ data }) => {
   return data.map(
     (
-      { _id, title, createdAt, description, tag, audio, imageUrl, category },
+      { _id, title, publishDate, description, tag, audio, imageUrl, category },
       index
     ) => (
       <PodcastCard
         key={_id}
         title={title}
-        createdAt={createdAt}
+        publishDate={publishDate}
         description={description}
         tag={tag}
         audio={audio}
@@ -188,7 +188,7 @@ export const PodcastCardList = ({ data }) => {
 export const PodcastCard = ({
   _id,
   title,
-  createdAt,
+  publishDate,
   description,
   audio,
   imageUrl,
@@ -238,8 +238,8 @@ export const PodcastCard = ({
         </a>
       </div>
       <div className="flex-between text-[11px] text-slate-500">
-        <div>{formatMonth(createdAt)}</div>
-        <div>{formatDay(createdAt)}</div>
+        <div>{formatMonth(publishDate)}</div>
+        <div>{formatDay(publishDate)}</div>
       </div>
     </div>
   );
