@@ -1,14 +1,13 @@
 "use client";
 import Welcome from "@/components/Welcome";
-import PdfImage from "@/components/PdfImage";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
+import dynamic from "next/dynamic";
 import Loading from "../loading";
 import moment from "moment";
 import { getResources } from "@/utils/actions/resourcesActions";
 import Image from "next/image";
-
+const PdfImage = dynamic(() => import("@/components/PdfImage"), { ssr: false });
 const Resources = () => {
   const [allResources, setAllResources] = useState([]);
   const [error, setError] = useState("");
@@ -116,7 +115,9 @@ export const ResourcesCard = ({ _id, title, createdAt, pdf, tag }) => {
         <div className="flex flex-col gap-[.75rem]">
           <h2 className="text-[1.5rem]">{title}</h2>
         </div>
-
+        <div className="w-full">
+                     <PdfImage pdfUrl={pdf}/>
+         </div>
         <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">
           #{tag}
         </div>

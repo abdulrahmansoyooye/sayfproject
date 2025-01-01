@@ -8,6 +8,8 @@ import React, { useEffect, useState } from "react";
 import { LoadingHorizontal } from "../../loading";
 import LoadingSkeleton from "@/components/LoadingSkeleton"
 import CardSkeleton from "@/components/CardSkeleton"
+import dynamic from "next/dynamic";
+const PdfImage = dynamic(() => import("@/components/PdfImage"), { ssr: false });
 const page = () => {
   const { resourcesId } = useParams();
   const [error, setError] = useState("");
@@ -41,11 +43,11 @@ const page = () => {
           <LoadingSkeleton />
         ) : (
       <div className="flex max-lg:flex-col gap-[2rem] bg-white w-full p-[2rem] rounded-lg ">
-        <object width="100%" height="400" data={pdf} type="application/pdf" className="overflow-hidden rounded-md">
-          {" "}
-        </object>
+         <div className="w-full">
+                     <PdfImage pdfUrl={pdf}/>
+                    </div>
 
-        <div className="flex flex-col gap-[4rem] justify-between w-full flex-wrap">
+        <div className="flex flex-col gap-[2rem] justify-between w-full flex-wrap">
           <div className="flex justify-between  gap-[0.5rem] flex-wrap">
             <div className="text-[2rem] font-[500] dark-text ">{title}</div>
             <div className="bg-slate-100 p-[0.5rem]  rounded-lg text-[0.75rem] flex-0 font-[300]">
@@ -58,13 +60,13 @@ const page = () => {
               : description}
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex ">
             <a
               href={pdf}
-              className="bg-[#f1f3f4] rounded-[50%] p-4 hover:bg-slate-200 transition-colors duration-300 ease-in-out "
+              className="bg-[#f1f3f4] flex gap-2 rounded-2xl p-4 hover:bg-slate-200 transition-colors duration-300 ease-in-out "
               download
             >
-              <Image
+              Download  <Image
                 width={20}
                 height={20}
                 src={"/assets/download.png"}
