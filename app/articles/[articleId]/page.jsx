@@ -60,7 +60,7 @@ const EachArticle = () => {
               {category}
             </div>
 
-            <div className="text-[1.7rem] text-center ">
+            <div className="text-[1.7rem] serif text-center ">
               {title && title.replace()}
             </div>
             {imageUrl && (
@@ -75,7 +75,7 @@ const EachArticle = () => {
               <div>{formatDay(createdAt)}</div>
             </div>
 
-            <div className="text-[1rem]">{content && parse(content)}</div>
+            <div className="text-[1rem] serif">{content && parse(content)}</div>
           </div>
         )}
         <div>
@@ -102,7 +102,7 @@ const EachArticle = () => {
                 onClick={() => router.push(`/articles/${_id}`)}
               >
                 <div className="flex flex-col gap-[0.5rem] ">
-                  <div className="text-[1.5rem]">{title}</div>
+                  <div className="text-[1.5rem] serif">{title}</div>
                 
                 </div>
                 <img

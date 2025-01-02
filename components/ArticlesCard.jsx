@@ -22,13 +22,13 @@ const ArticlesCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: `0.${index}` }}
       key={`${index}-image`}
-      className="container flex-col gap-[4rem] cursor-pointer"
+      className="container flex-col gap-[4rem] cursor-pointer "
       onClick={() => router.push(`/articles/${_id}`)}
     >
       <div className="flex flex-col gap-[1rem]">
         <div className="flex flex-wrap gap-[0.75rem]">
-          <h2 className="text-[1.5rem] ">{title}</h2>
-          <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem] rounded-lg font-[300]">
+          <h2 className="text-[1.5rem] serif">{title}</h2>
+          <div className="flex flex-col text-[11px] bg-slate-200 p-[0.8rem]  rounded-lg font-[300]">
             {category ? category : "#tag"}
           </div>
         </div>
@@ -39,7 +39,7 @@ const ArticlesCard = ({
             alt="article-img"
           />
         </div>
-        <div className="text-[0.9rem]">{parse(data)}</div>
+        <div className="serif text-[0.9rem]">{parse(data)}</div>
       </div>
 
       <div className="">
